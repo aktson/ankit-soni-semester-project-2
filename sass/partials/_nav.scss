@@ -1,0 +1,15 @@
+.navbar {
+  @extend .shadow-sm;
+  padding: 1.2em;
+}
+.navbar-ul {
+  justify-content: end;
+  flex-grow: 1;
+  gap: 1em;
+  align-items: center;
+}
+.nav-link {
+  color: $black !important;
+  font-size: 1.1em;
+  font-weight: 400;
+}

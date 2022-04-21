@@ -1,0 +1,110 @@
+#hero {
+  @extend .spacer;
+  overflow-x: hidden;
+
+  .container-fluid {
+    padding: 0;
+  }
+  h1 {
+    font-size: 4em;
+    @media (max-width: $mobile) {
+      font-size: 2.5em;
+    }
+  }
+
+  .row > * {
+    padding: 0;
+    gap: 0;
+  }
+
+  .hero-content {
+    background-color: $secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5em;
+  }
+
+  .hero__image {
+    height: 70vh;
+    @media (max-width: $mobile) {
+      height: 40vh;
+    }
+  }
+}
+
+// section featured products
+.featured-products {
+  @extend .spacer;
+
+  .col {
+    @extend .inner-spacer;
+  }
+  &__link {
+    margin-left: auto;
+    text-align: end;
+    font-size: 1.2em;
+    color: $black;
+  }
+}
+
+//section member campaign
+.member-campaign {
+  @extend .spacer;
+
+  &__content {
+    background-color: $dark;
+    color: $light;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    padding: 0.5em;
+  }
+  &__content h3 {
+    font-size: 3em;
+  }
+  &__content p {
+    font-size: 1.5em;
+  }
+}
+
+//section newsletter
+.newsletter {
+  @extend .spacer;
+  height: 50vh;
+  background-color: $secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .newsletter-content {
+    text-align: center;
+    max-width: $mobile;
+  }
+  .newsletter-content h3 {
+    @extend .inner-spacer;
+    font-size: 3em;
+  }
+}
+//section services
+.services {
+  @extend .spacer;
+
+  .row {
+    justify-content: center;
+  }
+  .services-col {
+    @extend .inner-spacer;
+    text-align: center;
+    @media (max-width: $mobile) {
+      max-width: 350px;
+    }
+  }
+
+  i {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+}

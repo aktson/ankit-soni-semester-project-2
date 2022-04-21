@@ -1,0 +1,10 @@
+#hero-products {
+  @extend .spacer;
+
+  #hero-products-banner {
+    height: 60vh;
+    background: url("../../images/shoes.jpg") no-repeat center;
+    background-size: cover;
+    margin: 0 auto;
+  }
+}

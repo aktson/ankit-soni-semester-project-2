@@ -1,0 +1,17 @@
+.product-specific {
+  @extend .spacer;
+  margin-top: 100px;
+
+  h2 {
+    text-align: start;
+    margin-bottom: 0.2em;
+  }
+  .price {
+    @extend .inner-spacer;
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+  button {
+    @extend .inner-spacer;
+  }
+}
