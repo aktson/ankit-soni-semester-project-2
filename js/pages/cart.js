@@ -1,4 +1,5 @@
 import { displayMessage } from "../generalFunctions/displayMessage.js";
+import { formatPrice } from "../generalFunctions/formatPrice.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { getFromStorage, saveToStorage, productKey } from "../storage/storage.js";
 
@@ -20,15 +21,12 @@ function renderCartItems(itemsToRender) {
   const cartTotalItemContainer = document.querySelector(".cart-total");
   const totalPriceContainer = document.querySelector(".total-price-container");
 
-
-  function formatMoney(number) {
-    return parseFloat(number).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-  }
+  // formats total amount and converts to 2 decimal points
 
   itemsToRender.forEach(item => {
 
-    const price = formatMoney(item.price);
-    const itemTotal = formatMoney(item.price * item.quantity);
+    const price = formatPrice(item.price);
+    const itemTotal = formatPrice(item.price * item.quantity);
 
 
 
@@ -54,7 +52,7 @@ function renderCartItems(itemsToRender) {
 
     let total = 0;
     total += parseFloat(item.price) * parseFloat(item.quantity);
-    totalPriceContainer.innerHTML = `NOK ${total}`;
+    totalPriceContainer.innerHTML = `NOK ${formatPrice(total)}`;
 
   })
 

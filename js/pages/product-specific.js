@@ -46,7 +46,6 @@ function renderSpecificPropduct(result) {
   let cssClass = "visually-hidden";
 
   const isItemInStorage = itemsSavedInStorage.find(function (fav) {
-    console.log(fav)
     return parseInt(fav.id) === result.id;
   })
 
@@ -119,7 +118,7 @@ function addToCart(event) {
     modalTitle.innerHTML = `<div class ="modal-body-content">
                               <img src="${image}" class="modal-body-content__image"/>
                               <h5>${title}</h5>
-                              <p class="ms-auto">${price}</p>
+                              <p class="ms-auto">NOK ${price}</p>
                             </div>  
                            <a href="cart.html" class="btn btn-primary">Proceed to cart</a>`;
 
