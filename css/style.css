@@ -12215,11 +12215,23 @@ a {
   gap: 2em;
   padding: 1em;
   position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart-item .cart-item-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #3c3f40;
+  gap: 1em;
 }
 
 .cart-item .cart-item-image {
   width: 70px;
   height: 70px;
+  border-radius: 50%;
 }
 
 .cart-item p {
@@ -12233,9 +12245,9 @@ a {
   cursor: pointer;
 }
 
-.cart-item .free {
+.cart-item .free-delivery {
   position: absolute;
-  left: 8em;
+  left: 7em;
   bottom: 1em;
   color: #7273ff;
 }

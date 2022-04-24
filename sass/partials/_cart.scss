@@ -35,10 +35,17 @@
 	gap: 2em;
 	padding: 1em;
 	position: relative;
+	justify-content: space-between;
 
+	.cart-item-link {
+		display: flex;
+		color: $dark;
+		gap: 1em;
+	}
 	.cart-item-image {
 		width: 70px;
 		height: 70px;
+		border-radius: 50%;
 	}
 
 	p {
@@ -50,9 +57,9 @@
 		bottom: 1em;
 		cursor: pointer;
 	}
-	.free {
+	.free-delivery {
 		position: absolute;
-		left: 8em;
+		left: 7em;
 		bottom: 1em;
 		color: $primary;
 	}

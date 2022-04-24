@@ -8,7 +8,6 @@ scrollToTop();
 
 const itemsSavedInStorage = getFromStorage(productKey);
 
-const backBtnContainer = document.querySelector(".back-btn-container");
 
 if (itemsSavedInStorage.length === 0) {
   displayMessage("light", "Nothing in cart yet", ".cart-wrapper");
@@ -21,31 +20,45 @@ function renderCartItems(itemsToRender) {
   const cartTotalItemContainer = document.querySelector(".cart-total");
   const totalPriceContainer = document.querySelector(".total-price-container");
 
-  let total = 0;
+
+  function formatMoney(number) {
+    return parseFloat(number).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+  }
 
   itemsToRender.forEach(item => {
 
+    const price = formatMoney(item.price);
+    const itemTotal = formatMoney(item.price * item.quantity);
+
+
+
     cartItemContainer.innerHTML += `<div class="cart-item">
-                                      <img src="${item.image}" class="cart-item-image" alt="${item.title}" />
-                                      <h4>${item.title}</h4>
-                                      <p class="cart-price">NOK ${item.price}</p>
-                                      <small class="free">
+                                      <a href="product-specific.html?id=${item.id}" class="cart-item-link"> 
+                                        <img src="${item.image}" class="cart-item-image" alt="${item.title}" />
+                                        <h4>${item.title}</h4>
+                                      </a>
+                                      <p class="cart-price">${item.quantity} stk.</p>
+                                      <p class="cart-price">NOK ${price} </p>
+                                      <small class="free-delivery">
                                         <i class="fa-solid fa-check"></i>
                                         free delivery
                                       </small>
                                       <i class="fa-solid fa-trash-can delete-btn"  data-id=${item.id}></i>
                                       </div>`
 
-    cartTotalItemContainer.innerHTML += `<div class="cart-total-item">
-                                          <p>${item.title}</p>
-                                          <p>${item.price}</p>
+    cartTotalItemContainer.innerHTML += `<div class="cart-total-item ">
+                                         <p>${item.title}</p>
+                                          <div class="d-flex gap-5"><p >${item.quantity} stk. * ${price}</p>
+                                          <p>${itemTotal} </p></div>
                                         </div>`
 
+    let total = 0;
+    total += parseFloat(item.price) * parseFloat(item.quantity);
+    totalPriceContainer.innerHTML = `NOK ${total}`;
 
-    total += parseFloat(item.price)
-    totalPriceContainer.innerHTML = total;
   })
 
+  // delet items from cart 
   const deleteItemBtns = document.querySelectorAll(".delete-btn")
 
   if (itemsToRender.length > 0) {

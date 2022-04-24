@@ -45,8 +45,8 @@ function renderSpecificPropduct(result) {
 
   let cssClass = "visually-hidden";
 
-
   const isItemInStorage = itemsSavedInStorage.find(function (fav) {
+    console.log(fav)
     return parseInt(fav.id) === result.id;
   })
 
@@ -81,29 +81,8 @@ function renderSpecificPropduct(result) {
   const deleteBtn = document.querySelector(".delete-btn");
   deleteBtn.addEventListener("click", deleteFromCart);
 
-
 }
 
-let currentAddedProduct = getFromStorage(productKey);
-
-// function addItem(image, title, price, id) {
-//   let quantity = 1;
-
-//   for (let i = 0; i < currentAddedProduct.length; i++) {
-//     if (currentAddedProduct[i].id = id) {
-//       quantity++;
-//       console.log(quantity)
-
-
-//     }
-//   }
-//   const product = { image, title, price, id };
-
-//   currentAddedProduct.push(product);
-// }
-function addItem(arr, item) {
-  arr.push(item)
-}
 //add item to cart
 
 function addToCart(event) {
@@ -113,14 +92,10 @@ function addToCart(event) {
   const title = event.target.dataset.title;
   const price = event.target.dataset.price;
   const id = +event.target.dataset.id;
+  let quantity = 1;
 
+  let currentAddedProduct = getFromStorage(productKey);
 
-  // addItem(image, title, price, id);
-  // saveToStorage(productKey, currentAddedProduct)
-
-  // console.log(currentAddedProduct)
-
-  // let currentAddedProduct = getFromStorage(productKey);
 
   const findCurrentAddedProduct = currentAddedProduct.find(function (product) {
     return parseInt(product.id) === id;
@@ -128,7 +103,7 @@ function addToCart(event) {
 
 
   if (!findCurrentAddedProduct) {
-    const product = { id, title, price, image };
+    const product = { id, title, price, image, quantity };
 
     currentAddedProduct.push(product);
 
@@ -149,16 +124,21 @@ function addToCart(event) {
                            <a href="cart.html" class="btn btn-primary">Proceed to cart</a>`;
 
   } else {
-    const filterCurrentAddedProduct = currentAddedProduct.filter(product => parseInt(product.id) === id);
-    addItem(currentAddedProduct, filterCurrentAddedProduct);
-    // saveToStorage(productKey, filterCurrentAddedProduct);
+    const findCurrentAddedProduct = currentAddedProduct.find(product => parseInt(product.id) === id);
 
-    console.log(currentAddedProduct.length)
+    if (findCurrentAddedProduct) {
+
+      for (let i = 0; i < currentAddedProduct.length; i++) {
+        currentAddedProduct[i].quantity++;
+        console.log(quantity)
+        saveToStorage(productKey, currentAddedProduct)
+
+      }
+    }
   }
-
 }
 
-// delet item from cart
+// delete item from cart
 function deleteFromCart(event) {
 
   const id = +event.target.dataset.id;
@@ -177,7 +157,5 @@ function deleteFromCart(event) {
     badge.classList.add("visually-hidden");
 
   }
-
-
 
 }
