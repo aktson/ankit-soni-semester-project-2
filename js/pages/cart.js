@@ -20,8 +20,8 @@ function renderCartItems(itemsToRender) {
   const cartItemContainer = document.querySelector(".cart-item-container");
   const cartTotalItemContainer = document.querySelector(".cart-total");
   const totalPriceContainer = document.querySelector(".total-price-container");
+  let total = 0;
 
-  // formats total amount and converts to 2 decimal points
 
   itemsToRender.forEach(item => {
 
@@ -50,7 +50,7 @@ function renderCartItems(itemsToRender) {
                                           <p>${itemTotal} </p></div>
                                         </div>`
 
-    let total = 0;
+
     total += parseFloat(item.price) * parseFloat(item.quantity);
     totalPriceContainer.innerHTML = `NOK ${formatPrice(total)}`;
 

@@ -14,17 +14,19 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 
-
 (async function fetchProduct() {
 
-  const url = baseUrl + `/products/${id}`;
+  const url = baseUrl + `api/items/${id}?populate=*`;
 
   try {
     const response = await fetch(url);
 
     if (response.ok) {
       const results = await response.json();
-      renderSpecificPropduct(results);
+
+      console.log(results.data)
+      renderSpecificPropduct(results.data);
+
 
     } else {
       throw new Error(response.statusText);
@@ -55,19 +57,23 @@ function renderSpecificPropduct(result) {
 
   const productContainer = document.querySelector("#product-container");
 
-  const imgUrl = baseUrl + result.image.url;
-  const altText = result.image.alternativeText;
+  const title = result.attributes.title;
+  const price = result.attributes.price;
+  const description = result.attributes.description;
+  const img = result.attributes.image.data.attributes.url;
+  const altText = result.attributes.image.data.attributes.alternativeText;
+
   productContainer.innerHTML = "";
 
-  productContainer.innerHTML = `<div class="col-md-8" style ="background: url('${imgUrl}') no-repeat center;background-size: cover; min-height:500px;" >
+  productContainer.innerHTML = `<div class="col-md-8" style ="background: url('${img}') no-repeat center;background-size: cover; min-height:500px;" >
                                   <span role="img" aria-label=${altText}></span>
                                 </div>
                                 <div class="col-md-4"> 
-                                    <h2>${result.title}</h2> 
-                                    <p class="price" >NOK ${result.price} <span class = "badge ${cssClass}"><i class="fa-solid fa-circle-check me-2"></i> In the cart</span></p>
-                                    <button class="add-to-cart" data-title="${result.title}" data-id=${result.id} data-price="${result.price}" data-image="${imgUrl}" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+                                    <h2>${title}</h2> 
+                                    <p class="price" >NOK ${price} <span class = "badge ${cssClass}"><i class="fa-solid fa-circle-check me-2"></i> In the cart</span></p>
+                                    <button class="add-to-cart" data-title="${title}" data-id=${result.id} data-price="${price}" data-image="${img}" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
                                     <button class="delete-btn ${cssClass}" data-id=${result.id}>Remove item</button>
-                                    <p>${result.description}</p>
+                                    <p>${description}</p>
                                 </div>
                                 </div>`;
 
@@ -76,16 +82,13 @@ function renderSpecificPropduct(result) {
   addTocartBtn.addEventListener("click", addToCart);
 
 
-
   const deleteBtn = document.querySelector(".delete-btn");
   deleteBtn.addEventListener("click", deleteFromCart);
 
 }
 
 //add item to cart
-
 function addToCart(event) {
-
 
   const image = event.target.dataset.image;
   const title = event.target.dataset.title;
@@ -152,6 +155,7 @@ function deleteFromCart(event) {
     const badge = document.querySelector(".badge");
 
     saveToStorage(productKey, findItemToDelete);
+
     event.target.classList.add("visually-hidden");
     badge.classList.add("visually-hidden");
 

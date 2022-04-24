@@ -6,15 +6,16 @@ scrollToTop();
 
 (async function fetchProducts() {
 
-  const url = baseUrl + "/products";
+  const url = baseUrl + "api/items?populate=*";
 
   try {
     const response = await fetch(url);
 
     if (response.ok) {
       const results = await response.json();
+      console.log(results.data)
 
-      renderProducts(results);
+      renderProducts(results.data);
 
     } else {
       throw new Error(response.statusText);
@@ -36,17 +37,20 @@ function renderProducts(results) {
 
   results.forEach(result => {
 
-    const imgUrl = baseUrl + result.image.url;
-    const altText = result.image.alternativeText;
+    const title = result.attributes.title;
+    const price = result.attributes.price;
+
+    const img = result.attributes.image.data.attributes.url;
+    const altText = result.attributes.image.data.attributes.alternativeText;
 
 
     productsContainer.innerHTML += `<a href="product-specific.html?id=${result.id}">
                                         <div class="col">
                                           <div class="card h-100 shadow-lg">
-                                          <img src="${imgUrl}" alt="${altText}" class="product-image"/>
+                                          <img src="${img}" alt="${altText}" class="product-image"/>
                                           <div class="card-body">
-                                            <h5 class="card-title">${result.title}</h5>
-                                            <p class="card-text">NOK ${result.price}</p>
+                                            <h5 class="card-title">${title}</h5>
+                                            <p class="card-text">NOK ${price}</p>
                                           </div>
                                         </div>
                                       </div>
