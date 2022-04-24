@@ -1,17 +1,59 @@
 .product-specific {
-  @extend .spacer;
-  margin-top: 100px;
+	@extend .spacer;
+	margin-top: 100px;
 
-  h2 {
-    text-align: start;
-    margin-bottom: 0.2em;
-  }
-  .price {
-    @extend .inner-spacer;
-    font-size: 1.4em;
-    font-weight: bold;
-  }
-  button {
-    @extend .inner-spacer;
-  }
+	h2 {
+		text-align: start;
+		margin-bottom: 0.2em;
+		position: relative;
+	}
+	.price {
+		@extend .inner-spacer;
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+	.add-to-cart {
+		@extend .inner-spacer;
+		@extend .btn, .btn-outline-primary, .btn-lg;
+	}
+	.delete-btn {
+		@extend .inner-spacer;
+		@extend .btn, .btn-lg, .btn-outline-danger;
+		margin-left: 0.5em;
+	}
+	.badge {
+		background-color: $success;
+		width: max-content;
+		padding: 0.5em;
+		font-size: 0.8em;
+		font-weight: 300;
+		margin-left: 0.52em;
+	}
+}
+
+#product-container {
+	justify-content: center;
+}
+.btn-close {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+.modal-header {
+	border: none;
+	position: relative;
+	font-size: 1.3em;
+}
+.modal-body-content {
+	display: flex;
+	gap: 0.4em;
+	margin-bottom: 2em;
+	padding: 1em;
+
+	@extend .shadow-sm;
+	&__image {
+		width: 50px;
+		height: 50px;
+	}
 }

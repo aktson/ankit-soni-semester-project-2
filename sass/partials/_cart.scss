@@ -1,65 +1,86 @@
 .cart {
-  @extend .spacer;
-  margin-top: 100px;
+	@extend .spacer;
+	margin-top: 100px;
+	text-align: center;
+	position: relative;
+}
+.back-btn-container {
+	position: absolute;
+	left: 0;
 }
 
-.cart-items-container {
-  justify-content: center;
-  gap: 1em;
+.back-button {
+	@extend .btn;
+	@extend .btn-outline-primary;
+	position: absolute;
+	left: 0;
+	display: flex;
+	align-items: center;
+	gap: 0.4em;
+
+	@media (max-width: $mobile) {
+		top: -4em;
+		margin: 0 auto;
+	}
+}
+.cart-wrapper {
+	justify-content: center;
+	gap: 1em;
 }
 
 .cart-item {
-  @extend .shadow-sm;
-  display: flex;
-  gap: 2em;
-  padding: 1em;
-  position: relative;
+	@extend .shadow-sm;
 
-  .cart-item-image {
-    width: 70px;
-    height: 70px;
-  }
+	display: flex;
+	gap: 2em;
+	padding: 1em;
+	position: relative;
 
-  p {
-    margin-left: auto;
-  }
-  .delete-btn {
-    position: absolute;
-    right: 1em;
-    bottom: 1em;
-    cursor: pointer;
-  }
-  .free {
-    position: absolute;
-    left: 8em;
-    bottom: 1em;
-    color: $primary;
-  }
+	.cart-item-image {
+		width: 70px;
+		height: 70px;
+	}
+
+	p {
+		margin-left: auto;
+	}
+	.delete-btn {
+		position: absolute;
+		right: 1em;
+		bottom: 1em;
+		cursor: pointer;
+	}
+	.free {
+		position: absolute;
+		left: 8em;
+		bottom: 1em;
+		color: $primary;
+	}
 }
 
 .cart-total-container {
-  @extend .shadow-sm;
-  padding: 2em;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
+	@extend .shadow-sm;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
 
-  .cart-total {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  .cart-total-item {
-    display: flex;
-    justify-content: space-between;
-  }
-  h3 {
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .cart-total-total {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1em;
-  }
+	.cart-total {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	.cart-total-item {
+		display: flex;
+		justify-content: space-between;
+	}
+	h3 {
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.cart-total-total {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 1em;
+	}
 }

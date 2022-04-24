@@ -1,4 +1,7 @@
 import { baseUrl } from "../settings.js";
+import { scrollToTop } from "../generalFunctions/scrollToTop.js";
+
+scrollToTop();
 
 // hero section
 (async function fetchHero() {
@@ -20,7 +23,7 @@ function renderHero(image, altText) {
 
   heroBanner.innerHTML = `<div style ="background: url('${image}') no-repeat center;background-size: cover;" class="hero__image" >
                       <span  role="img" aria-label=${altText}></span>
-                    <div>`;
+                    </div>`;
 
 }
 
