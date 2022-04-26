@@ -1,6 +1,15 @@
 .product-specific {
 	@extend .spacer;
 	margin-top: 100px;
+	.product-content {
+		padding: 0em 1em;
+		@media (max-width: $mobile) {
+			padding: 0.5em;
+		}
+		@media (max-width: $large) {
+			padding: 0.5em;
+		}
+	}
 
 	h2 {
 		text-align: start;
@@ -15,11 +24,11 @@
 	.add-to-cart {
 		@extend .inner-spacer;
 		@extend .btn, .btn-outline-primary, .btn-lg;
+		margin-right: 0.5em;
 	}
 	.delete-btn {
 		@extend .inner-spacer;
 		@extend .btn, .btn-lg, .btn-outline-danger;
-		margin-left: 0.5em;
 	}
 	.badge {
 		background-color: $success;

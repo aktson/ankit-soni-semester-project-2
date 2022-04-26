@@ -28,7 +28,7 @@
   --bs-info: #0dcaf0;
   --bs-warning: #ffdc83;
   --bs-danger: #ffb2ad;
-  --bs-light: #d8d9cc;
+  --bs-light: #eeefe9;
   --bs-dark: #3c3f40;
   --bs-primary-rgb: 114, 115, 255;
   --bs-secondary-rgb: 255, 255, 157;
@@ -36,7 +36,7 @@
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 220, 131;
   --bs-danger-rgb: 255, 178, 173;
-  --bs-light-rgb: 216, 217, 204;
+  --bs-light-rgb: 238.34831, 238.77528, 233.22472;
   --bs-dark-rgb: 60, 63, 64;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 33, 36, 38;
@@ -2157,15 +2157,15 @@ progress {
 }
 
 .table-light {
-  --bs-table-bg: #d8d9cc;
-  --bs-table-striped-bg: #cfd0c4;
+  --bs-table-bg: #eeefe9;
+  --bs-table-striped-bg: #e4e5df;
   --bs-table-striped-color: #212426;
-  --bs-table-active-bg: #c6c7bb;
+  --bs-table-active-bg: #dadad6;
   --bs-table-active-color: #212426;
-  --bs-table-hover-bg: #cacbc0;
+  --bs-table-hover-bg: #dfe0db;
   --bs-table-hover-color: #212426;
   color: #212426;
-  border-color: #c6c7bb;
+  border-color: #dadad6;
 }
 
 .table-dark {
@@ -2663,7 +2663,7 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 
-.btn-check[disabled] + .btn, .btn-check[disabled] + .form-btn, .product-specific .btn-check[disabled] + .add-to-cart, .product-specific .btn-check[disabled] + .delete-btn, .btn-check[disabled] + .back-button, .btn-check:disabled + .btn, .btn-check:disabled + .form-btn, .product-specific .btn-check:disabled + .add-to-cart, .product-specific .btn-check:disabled + .delete-btn, .btn-check:disabled + .back-button {
+.btn-check[disabled] + .btn, .btn-check[disabled] + .form-btn, .btn-check[disabled] + .delete-product, .btn-check[disabled] + .edit-product, .product-specific .btn-check[disabled] + .add-to-cart, .product-specific .btn-check[disabled] + .delete-btn, .btn-check[disabled] + .back-button, .btn-check:disabled + .btn, .btn-check:disabled + .form-btn, .btn-check:disabled + .delete-product, .btn-check:disabled + .edit-product, .product-specific .btn-check:disabled + .add-to-cart, .product-specific .btn-check:disabled + .delete-btn, .btn-check:disabled + .back-button {
   pointer-events: none;
   -webkit-filter: none;
           filter: none;
@@ -2895,12 +2895,12 @@ textarea.form-control-lg {
   z-index: 3;
 }
 
-.input-group .btn, .input-group .form-btn, .input-group .product-specific .add-to-cart, .product-specific .input-group .add-to-cart, .input-group .product-specific .delete-btn, .product-specific .input-group .delete-btn, .input-group .back-button {
+.input-group .btn, .input-group .form-btn, .input-group .delete-product, .input-group .edit-product, .input-group .product-specific .add-to-cart, .product-specific .input-group .add-to-cart, .input-group .product-specific .delete-btn, .product-specific .input-group .delete-btn, .input-group .back-button {
   position: relative;
   z-index: 2;
 }
 
-.input-group .btn:focus, .input-group .form-btn:focus, .input-group .product-specific .add-to-cart:focus, .product-specific .input-group .add-to-cart:focus, .input-group .product-specific .delete-btn:focus, .product-specific .input-group .delete-btn:focus, .input-group .back-button:focus {
+.input-group .btn:focus, .input-group .form-btn:focus, .input-group .delete-product:focus, .input-group .edit-product:focus, .input-group .product-specific .add-to-cart:focus, .product-specific .input-group .add-to-cart:focus, .input-group .product-specific .delete-btn:focus, .product-specific .input-group .delete-btn:focus, .input-group .back-button:focus {
   z-index: 3;
 }
 
@@ -2928,6 +2928,8 @@ textarea.form-control-lg {
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn,
 .input-group-lg > .form-btn,
+.input-group-lg > .delete-product,
+.input-group-lg > .edit-product,
 .product-specific .input-group-lg > .add-to-cart,
 .product-specific .input-group-lg > .delete-btn,
 .input-group-lg > .back-button {
@@ -2941,6 +2943,8 @@ textarea.form-control-lg {
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn,
 .input-group-sm > .form-btn,
+.input-group-sm > .delete-product,
+.input-group-sm > .edit-product,
 .product-specific .input-group-sm > .add-to-cart,
 .product-specific .input-group-sm > .delete-btn,
 .input-group-sm > .back-button {
@@ -3170,7 +3174,7 @@ textarea.form-control-lg {
   z-index: 3;
 }
 
-.btn, .form-btn, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
+.btn, .form-btn, .delete-product, .edit-product, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -3195,25 +3199,27 @@ textarea.form-control-lg {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn, .form-btn, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
+  .btn, .form-btn, .delete-product, .edit-product, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.btn:hover, .form-btn:hover, .product-specific .add-to-cart:hover, .product-specific .delete-btn:hover, .back-button:hover {
+.btn:hover, .form-btn:hover, .delete-product:hover, .edit-product:hover, .product-specific .add-to-cart:hover, .product-specific .delete-btn:hover, .back-button:hover {
   color: #212529;
 }
 
-.btn-check:focus + .btn, .btn-check:focus + .form-btn, .product-specific .btn-check:focus + .add-to-cart, .product-specific .btn-check:focus + .delete-btn, .btn-check:focus + .back-button, .btn:focus, .form-btn:focus, .product-specific .add-to-cart:focus, .product-specific .delete-btn:focus, .back-button:focus {
+.btn-check:focus + .btn, .btn-check:focus + .form-btn, .btn-check:focus + .delete-product, .btn-check:focus + .edit-product, .product-specific .btn-check:focus + .add-to-cart, .product-specific .btn-check:focus + .delete-btn, .btn-check:focus + .back-button, .btn:focus, .form-btn:focus, .delete-product:focus, .edit-product:focus, .product-specific .add-to-cart:focus, .product-specific .delete-btn:focus, .back-button:focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.25);
 }
 
-.btn:disabled, .form-btn:disabled, .product-specific .add-to-cart:disabled, .product-specific .delete-btn:disabled, .back-button:disabled, .btn.disabled, .disabled.form-btn, .product-specific .disabled.add-to-cart, .product-specific .disabled.delete-btn, .disabled.back-button,
+.btn:disabled, .form-btn:disabled, .delete-product:disabled, .edit-product:disabled, .product-specific .add-to-cart:disabled, .product-specific .delete-btn:disabled, .back-button:disabled, .btn.disabled, .disabled.form-btn, .disabled.delete-product, .disabled.edit-product, .product-specific .disabled.add-to-cart, .product-specific .disabled.delete-btn, .disabled.back-button,
 fieldset:disabled .btn,
 fieldset:disabled .form-btn,
+fieldset:disabled .delete-product,
+fieldset:disabled .edit-product,
 fieldset:disabled .product-specific .add-to-cart,
 .product-specific fieldset:disabled .add-to-cart,
 fieldset:disabled .product-specific .delete-btn,
@@ -3391,19 +3397,19 @@ fieldset:disabled .back-button {
   border-color: #0dcaf0;
 }
 
-.btn-warning {
+.btn-warning, .edit-product {
   color: #212426;
   background-color: #ffdc83;
   border-color: #ffdc83;
 }
 
-.btn-warning:hover {
+.btn-warning:hover, .edit-product:hover {
   color: #212426;
   background-color: #ffe196;
   border-color: #ffe08f;
 }
 
-.btn-check:focus + .btn-warning, .btn-warning:focus {
+.btn-check:focus + .btn-warning, .btn-check:focus + .edit-product, .btn-warning:focus, .edit-product:focus {
   color: #212426;
   background-color: #ffe196;
   border-color: #ffe08f;
@@ -3411,40 +3417,44 @@ fieldset:disabled .back-button {
           box-shadow: 0 0 0 0.25rem rgba(222, 192, 117, 0.5);
 }
 
-.btn-check:checked + .btn-warning,
-.btn-check:active + .btn-warning, .btn-warning:active, .btn-warning.active,
-.show > .btn-warning.dropdown-toggle {
+.btn-check:checked + .btn-warning, .btn-check:checked + .edit-product,
+.btn-check:active + .btn-warning,
+.btn-check:active + .edit-product, .btn-warning:active, .edit-product:active, .btn-warning.active, .active.edit-product,
+.show > .btn-warning.dropdown-toggle,
+.show > .dropdown-toggle.edit-product {
   color: #212426;
   background-color: #ffe39c;
   border-color: #ffe08f;
 }
 
-.btn-check:checked + .btn-warning:focus,
-.btn-check:active + .btn-warning:focus, .btn-warning:active:focus, .btn-warning.active:focus,
-.show > .btn-warning.dropdown-toggle:focus {
+.btn-check:checked + .btn-warning:focus, .btn-check:checked + .edit-product:focus,
+.btn-check:active + .btn-warning:focus,
+.btn-check:active + .edit-product:focus, .btn-warning:active:focus, .edit-product:active:focus, .btn-warning.active:focus, .active.edit-product:focus,
+.show > .btn-warning.dropdown-toggle:focus,
+.show > .dropdown-toggle.edit-product:focus {
   -webkit-box-shadow: 0 0 0 0.25rem rgba(222, 192, 117, 0.5);
           box-shadow: 0 0 0 0.25rem rgba(222, 192, 117, 0.5);
 }
 
-.btn-warning:disabled, .btn-warning.disabled {
+.btn-warning:disabled, .edit-product:disabled, .btn-warning.disabled, .disabled.edit-product {
   color: #212426;
   background-color: #ffdc83;
   border-color: #ffdc83;
 }
 
-.btn-danger {
+.btn-danger, .delete-product {
   color: #212426;
   background-color: #ffb2ad;
   border-color: #ffb2ad;
 }
 
-.btn-danger:hover {
+.btn-danger:hover, .delete-product:hover {
   color: #212426;
   background-color: #ffbeb9;
   border-color: #ffbab5;
 }
 
-.btn-check:focus + .btn-danger, .btn-danger:focus {
+.btn-check:focus + .btn-danger, .btn-check:focus + .delete-product, .btn-danger:focus, .delete-product:focus {
   color: #212426;
   background-color: #ffbeb9;
   border-color: #ffbab5;
@@ -3452,22 +3462,26 @@ fieldset:disabled .back-button {
           box-shadow: 0 0 0 0.25rem rgba(222, 157, 153, 0.5);
 }
 
-.btn-check:checked + .btn-danger,
-.btn-check:active + .btn-danger, .btn-danger:active, .btn-danger.active,
-.show > .btn-danger.dropdown-toggle {
+.btn-check:checked + .btn-danger, .btn-check:checked + .delete-product,
+.btn-check:active + .btn-danger,
+.btn-check:active + .delete-product, .btn-danger:active, .delete-product:active, .btn-danger.active, .active.delete-product,
+.show > .btn-danger.dropdown-toggle,
+.show > .dropdown-toggle.delete-product {
   color: #212426;
   background-color: #ffc1bd;
   border-color: #ffbab5;
 }
 
-.btn-check:checked + .btn-danger:focus,
-.btn-check:active + .btn-danger:focus, .btn-danger:active:focus, .btn-danger.active:focus,
-.show > .btn-danger.dropdown-toggle:focus {
+.btn-check:checked + .btn-danger:focus, .btn-check:checked + .delete-product:focus,
+.btn-check:active + .btn-danger:focus,
+.btn-check:active + .delete-product:focus, .btn-danger:active:focus, .delete-product:active:focus, .btn-danger.active:focus, .active.delete-product:focus,
+.show > .btn-danger.dropdown-toggle:focus,
+.show > .dropdown-toggle.delete-product:focus {
   -webkit-box-shadow: 0 0 0 0.25rem rgba(222, 157, 153, 0.5);
           box-shadow: 0 0 0 0.25rem rgba(222, 157, 153, 0.5);
 }
 
-.btn-danger:disabled, .btn-danger.disabled {
+.btn-danger:disabled, .delete-product:disabled, .btn-danger.disabled, .disabled.delete-product {
   color: #212426;
   background-color: #ffb2ad;
   border-color: #ffb2ad;
@@ -3475,43 +3489,43 @@ fieldset:disabled .back-button {
 
 .btn-light {
   color: #212426;
-  background-color: #d8d9cc;
-  border-color: #d8d9cc;
+  background-color: #eeefe9;
+  border-color: #eeefe9;
 }
 
 .btn-light:hover {
   color: #212426;
-  background-color: #dedfd4;
-  border-color: #dcddd1;
+  background-color: #f1f1ec;
+  border-color: #f0f0eb;
 }
 
 .btn-check:focus + .btn-light, .btn-light:focus {
   color: #212426;
-  background-color: #dedfd4;
-  border-color: #dcddd1;
-  -webkit-box-shadow: 0 0 0 0.25rem rgba(189, 190, 179, 0.5);
-          box-shadow: 0 0 0 0.25rem rgba(189, 190, 179, 0.5);
+  background-color: #f1f1ec;
+  border-color: #f0f0eb;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(208, 208, 204, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(208, 208, 204, 0.5);
 }
 
 .btn-check:checked + .btn-light,
 .btn-check:active + .btn-light, .btn-light:active, .btn-light.active,
 .show > .btn-light.dropdown-toggle {
   color: #212426;
-  background-color: #e0e1d6;
-  border-color: #dcddd1;
+  background-color: #f2f2ee;
+  border-color: #f0f0eb;
 }
 
 .btn-check:checked + .btn-light:focus,
 .btn-check:active + .btn-light:focus, .btn-light:active:focus, .btn-light.active:focus,
 .show > .btn-light.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.25rem rgba(189, 190, 179, 0.5);
-          box-shadow: 0 0 0 0.25rem rgba(189, 190, 179, 0.5);
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(208, 208, 204, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(208, 208, 204, 0.5);
 }
 
 .btn-light:disabled, .btn-light.disabled {
   color: #212426;
-  background-color: #d8d9cc;
-  border-color: #d8d9cc;
+  background-color: #eeefe9;
+  border-color: #eeefe9;
 }
 
 .btn-dark {
@@ -3766,36 +3780,36 @@ fieldset:disabled .back-button {
 }
 
 .btn-outline-light {
-  color: #d8d9cc;
-  border-color: #d8d9cc;
+  color: #eeefe9;
+  border-color: #eeefe9;
 }
 
 .btn-outline-light:hover {
   color: #212426;
-  background-color: #d8d9cc;
-  border-color: #d8d9cc;
+  background-color: #eeefe9;
+  border-color: #eeefe9;
 }
 
 .btn-check:focus + .btn-outline-light, .btn-outline-light:focus {
-  -webkit-box-shadow: 0 0 0 0.25rem rgba(216, 217, 204, 0.5);
-          box-shadow: 0 0 0 0.25rem rgba(216, 217, 204, 0.5);
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(238, 239, 233, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(238, 239, 233, 0.5);
 }
 
 .btn-check:checked + .btn-outline-light,
 .btn-check:active + .btn-outline-light, .btn-outline-light:active, .btn-outline-light.active, .btn-outline-light.dropdown-toggle.show {
   color: #212426;
-  background-color: #d8d9cc;
-  border-color: #d8d9cc;
+  background-color: #eeefe9;
+  border-color: #eeefe9;
 }
 
 .btn-check:checked + .btn-outline-light:focus,
 .btn-check:active + .btn-outline-light:focus, .btn-outline-light:active:focus, .btn-outline-light.active:focus, .btn-outline-light.dropdown-toggle.show:focus {
-  -webkit-box-shadow: 0 0 0 0.25rem rgba(216, 217, 204, 0.5);
-          box-shadow: 0 0 0 0.25rem rgba(216, 217, 204, 0.5);
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(238, 239, 233, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(238, 239, 233, 0.5);
 }
 
 .btn-outline-light:disabled, .btn-outline-light.disabled {
-  color: #d8d9cc;
+  color: #eeefe9;
   background-color: transparent;
 }
 
@@ -3847,13 +3861,13 @@ fieldset:disabled .back-button {
   color: #6c757d;
 }
 
-.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .form-btn, .btn-group-lg > .back-button, .product-specific .add-to-cart, .product-specific .delete-btn {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .form-btn, .btn-group-lg > .delete-product, .btn-group-lg > .edit-product, .btn-group-lg > .back-button, .product-specific .add-to-cart, .product-specific .delete-btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.3rem;
 }
 
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .form-btn, .product-specific .btn-group-sm > .add-to-cart, .product-specific .btn-group-sm > .delete-btn, .btn-group-sm > .back-button {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .form-btn, .btn-group-sm > .delete-product, .btn-group-sm > .edit-product, .product-specific .btn-group-sm > .add-to-cart, .product-specific .btn-group-sm > .delete-btn, .btn-group-sm > .back-button, .delete-product, .edit-product {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem;
@@ -4247,9 +4261,11 @@ fieldset:disabled .back-button {
   vertical-align: middle;
 }
 
-.btn-group > .btn, .btn-group > .form-btn, .product-specific .btn-group > .add-to-cart, .product-specific .btn-group > .delete-btn, .btn-group > .back-button,
+.btn-group > .btn, .btn-group > .form-btn, .btn-group > .delete-product, .btn-group > .edit-product, .product-specific .btn-group > .add-to-cart, .product-specific .btn-group > .delete-btn, .btn-group > .back-button,
 .btn-group-vertical > .btn,
 .btn-group-vertical > .form-btn,
+.btn-group-vertical > .delete-product,
+.btn-group-vertical > .edit-product,
 .product-specific .btn-group-vertical > .add-to-cart,
 .product-specific .btn-group-vertical > .delete-btn,
 .btn-group-vertical > .back-button {
@@ -4259,59 +4275,81 @@ fieldset:disabled .back-button {
           flex: 1 1 auto;
 }
 
-.btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .form-btn, .product-specific .btn-group > .btn-check:checked + .add-to-cart, .product-specific .btn-group > .btn-check:checked + .delete-btn, .btn-group > .btn-check:checked + .back-button,
+.btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .form-btn, .btn-group > .btn-check:checked + .delete-product, .btn-group > .btn-check:checked + .edit-product, .product-specific .btn-group > .btn-check:checked + .add-to-cart, .product-specific .btn-group > .btn-check:checked + .delete-btn, .btn-group > .btn-check:checked + .back-button,
 .btn-group > .btn-check:focus + .btn,
 .btn-group > .btn-check:focus + .form-btn,
+.btn-group > .btn-check:focus + .delete-product,
+.btn-group > .btn-check:focus + .edit-product,
 .product-specific .btn-group > .btn-check:focus + .add-to-cart,
 .product-specific .btn-group > .btn-check:focus + .delete-btn,
 .btn-group > .btn-check:focus + .back-button,
 .btn-group > .btn:hover,
 .btn-group > .form-btn:hover,
+.btn-group > .delete-product:hover,
+.btn-group > .edit-product:hover,
 .product-specific .btn-group > .add-to-cart:hover,
 .product-specific .btn-group > .delete-btn:hover,
 .btn-group > .back-button:hover,
 .btn-group > .btn:focus,
 .btn-group > .form-btn:focus,
+.btn-group > .delete-product:focus,
+.btn-group > .edit-product:focus,
 .product-specific .btn-group > .add-to-cart:focus,
 .product-specific .btn-group > .delete-btn:focus,
 .btn-group > .back-button:focus,
 .btn-group > .btn:active,
 .btn-group > .form-btn:active,
+.btn-group > .delete-product:active,
+.btn-group > .edit-product:active,
 .product-specific .btn-group > .add-to-cart:active,
 .product-specific .btn-group > .delete-btn:active,
 .btn-group > .back-button:active,
 .btn-group > .btn.active,
 .btn-group > .active.form-btn,
+.btn-group > .active.delete-product,
+.btn-group > .active.edit-product,
 .product-specific .btn-group > .active.add-to-cart,
 .product-specific .btn-group > .active.delete-btn,
 .btn-group > .active.back-button,
 .btn-group-vertical > .btn-check:checked + .btn,
 .btn-group-vertical > .btn-check:checked + .form-btn,
+.btn-group-vertical > .btn-check:checked + .delete-product,
+.btn-group-vertical > .btn-check:checked + .edit-product,
 .product-specific .btn-group-vertical > .btn-check:checked + .add-to-cart,
 .product-specific .btn-group-vertical > .btn-check:checked + .delete-btn,
 .btn-group-vertical > .btn-check:checked + .back-button,
 .btn-group-vertical > .btn-check:focus + .btn,
 .btn-group-vertical > .btn-check:focus + .form-btn,
+.btn-group-vertical > .btn-check:focus + .delete-product,
+.btn-group-vertical > .btn-check:focus + .edit-product,
 .product-specific .btn-group-vertical > .btn-check:focus + .add-to-cart,
 .product-specific .btn-group-vertical > .btn-check:focus + .delete-btn,
 .btn-group-vertical > .btn-check:focus + .back-button,
 .btn-group-vertical > .btn:hover,
 .btn-group-vertical > .form-btn:hover,
+.btn-group-vertical > .delete-product:hover,
+.btn-group-vertical > .edit-product:hover,
 .product-specific .btn-group-vertical > .add-to-cart:hover,
 .product-specific .btn-group-vertical > .delete-btn:hover,
 .btn-group-vertical > .back-button:hover,
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .form-btn:focus,
+.btn-group-vertical > .delete-product:focus,
+.btn-group-vertical > .edit-product:focus,
 .product-specific .btn-group-vertical > .add-to-cart:focus,
 .product-specific .btn-group-vertical > .delete-btn:focus,
 .btn-group-vertical > .back-button:focus,
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .form-btn:active,
+.btn-group-vertical > .delete-product:active,
+.btn-group-vertical > .edit-product:active,
 .product-specific .btn-group-vertical > .add-to-cart:active,
 .product-specific .btn-group-vertical > .delete-btn:active,
 .btn-group-vertical > .back-button:active,
 .btn-group-vertical > .btn.active,
 .btn-group-vertical > .active.form-btn,
+.btn-group-vertical > .active.delete-product,
+.btn-group-vertical > .active.edit-product,
 .product-specific .btn-group-vertical > .active.add-to-cart,
 .product-specific .btn-group-vertical > .active.delete-btn,
 .btn-group-vertical > .active.back-button {
@@ -4333,14 +4371,16 @@ fieldset:disabled .back-button {
   width: auto;
 }
 
-.btn-group > .btn:not(:first-child), .btn-group > .form-btn:not(:first-child), .product-specific .btn-group > .add-to-cart:not(:first-child), .product-specific .btn-group > .delete-btn:not(:first-child), .btn-group > .back-button:not(:first-child),
+.btn-group > .btn:not(:first-child), .btn-group > .form-btn:not(:first-child), .btn-group > .delete-product:not(:first-child), .btn-group > .edit-product:not(:first-child), .product-specific .btn-group > .add-to-cart:not(:first-child), .product-specific .btn-group > .delete-btn:not(:first-child), .btn-group > .back-button:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .form-btn:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .delete-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-button:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .form-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .delete-product:not(:last-child):not(.dropdown-toggle), .btn-group > .edit-product:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .delete-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-button:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
 .btn-group > .btn-group:not(:last-child) > .form-btn,
+.btn-group > .btn-group:not(:last-child) > .delete-product,
+.btn-group > .btn-group:not(:last-child) > .edit-product,
 .product-specific .btn-group > .btn-group:not(:last-child) > .add-to-cart,
 .product-specific .btn-group > .btn-group:not(:last-child) > .delete-btn,
 .btn-group > .btn-group:not(:last-child) > .back-button {
@@ -4348,14 +4388,18 @@ fieldset:disabled .back-button {
   border-bottom-right-radius: 0;
 }
 
-.btn-group > .btn:nth-child(n + 3), .btn-group > .form-btn:nth-child(n + 3), .product-specific .btn-group > .add-to-cart:nth-child(n + 3), .product-specific .btn-group > .delete-btn:nth-child(n + 3), .btn-group > .back-button:nth-child(n + 3),
+.btn-group > .btn:nth-child(n + 3), .btn-group > .form-btn:nth-child(n + 3), .btn-group > .delete-product:nth-child(n + 3), .btn-group > .edit-product:nth-child(n + 3), .product-specific .btn-group > .add-to-cart:nth-child(n + 3), .product-specific .btn-group > .delete-btn:nth-child(n + 3), .btn-group > .back-button:nth-child(n + 3),
 .btn-group > :not(.btn-check) + .btn,
 .btn-group > :not(.btn-check) + .form-btn,
+.btn-group > :not(.btn-check) + .delete-product,
+.btn-group > :not(.btn-check) + .edit-product,
 .product-specific .btn-group > :not(.btn-check) + .add-to-cart,
 .product-specific .btn-group > :not(.btn-check) + .delete-btn,
 .btn-group > :not(.btn-check) + .back-button,
 .btn-group > .btn-group:not(:first-child) > .btn,
 .btn-group > .btn-group:not(:first-child) > .form-btn,
+.btn-group > .btn-group:not(:first-child) > .delete-product,
+.btn-group > .btn-group:not(:first-child) > .edit-product,
 .product-specific .btn-group > .btn-group:not(:first-child) > .add-to-cart,
 .product-specific .btn-group > .btn-group:not(:first-child) > .delete-btn,
 .btn-group > .btn-group:not(:first-child) > .back-button {
@@ -4378,12 +4422,12 @@ fieldset:disabled .back-button {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .form-btn + .dropdown-toggle-split, .product-specific .btn-group-sm > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-sm > .delete-btn + .dropdown-toggle-split, .btn-group-sm > .back-button + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .form-btn + .dropdown-toggle-split, .btn-group-sm > .delete-product + .dropdown-toggle-split, .btn-group-sm > .edit-product + .dropdown-toggle-split, .product-specific .btn-group-sm > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-sm > .delete-btn + .dropdown-toggle-split, .btn-group-sm > .back-button + .dropdown-toggle-split, .delete-product + .dropdown-toggle-split, .edit-product + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .form-btn + .dropdown-toggle-split, .product-specific .btn-group-lg > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-lg > .delete-btn + .dropdown-toggle-split, .btn-group-lg > .back-button + .dropdown-toggle-split, .product-specific .add-to-cart + .dropdown-toggle-split, .product-specific .delete-btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .form-btn + .dropdown-toggle-split, .btn-group-lg > .delete-product + .dropdown-toggle-split, .btn-group-lg > .edit-product + .dropdown-toggle-split, .product-specific .btn-group-lg > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-lg > .delete-btn + .dropdown-toggle-split, .btn-group-lg > .back-button + .dropdown-toggle-split, .product-specific .add-to-cart + .dropdown-toggle-split, .product-specific .delete-btn + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -4404,6 +4448,8 @@ fieldset:disabled .back-button {
 
 .btn-group-vertical > .btn,
 .btn-group-vertical > .form-btn,
+.btn-group-vertical > .delete-product,
+.btn-group-vertical > .edit-product,
 .product-specific .btn-group-vertical > .add-to-cart,
 .product-specific .btn-group-vertical > .delete-btn,
 .btn-group-vertical > .back-button,
@@ -4411,14 +4457,16 @@ fieldset:disabled .back-button {
   width: 100%;
 }
 
-.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .form-btn:not(:first-child), .product-specific .btn-group-vertical > .add-to-cart:not(:first-child), .product-specific .btn-group-vertical > .delete-btn:not(:first-child), .btn-group-vertical > .back-button:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .form-btn:not(:first-child), .btn-group-vertical > .delete-product:not(:first-child), .btn-group-vertical > .edit-product:not(:first-child), .product-specific .btn-group-vertical > .add-to-cart:not(:first-child), .product-specific .btn-group-vertical > .delete-btn:not(:first-child), .btn-group-vertical > .back-button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
 
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .form-btn:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .delete-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-button:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .form-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .delete-product:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .edit-product:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .delete-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-button:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .form-btn,
+.btn-group-vertical > .btn-group:not(:last-child) > .delete-product,
+.btn-group-vertical > .btn-group:not(:last-child) > .edit-product,
 .product-specific .btn-group-vertical > .btn-group:not(:last-child) > .add-to-cart,
 .product-specific .btn-group-vertical > .btn-group:not(:last-child) > .delete-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .back-button {
@@ -4426,9 +4474,11 @@ fieldset:disabled .back-button {
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .form-btn ~ .btn, .product-specific .btn-group-vertical > .add-to-cart ~ .btn, .product-specific .btn-group-vertical > .delete-btn ~ .btn, .btn-group-vertical > .back-button ~ .btn, .btn-group-vertical > .btn ~ .form-btn, .btn-group-vertical > .form-btn ~ .form-btn, .product-specific .btn-group-vertical > .add-to-cart ~ .form-btn, .product-specific .btn-group-vertical > .delete-btn ~ .form-btn, .btn-group-vertical > .back-button ~ .form-btn, .product-specific .btn-group-vertical > .btn ~ .add-to-cart, .product-specific .btn-group-vertical > .form-btn ~ .add-to-cart, .product-specific .btn-group-vertical > .add-to-cart ~ .add-to-cart, .product-specific .btn-group-vertical > .delete-btn ~ .add-to-cart, .product-specific .btn-group-vertical > .back-button ~ .add-to-cart, .product-specific .btn-group-vertical > .btn ~ .delete-btn, .product-specific .btn-group-vertical > .form-btn ~ .delete-btn, .product-specific .btn-group-vertical > .add-to-cart ~ .delete-btn, .product-specific .btn-group-vertical > .delete-btn ~ .delete-btn, .product-specific .btn-group-vertical > .back-button ~ .delete-btn, .btn-group-vertical > .btn ~ .back-button, .btn-group-vertical > .form-btn ~ .back-button, .product-specific .btn-group-vertical > .add-to-cart ~ .back-button, .product-specific .btn-group-vertical > .delete-btn ~ .back-button, .btn-group-vertical > .back-button ~ .back-button,
+.btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .form-btn ~ .btn, .btn-group-vertical > .delete-product ~ .btn, .btn-group-vertical > .edit-product ~ .btn, .product-specific .btn-group-vertical > .add-to-cart ~ .btn, .product-specific .btn-group-vertical > .delete-btn ~ .btn, .btn-group-vertical > .back-button ~ .btn, .btn-group-vertical > .btn ~ .form-btn, .btn-group-vertical > .form-btn ~ .form-btn, .btn-group-vertical > .delete-product ~ .form-btn, .btn-group-vertical > .edit-product ~ .form-btn, .product-specific .btn-group-vertical > .add-to-cart ~ .form-btn, .product-specific .btn-group-vertical > .delete-btn ~ .form-btn, .btn-group-vertical > .back-button ~ .form-btn, .btn-group-vertical > .btn ~ .delete-product, .btn-group-vertical > .form-btn ~ .delete-product, .btn-group-vertical > .delete-product ~ .delete-product, .btn-group-vertical > .edit-product ~ .delete-product, .product-specific .btn-group-vertical > .add-to-cart ~ .delete-product, .product-specific .btn-group-vertical > .delete-btn ~ .delete-product, .btn-group-vertical > .back-button ~ .delete-product, .btn-group-vertical > .btn ~ .edit-product, .btn-group-vertical > .form-btn ~ .edit-product, .btn-group-vertical > .delete-product ~ .edit-product, .btn-group-vertical > .edit-product ~ .edit-product, .product-specific .btn-group-vertical > .add-to-cart ~ .edit-product, .product-specific .btn-group-vertical > .delete-btn ~ .edit-product, .btn-group-vertical > .back-button ~ .edit-product, .product-specific .btn-group-vertical > .btn ~ .add-to-cart, .product-specific .btn-group-vertical > .form-btn ~ .add-to-cart, .product-specific .btn-group-vertical > .delete-product ~ .add-to-cart, .product-specific .btn-group-vertical > .edit-product ~ .add-to-cart, .product-specific .btn-group-vertical > .add-to-cart ~ .add-to-cart, .product-specific .btn-group-vertical > .delete-btn ~ .add-to-cart, .product-specific .btn-group-vertical > .back-button ~ .add-to-cart, .product-specific .btn-group-vertical > .btn ~ .delete-btn, .product-specific .btn-group-vertical > .form-btn ~ .delete-btn, .product-specific .btn-group-vertical > .delete-product ~ .delete-btn, .product-specific .btn-group-vertical > .edit-product ~ .delete-btn, .product-specific .btn-group-vertical > .add-to-cart ~ .delete-btn, .product-specific .btn-group-vertical > .delete-btn ~ .delete-btn, .product-specific .btn-group-vertical > .back-button ~ .delete-btn, .btn-group-vertical > .btn ~ .back-button, .btn-group-vertical > .form-btn ~ .back-button, .btn-group-vertical > .delete-product ~ .back-button, .btn-group-vertical > .edit-product ~ .back-button, .product-specific .btn-group-vertical > .add-to-cart ~ .back-button, .product-specific .btn-group-vertical > .delete-btn ~ .back-button, .btn-group-vertical > .back-button ~ .back-button,
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
+.btn-group-vertical > .btn-group:not(:first-child) > .delete-product,
+.btn-group-vertical > .btn-group:not(:first-child) > .edit-product,
 .product-specific .btn-group-vertical > .btn-group:not(:first-child) > .add-to-cart,
 .product-specific .btn-group-vertical > .btn-group:not(:first-child) > .delete-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .back-button {
@@ -5609,13 +5659,13 @@ fieldset:disabled .back-button {
 }
 
 .alert-light {
-  color: #6a6c68;
-  background-color: #f7f7f5;
-  border-color: #f3f4f0;
+  color: #737574;
+  background-color: #fcfcfb;
+  border-color: #fafaf8;
 }
 
 .alert-light .alert-link {
-  color: #555653;
+  color: #5c5e5d;
 }
 
 .alert-dark {
@@ -6058,19 +6108,19 @@ fieldset:disabled .back-button {
 }
 
 .list-group-item-light {
-  color: #6a6c68;
-  background-color: #f7f7f5;
+  color: #737574;
+  background-color: #fcfcfb;
 }
 
 .list-group-item-light.list-group-item-action:hover, .list-group-item-light.list-group-item-action:focus {
-  color: #6a6c68;
-  background-color: #dededd;
+  color: #737574;
+  background-color: #e3e3e2;
 }
 
 .list-group-item-light.list-group-item-action.active {
   color: #ffffff;
-  background-color: #6a6c68;
-  border-color: #6a6c68;
+  background-color: #737574;
+  border-color: #737574;
 }
 
 .list-group-item-dark {
@@ -7178,7 +7228,7 @@ fieldset:disabled .back-button {
   opacity: 0.5;
 }
 
-.placeholder.btn::before, .placeholder.form-btn::before, .product-specific .placeholder.add-to-cart::before, .product-specific .placeholder.delete-btn::before, .placeholder.back-button::before {
+.placeholder.btn::before, .placeholder.form-btn::before, .placeholder.delete-product::before, .placeholder.edit-product::before, .product-specific .placeholder.add-to-cart::before, .product-specific .placeholder.delete-btn::before, .placeholder.back-button::before {
   display: inline-block;
   content: "";
 }
@@ -7290,11 +7340,11 @@ fieldset:disabled .back-button {
 }
 
 .link-light {
-  color: #d8d9cc;
+  color: #eeefe9;
 }
 
 .link-light:hover, .link-light:focus {
-  color: #e0e1d6;
+  color: #f2f2ee;
 }
 
 .link-dark {
@@ -7764,7 +7814,7 @@ fieldset:disabled .back-button {
 }
 
 .border-light {
-  border-color: #d8d9cc !important;
+  border-color: #eeefe9 !important;
 }
 
 .border-dark {
@@ -11909,7 +11959,7 @@ main {
   margin-bottom: 200px;
 }
 
-.inner-spacer, h1, .h1, h2, .h2, .featured-products .col, .newsletter .newsletter-content h3, .newsletter .newsletter-content .h3, .services .services-col, .products .col, .product-specific .price, .product-specific .add-to-cart, .product-specific .delete-btn {
+.inner-spacer, h1, .h1, h2, .h2, .featured-products .col, .newsletter .newsletter-content h3, .newsletter .newsletter-content .h3, .services .services-col, .products .col, .search-container, .product-specific .price, .product-specific .add-to-cart, .product-specific .delete-btn {
   margin-bottom: 1.5em;
 }
 
@@ -11925,7 +11975,7 @@ a {
   border: 0;
 }
 
-.btn, .form-btn, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
+.btn, .form-btn, .delete-product, .edit-product, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
   border-radius: 0;
   padding: 0.7em 1.5em;
 }
@@ -11938,7 +11988,11 @@ a {
   padding: 1em;
   width: auto;
   font-weight: 400;
-  font-size: 1.1em;
+  font-size: 1em;
+}
+
+#message-container {
+  margin-bottom: 1em;
 }
 
 .loader {
@@ -12144,7 +12198,7 @@ form span > div {
 
 .member-campaign__content {
   background-color: #3c3f40;
-  color: #d8d9cc;
+  color: #eeefe9;
   text-align: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -12214,6 +12268,10 @@ form span > div {
   margin: 0 auto;
 }
 
+#products-container #display-message {
+  margin: 2em auto;
+}
+
 .products .loader {
   margin: 0 auto;
 }
@@ -12226,8 +12284,53 @@ form span > div {
   height: 300px;
 }
 
+.card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-container #search {
+  width: 250px;
+  text-align: center;
+  border: none;
+  background-color: #f5f5f2;
+  padding: 1.2em 0.5em;
+}
+
 .product-specific {
   margin-top: 100px;
+}
+
+.product-specific .product-content {
+  padding: 0em 1em;
+}
+
+@media (max-width: 576px) {
+  .product-specific .product-content {
+    padding: 0.5em;
+  }
+}
+
+@media (max-width: 992px) {
+  .product-specific .product-content {
+    padding: 0.5em;
+  }
 }
 
 .product-specific h2, .product-specific .h2 {
@@ -12241,8 +12344,8 @@ form span > div {
   font-weight: bold;
 }
 
-.product-specific .delete-btn {
-  margin-left: 0.5em;
+.product-specific .add-to-cart {
+  margin-right: 0.5em;
 }
 
 .product-specific .badge {
