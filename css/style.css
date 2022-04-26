@@ -2663,7 +2663,7 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 
-.btn-check[disabled] + .btn, .product-specific .btn-check[disabled] + .add-to-cart, .product-specific .btn-check[disabled] + .delete-btn, .btn-check[disabled] + .back-button, .btn-check:disabled + .btn, .product-specific .btn-check:disabled + .add-to-cart, .product-specific .btn-check:disabled + .delete-btn, .btn-check:disabled + .back-button {
+.btn-check[disabled] + .btn, .btn-check[disabled] + .form-btn, .product-specific .btn-check[disabled] + .add-to-cart, .product-specific .btn-check[disabled] + .delete-btn, .btn-check[disabled] + .back-button, .btn-check:disabled + .btn, .btn-check:disabled + .form-btn, .product-specific .btn-check:disabled + .add-to-cart, .product-specific .btn-check:disabled + .delete-btn, .btn-check:disabled + .back-button {
   pointer-events: none;
   -webkit-filter: none;
           filter: none;
@@ -2780,17 +2780,18 @@ textarea.form-control-lg {
   background-color: #adb5bd;
 }
 
-.form-floating {
+.form-floating, .div-input-container {
   position: relative;
 }
 
-.form-floating > .form-control,
-.form-floating > .form-select {
+.form-floating > .form-control, .div-input-container > .form-control,
+.form-floating > .form-select,
+.div-input-container > .form-select {
   height: calc(3.5rem + 2px);
   line-height: 1.25;
 }
 
-.form-floating > label {
+.form-floating > label, .div-input-container > label {
   position: absolute;
   top: 0;
   left: 0;
@@ -2807,56 +2808,60 @@ textarea.form-control-lg {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .form-floating > label {
+  .form-floating > label, .div-input-container > label {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.form-floating > .form-control {
+.form-floating > .form-control, .div-input-container > .form-control {
   padding: 1rem 0.75rem;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder {
+.form-floating > .form-control::-webkit-input-placeholder, .div-input-container > .form-control::-webkit-input-placeholder {
   color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder {
+.form-floating > .form-control:-ms-input-placeholder, .div-input-container > .form-control:-ms-input-placeholder {
   color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder {
+.form-floating > .form-control::-ms-input-placeholder, .div-input-container > .form-control::-ms-input-placeholder {
   color: transparent;
 }
 
-.form-floating > .form-control::placeholder {
+.form-floating > .form-control::placeholder, .div-input-container > .form-control::placeholder {
   color: transparent;
 }
 
-.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
+.form-floating > .form-control:focus, .div-input-container > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown), .div-input-container > .form-control:not(:placeholder-shown) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
 
-.form-floating > .form-control:-webkit-autofill {
+.form-floating > .form-control:-webkit-autofill, .div-input-container > .form-control:-webkit-autofill {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
 
-.form-floating > .form-select {
+
+.form-floating > .form-select,
+.div-input-container > .form-select {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
 
-.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:focus ~ label, .div-input-container > .form-control:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
-.form-floating > .form-select ~ label {
+.div-input-container > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label,
+.div-input-container > .form-select ~ label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
           transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 
-.form-floating > .form-control:-webkit-autofill ~ label {
+.form-floating > .form-control:-webkit-autofill ~ label, .div-input-container > .form-control:-webkit-autofill ~ label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
           transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
@@ -2890,12 +2895,12 @@ textarea.form-control-lg {
   z-index: 3;
 }
 
-.input-group .btn, .input-group .product-specific .add-to-cart, .product-specific .input-group .add-to-cart, .input-group .product-specific .delete-btn, .product-specific .input-group .delete-btn, .input-group .back-button {
+.input-group .btn, .input-group .form-btn, .input-group .product-specific .add-to-cart, .product-specific .input-group .add-to-cart, .input-group .product-specific .delete-btn, .product-specific .input-group .delete-btn, .input-group .back-button {
   position: relative;
   z-index: 2;
 }
 
-.input-group .btn:focus, .input-group .product-specific .add-to-cart:focus, .product-specific .input-group .add-to-cart:focus, .input-group .product-specific .delete-btn:focus, .product-specific .input-group .delete-btn:focus, .input-group .back-button:focus {
+.input-group .btn:focus, .input-group .form-btn:focus, .input-group .product-specific .add-to-cart:focus, .product-specific .input-group .add-to-cart:focus, .input-group .product-specific .delete-btn:focus, .product-specific .input-group .delete-btn:focus, .input-group .back-button:focus {
   z-index: 3;
 }
 
@@ -2922,6 +2927,7 @@ textarea.form-control-lg {
 .input-group-lg > .form-select,
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn,
+.input-group-lg > .form-btn,
 .product-specific .input-group-lg > .add-to-cart,
 .product-specific .input-group-lg > .delete-btn,
 .input-group-lg > .back-button {
@@ -2934,6 +2940,7 @@ textarea.form-control-lg {
 .input-group-sm > .form-select,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn,
+.input-group-sm > .form-btn,
 .product-specific .input-group-sm > .add-to-cart,
 .product-specific .input-group-sm > .delete-btn,
 .input-group-sm > .back-button {
@@ -3163,7 +3170,7 @@ textarea.form-control-lg {
   z-index: 3;
 }
 
-.btn, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
+.btn, .form-btn, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -3188,24 +3195,25 @@ textarea.form-control-lg {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
+  .btn, .form-btn, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.btn:hover, .product-specific .add-to-cart:hover, .product-specific .delete-btn:hover, .back-button:hover {
+.btn:hover, .form-btn:hover, .product-specific .add-to-cart:hover, .product-specific .delete-btn:hover, .back-button:hover {
   color: #212529;
 }
 
-.btn-check:focus + .btn, .product-specific .btn-check:focus + .add-to-cart, .product-specific .btn-check:focus + .delete-btn, .btn-check:focus + .back-button, .btn:focus, .product-specific .add-to-cart:focus, .product-specific .delete-btn:focus, .back-button:focus {
+.btn-check:focus + .btn, .btn-check:focus + .form-btn, .product-specific .btn-check:focus + .add-to-cart, .product-specific .btn-check:focus + .delete-btn, .btn-check:focus + .back-button, .btn:focus, .form-btn:focus, .product-specific .add-to-cart:focus, .product-specific .delete-btn:focus, .back-button:focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.25);
 }
 
-.btn:disabled, .product-specific .add-to-cart:disabled, .product-specific .delete-btn:disabled, .back-button:disabled, .btn.disabled, .product-specific .disabled.add-to-cart, .product-specific .disabled.delete-btn, .disabled.back-button,
+.btn:disabled, .form-btn:disabled, .product-specific .add-to-cart:disabled, .product-specific .delete-btn:disabled, .back-button:disabled, .btn.disabled, .disabled.form-btn, .product-specific .disabled.add-to-cart, .product-specific .disabled.delete-btn, .disabled.back-button,
 fieldset:disabled .btn,
+fieldset:disabled .form-btn,
 fieldset:disabled .product-specific .add-to-cart,
 .product-specific fieldset:disabled .add-to-cart,
 fieldset:disabled .product-specific .delete-btn,
@@ -3215,19 +3223,19 @@ fieldset:disabled .back-button {
   opacity: 0.65;
 }
 
-.btn-primary {
+.btn-primary, .form-btn {
   color: #212426;
   background-color: #7273ff;
   border-color: #7273ff;
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .form-btn:hover {
   color: #212426;
   background-color: #8788ff;
   border-color: #8081ff;
 }
 
-.btn-check:focus + .btn-primary, .btn-primary:focus {
+.btn-check:focus + .btn-primary, .btn-check:focus + .form-btn, .btn-primary:focus, .form-btn:focus {
   color: #212426;
   background-color: #8788ff;
   border-color: #8081ff;
@@ -3235,22 +3243,26 @@ fieldset:disabled .back-button {
           box-shadow: 0 0 0 0.25rem rgba(102, 103, 222, 0.5);
 }
 
-.btn-check:checked + .btn-primary,
-.btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active,
-.show > .btn-primary.dropdown-toggle {
+.btn-check:checked + .btn-primary, .btn-check:checked + .form-btn,
+.btn-check:active + .btn-primary,
+.btn-check:active + .form-btn, .btn-primary:active, .form-btn:active, .btn-primary.active, .active.form-btn,
+.show > .btn-primary.dropdown-toggle,
+.show > .dropdown-toggle.form-btn {
   color: #212426;
   background-color: #8e8fff;
   border-color: #8081ff;
 }
 
-.btn-check:checked + .btn-primary:focus,
-.btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus,
-.show > .btn-primary.dropdown-toggle:focus {
+.btn-check:checked + .btn-primary:focus, .btn-check:checked + .form-btn:focus,
+.btn-check:active + .btn-primary:focus,
+.btn-check:active + .form-btn:focus, .btn-primary:active:focus, .form-btn:active:focus, .btn-primary.active:focus, .active.form-btn:focus,
+.show > .btn-primary.dropdown-toggle:focus,
+.show > .dropdown-toggle.form-btn:focus {
   -webkit-box-shadow: 0 0 0 0.25rem rgba(102, 103, 222, 0.5);
           box-shadow: 0 0 0 0.25rem rgba(102, 103, 222, 0.5);
 }
 
-.btn-primary:disabled, .btn-primary.disabled {
+.btn-primary:disabled, .form-btn:disabled, .btn-primary.disabled, .disabled.form-btn {
   color: #212426;
   background-color: #7273ff;
   border-color: #7273ff;
@@ -3835,13 +3847,13 @@ fieldset:disabled .back-button {
   color: #6c757d;
 }
 
-.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .back-button, .product-specific .add-to-cart, .product-specific .delete-btn {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .form-btn, .btn-group-lg > .back-button, .product-specific .add-to-cart, .product-specific .delete-btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.3rem;
 }
 
-.btn-sm, .btn-group-sm > .btn, .product-specific .btn-group-sm > .add-to-cart, .product-specific .btn-group-sm > .delete-btn, .btn-group-sm > .back-button {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .form-btn, .product-specific .btn-group-sm > .add-to-cart, .product-specific .btn-group-sm > .delete-btn, .btn-group-sm > .back-button {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem;
@@ -4235,8 +4247,9 @@ fieldset:disabled .back-button {
   vertical-align: middle;
 }
 
-.btn-group > .btn, .product-specific .btn-group > .add-to-cart, .product-specific .btn-group > .delete-btn, .btn-group > .back-button,
+.btn-group > .btn, .btn-group > .form-btn, .product-specific .btn-group > .add-to-cart, .product-specific .btn-group > .delete-btn, .btn-group > .back-button,
 .btn-group-vertical > .btn,
+.btn-group-vertical > .form-btn,
 .product-specific .btn-group-vertical > .add-to-cart,
 .product-specific .btn-group-vertical > .delete-btn,
 .btn-group-vertical > .back-button {
@@ -4246,48 +4259,59 @@ fieldset:disabled .back-button {
           flex: 1 1 auto;
 }
 
-.btn-group > .btn-check:checked + .btn, .product-specific .btn-group > .btn-check:checked + .add-to-cart, .product-specific .btn-group > .btn-check:checked + .delete-btn, .btn-group > .btn-check:checked + .back-button,
+.btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .form-btn, .product-specific .btn-group > .btn-check:checked + .add-to-cart, .product-specific .btn-group > .btn-check:checked + .delete-btn, .btn-group > .btn-check:checked + .back-button,
 .btn-group > .btn-check:focus + .btn,
+.btn-group > .btn-check:focus + .form-btn,
 .product-specific .btn-group > .btn-check:focus + .add-to-cart,
 .product-specific .btn-group > .btn-check:focus + .delete-btn,
 .btn-group > .btn-check:focus + .back-button,
 .btn-group > .btn:hover,
+.btn-group > .form-btn:hover,
 .product-specific .btn-group > .add-to-cart:hover,
 .product-specific .btn-group > .delete-btn:hover,
 .btn-group > .back-button:hover,
 .btn-group > .btn:focus,
+.btn-group > .form-btn:focus,
 .product-specific .btn-group > .add-to-cart:focus,
 .product-specific .btn-group > .delete-btn:focus,
 .btn-group > .back-button:focus,
 .btn-group > .btn:active,
+.btn-group > .form-btn:active,
 .product-specific .btn-group > .add-to-cart:active,
 .product-specific .btn-group > .delete-btn:active,
 .btn-group > .back-button:active,
 .btn-group > .btn.active,
+.btn-group > .active.form-btn,
 .product-specific .btn-group > .active.add-to-cart,
 .product-specific .btn-group > .active.delete-btn,
 .btn-group > .active.back-button,
 .btn-group-vertical > .btn-check:checked + .btn,
+.btn-group-vertical > .btn-check:checked + .form-btn,
 .product-specific .btn-group-vertical > .btn-check:checked + .add-to-cart,
 .product-specific .btn-group-vertical > .btn-check:checked + .delete-btn,
 .btn-group-vertical > .btn-check:checked + .back-button,
 .btn-group-vertical > .btn-check:focus + .btn,
+.btn-group-vertical > .btn-check:focus + .form-btn,
 .product-specific .btn-group-vertical > .btn-check:focus + .add-to-cart,
 .product-specific .btn-group-vertical > .btn-check:focus + .delete-btn,
 .btn-group-vertical > .btn-check:focus + .back-button,
 .btn-group-vertical > .btn:hover,
+.btn-group-vertical > .form-btn:hover,
 .product-specific .btn-group-vertical > .add-to-cart:hover,
 .product-specific .btn-group-vertical > .delete-btn:hover,
 .btn-group-vertical > .back-button:hover,
 .btn-group-vertical > .btn:focus,
+.btn-group-vertical > .form-btn:focus,
 .product-specific .btn-group-vertical > .add-to-cart:focus,
 .product-specific .btn-group-vertical > .delete-btn:focus,
 .btn-group-vertical > .back-button:focus,
 .btn-group-vertical > .btn:active,
+.btn-group-vertical > .form-btn:active,
 .product-specific .btn-group-vertical > .add-to-cart:active,
 .product-specific .btn-group-vertical > .delete-btn:active,
 .btn-group-vertical > .back-button:active,
 .btn-group-vertical > .btn.active,
+.btn-group-vertical > .active.form-btn,
 .product-specific .btn-group-vertical > .active.add-to-cart,
 .product-specific .btn-group-vertical > .active.delete-btn,
 .btn-group-vertical > .active.back-button {
@@ -4309,13 +4333,14 @@ fieldset:disabled .back-button {
   width: auto;
 }
 
-.btn-group > .btn:not(:first-child), .product-specific .btn-group > .add-to-cart:not(:first-child), .product-specific .btn-group > .delete-btn:not(:first-child), .btn-group > .back-button:not(:first-child),
+.btn-group > .btn:not(:first-child), .btn-group > .form-btn:not(:first-child), .product-specific .btn-group > .add-to-cart:not(:first-child), .product-specific .btn-group > .delete-btn:not(:first-child), .btn-group > .back-button:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .delete-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-button:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .form-btn:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .delete-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-button:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
+.btn-group > .btn-group:not(:last-child) > .form-btn,
 .product-specific .btn-group > .btn-group:not(:last-child) > .add-to-cart,
 .product-specific .btn-group > .btn-group:not(:last-child) > .delete-btn,
 .btn-group > .btn-group:not(:last-child) > .back-button {
@@ -4323,12 +4348,14 @@ fieldset:disabled .back-button {
   border-bottom-right-radius: 0;
 }
 
-.btn-group > .btn:nth-child(n + 3), .product-specific .btn-group > .add-to-cart:nth-child(n + 3), .product-specific .btn-group > .delete-btn:nth-child(n + 3), .btn-group > .back-button:nth-child(n + 3),
+.btn-group > .btn:nth-child(n + 3), .btn-group > .form-btn:nth-child(n + 3), .product-specific .btn-group > .add-to-cart:nth-child(n + 3), .product-specific .btn-group > .delete-btn:nth-child(n + 3), .btn-group > .back-button:nth-child(n + 3),
 .btn-group > :not(.btn-check) + .btn,
+.btn-group > :not(.btn-check) + .form-btn,
 .product-specific .btn-group > :not(.btn-check) + .add-to-cart,
 .product-specific .btn-group > :not(.btn-check) + .delete-btn,
 .btn-group > :not(.btn-check) + .back-button,
 .btn-group > .btn-group:not(:first-child) > .btn,
+.btn-group > .btn-group:not(:first-child) > .form-btn,
 .product-specific .btn-group > .btn-group:not(:first-child) > .add-to-cart,
 .product-specific .btn-group > .btn-group:not(:first-child) > .delete-btn,
 .btn-group > .btn-group:not(:first-child) > .back-button {
@@ -4351,12 +4378,12 @@ fieldset:disabled .back-button {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .product-specific .btn-group-sm > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-sm > .delete-btn + .dropdown-toggle-split, .btn-group-sm > .back-button + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .form-btn + .dropdown-toggle-split, .product-specific .btn-group-sm > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-sm > .delete-btn + .dropdown-toggle-split, .btn-group-sm > .back-button + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .product-specific .btn-group-lg > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-lg > .delete-btn + .dropdown-toggle-split, .btn-group-lg > .back-button + .dropdown-toggle-split, .product-specific .add-to-cart + .dropdown-toggle-split, .product-specific .delete-btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .form-btn + .dropdown-toggle-split, .product-specific .btn-group-lg > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-lg > .delete-btn + .dropdown-toggle-split, .btn-group-lg > .back-button + .dropdown-toggle-split, .product-specific .add-to-cart + .dropdown-toggle-split, .product-specific .delete-btn + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -4376,6 +4403,7 @@ fieldset:disabled .back-button {
 
 
 .btn-group-vertical > .btn,
+.btn-group-vertical > .form-btn,
 .product-specific .btn-group-vertical > .add-to-cart,
 .product-specific .btn-group-vertical > .delete-btn,
 .btn-group-vertical > .back-button,
@@ -4383,13 +4411,14 @@ fieldset:disabled .back-button {
   width: 100%;
 }
 
-.btn-group-vertical > .btn:not(:first-child), .product-specific .btn-group-vertical > .add-to-cart:not(:first-child), .product-specific .btn-group-vertical > .delete-btn:not(:first-child), .btn-group-vertical > .back-button:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .form-btn:not(:first-child), .product-specific .btn-group-vertical > .add-to-cart:not(:first-child), .product-specific .btn-group-vertical > .delete-btn:not(:first-child), .btn-group-vertical > .back-button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
 
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .delete-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-button:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .form-btn:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .delete-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-button:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
+.btn-group-vertical > .btn-group:not(:last-child) > .form-btn,
 .product-specific .btn-group-vertical > .btn-group:not(:last-child) > .add-to-cart,
 .product-specific .btn-group-vertical > .btn-group:not(:last-child) > .delete-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .back-button {
@@ -4397,8 +4426,9 @@ fieldset:disabled .back-button {
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn ~ .btn, .product-specific .btn-group-vertical > .add-to-cart ~ .btn, .product-specific .btn-group-vertical > .delete-btn ~ .btn, .btn-group-vertical > .back-button ~ .btn, .product-specific .btn-group-vertical > .btn ~ .add-to-cart, .product-specific .btn-group-vertical > .add-to-cart ~ .add-to-cart, .product-specific .btn-group-vertical > .delete-btn ~ .add-to-cart, .product-specific .btn-group-vertical > .back-button ~ .add-to-cart, .product-specific .btn-group-vertical > .btn ~ .delete-btn, .product-specific .btn-group-vertical > .add-to-cart ~ .delete-btn, .product-specific .btn-group-vertical > .delete-btn ~ .delete-btn, .product-specific .btn-group-vertical > .back-button ~ .delete-btn, .btn-group-vertical > .btn ~ .back-button, .product-specific .btn-group-vertical > .add-to-cart ~ .back-button, .product-specific .btn-group-vertical > .delete-btn ~ .back-button, .btn-group-vertical > .back-button ~ .back-button,
+.btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .form-btn ~ .btn, .product-specific .btn-group-vertical > .add-to-cart ~ .btn, .product-specific .btn-group-vertical > .delete-btn ~ .btn, .btn-group-vertical > .back-button ~ .btn, .btn-group-vertical > .btn ~ .form-btn, .btn-group-vertical > .form-btn ~ .form-btn, .product-specific .btn-group-vertical > .add-to-cart ~ .form-btn, .product-specific .btn-group-vertical > .delete-btn ~ .form-btn, .btn-group-vertical > .back-button ~ .form-btn, .product-specific .btn-group-vertical > .btn ~ .add-to-cart, .product-specific .btn-group-vertical > .form-btn ~ .add-to-cart, .product-specific .btn-group-vertical > .add-to-cart ~ .add-to-cart, .product-specific .btn-group-vertical > .delete-btn ~ .add-to-cart, .product-specific .btn-group-vertical > .back-button ~ .add-to-cart, .product-specific .btn-group-vertical > .btn ~ .delete-btn, .product-specific .btn-group-vertical > .form-btn ~ .delete-btn, .product-specific .btn-group-vertical > .add-to-cart ~ .delete-btn, .product-specific .btn-group-vertical > .delete-btn ~ .delete-btn, .product-specific .btn-group-vertical > .back-button ~ .delete-btn, .btn-group-vertical > .btn ~ .back-button, .btn-group-vertical > .form-btn ~ .back-button, .product-specific .btn-group-vertical > .add-to-cart ~ .back-button, .product-specific .btn-group-vertical > .delete-btn ~ .back-button, .btn-group-vertical > .back-button ~ .back-button,
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
 .product-specific .btn-group-vertical > .btn-group:not(:first-child) > .add-to-cart,
 .product-specific .btn-group-vertical > .btn-group:not(:first-child) > .delete-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .back-button {
@@ -7148,7 +7178,7 @@ fieldset:disabled .back-button {
   opacity: 0.5;
 }
 
-.placeholder.btn::before, .product-specific .placeholder.add-to-cart::before, .product-specific .placeholder.delete-btn::before, .placeholder.back-button::before {
+.placeholder.btn::before, .placeholder.form-btn::before, .product-specific .placeholder.add-to-cart::before, .product-specific .placeholder.delete-btn::before, .placeholder.back-button::before {
   display: inline-block;
   content: "";
 }
@@ -7570,7 +7600,7 @@ fieldset:disabled .back-button {
           box-shadow: 0 0.5rem 1rem rgba(33, 36, 38, 0.15) !important;
 }
 
-.shadow-sm, .navbar, .modal-body-content, .cart-item, .cart-total-container, form {
+.shadow-sm, form, .navbar, .modal-body-content, .cart-item, .cart-total-container {
   -webkit-box-shadow: 0 0.125rem 0.25rem rgba(33, 36, 38, 0.075) !important;
           box-shadow: 0 0.125rem 0.25rem rgba(33, 36, 38, 0.075) !important;
 }
@@ -11895,13 +11925,74 @@ a {
   border: 0;
 }
 
-.btn, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
+.btn, .form-btn, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
   border-radius: 0;
+  padding: 0.7em 1.5em;
 }
 
-.btn-primary {
+.btn-primary, .form-btn {
   color: #ffffff;
-  padding: 0.7em 1.5em;
+}
+
+#display-message {
+  padding: 1em;
+  width: auto;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #7273ff;
+  border-right: 4px solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-animation: rotate 1s linear infinite;
+          animation: rotate 1s linear infinite;
+}
+
+.loader::after {
+  content: "";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #7273ff;
+  border-bottom: 4px solid transparent;
+  animation: rotate 0.5s linear infinite reverse;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.div-input-container {
+  margin-bottom: 2.5em;
 }
 
 .form-control {
@@ -11911,11 +12002,14 @@ a {
   border-radius: 0;
 }
 
-#display-message {
-  padding: 1em;
-  width: auto;
-  font-weight: 400;
-  font-size: 1.1em;
+form {
+  padding: 2em !important;
+}
+
+form span > div {
+  font-size: 0.9em;
+  padding: 0;
+  display: inline;
 }
 
 .navbar {
@@ -11936,9 +12030,32 @@ a {
 }
 
 .nav-link {
-  color: #212426 !important;
-  font-size: 1.1em;
+  color: #3c3f40 !important;
+  font-size: 1.2em;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.nav-link:hover {
+  color: #7273ff !important;
   font-weight: 400;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #7273ff !important;
+  font-weight: 400;
+  pointer-events: none !important;
+}
+
+.dropdown-item.active {
+  background-color: transparent;
+  color: #7273ff !important;
+  font-weight: 400;
+  pointer-events: none;
+}
+
+#logout {
+  cursor: pointer;
 }
 
 .footer {
@@ -12106,7 +12223,7 @@ a {
 }
 
 .product-image {
-  width: 100%;
+  height: 300px;
 }
 
 .product-specific {
@@ -12299,7 +12416,7 @@ a {
   margin-top: 1em;
 }
 
-.form-wrapper {
+.form-wrapper, .form-wrapper__add-product {
   margin-top: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12309,57 +12426,21 @@ a {
           justify-content: center;
 }
 
-form {
-  padding: 2em !important;
+.form-wrapper__add-product {
+  margin-top: 50px;
 }
 
-.loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: inline-block;
-  border-top: 4px solid #7273ff;
-  border-right: 4px solid transparent;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-animation: rotate 1s linear infinite;
-          animation: rotate 1s linear infinite;
+.form-switch .form-check-input {
+  width: 3em;
+  height: 1.5em;
+  margin-right: 0.5em;
 }
 
-.loader::after {
-  content: "";
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border-left: 4px solid #7273ff;
-  border-bottom: 4px solid transparent;
-  animation: rotate 0.5s linear infinite reverse;
+.form-check-label {
+  margin-top: 0.2em;
 }
 
-@-webkit-keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+.form-switch {
+  padding-left: 3em;
 }
 /*# sourceMappingURL=style.css.map */

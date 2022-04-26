@@ -1,6 +1,6 @@
 export const productKey = "product";
-const tokenKey = "tokenKey";
-const userKey = "userKey";
+export const tokenKey = "tokenKey";
+export const userKey = "userKey";
 
 
 
@@ -10,7 +10,7 @@ export function saveToken(token) {
 
 }
 export function getToken() {
-  getFromStorage(tokenKey)
+  return getFromStorage(tokenKey)
 
 }
 
@@ -23,10 +23,11 @@ export function saveUser(user) {
 export function getUser() {
 
   const user = getFromStorage(userKey)
-  if (!user) {
-    return null;
+  if (user) {
+    return user.username;
   } else {
-    return (user.userName);
+    return null;
+
   }
 }
 
@@ -43,7 +44,7 @@ export function getFromStorage(key) {
   const item = localStorage.getItem(key);
 
   if (!item) {
-    return [];
+    return null;
   } else {
     return (JSON.parse(item));
   }

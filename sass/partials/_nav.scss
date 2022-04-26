@@ -1,15 +1,35 @@
 .navbar {
-  @extend .shadow-sm;
-  padding: 1.2em;
+	@extend .shadow-sm;
+	padding: 1.2em;
 }
 .navbar-ul {
-  justify-content: end;
-  flex-grow: 1;
-  gap: 1em;
-  align-items: center;
+	justify-content: end;
+	flex-grow: 1;
+	gap: 1em;
+	align-items: center;
 }
 .nav-link {
-  color: $black !important;
-  font-size: 1.1em;
-  font-weight: 400;
+	color: $dark !important;
+	font-size: 1.2em;
+	transition: all 1s;
+}
+.nav-link:hover {
+	color: $primary !important;
+	font-weight: 400;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+	color: $primary !important;
+	font-weight: 400;
+	pointer-events: none !important;
+}
+
+.dropdown-item.active {
+	background-color: transparent;
+	color: $primary !important;
+	font-weight: 400;
+	pointer-events: none;
+}
+#logout {
+	cursor: pointer;
 }

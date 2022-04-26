@@ -2,8 +2,9 @@ import { displayMessage } from "../generalFunctions/displayMessage.js";
 import { formatPrice } from "../generalFunctions/formatPrice.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { getFromStorage, saveToStorage, productKey } from "../storage/storage.js";
+import { renderMenu } from "../generalFunctions/renderMenu.js";
 
-
+renderMenu();
 scrollToTop();
 
 
@@ -11,7 +12,7 @@ const itemsSavedInStorage = getFromStorage(productKey);
 
 
 if (itemsSavedInStorage.length === 0) {
-  displayMessage("light", "Nothing in cart yet", ".cart-wrapper");
+  displayMessage("light", "Your cart is empty", ".cart-wrapper");
 
 }
 
@@ -85,7 +86,7 @@ function renderCartItems(itemsToRender) {
           renderCartItems(newSavedItems);
 
           if (newSavedItems.length === 0) {
-            displayMessage("light", "No items left in cart", ".cart-wrapper");
+            displayMessage("light", "Your cart is empty", ".cart-wrapper");
           }
         }
       })

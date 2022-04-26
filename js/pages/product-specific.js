@@ -1,10 +1,12 @@
 import { displayMessage } from "../generalFunctions/displayMessage.js";
+import { renderMenu } from "../generalFunctions/renderMenu.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { baseUrl } from "../settings.js";
 import { getFromStorage, saveToStorage, productKey } from "../storage/storage.js";
 
 
 scrollToTop();
+renderMenu();
 
 const itemsSavedInStorage = getFromStorage(productKey);
 
@@ -24,7 +26,6 @@ const id = params.get("id");
     if (response.ok) {
       const results = await response.json();
 
-      console.log(results.data)
       renderSpecificPropduct(results.data);
 
 
@@ -43,7 +44,6 @@ const id = params.get("id");
 
 function renderSpecificPropduct(result) {
 
-  document.title = result.title;
 
   let cssClass = "visually-hidden";
 
@@ -61,14 +61,16 @@ function renderSpecificPropduct(result) {
   const price = result.attributes.price;
   const description = result.attributes.description;
   const img = result.attributes.image.data.attributes.url;
-  const altText = result.attributes.image.data.attributes.alternativeText;
+  const altText = result.attributes.image_alttext;
+
+  document.title = `${title} | e-commerce`;
 
   productContainer.innerHTML = "";
 
   productContainer.innerHTML = `<div class="col-md-8" style ="background: url('${img}') no-repeat center;background-size: cover; min-height:500px;" >
                                   <span role="img" aria-label=${altText}></span>
                                 </div>
-                                <div class="col-md-4"> 
+                                <div class="col-md-4 px-4"> 
                                     <h2>${title}</h2> 
                                     <p class="price" >NOK ${price} <span class = "badge ${cssClass}"><i class="fa-solid fa-circle-check me-2"></i> In the cart</span></p>
                                     <button class="add-to-cart" data-title="${title}" data-id=${result.id} data-price="${price}" data-image="${img}" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
@@ -123,7 +125,9 @@ function addToCart(event) {
                               <h5>${title}</h5>
                               <p class="ms-auto">NOK ${price}</p>
                             </div>  
-                           <a href="cart.html" class="btn btn-primary">Proceed to cart</a>`;
+                            <button type="button" class="btn btn-outline-primary btn-sm me-2" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
+                            <a href = "cart.html" class="btn btn-primary btn-sm"> Proceed to cart</a > `
+      ;
 
   } else {
     const findCurrentAddedProduct = currentAddedProduct.find(product => parseInt(product.id) === id);

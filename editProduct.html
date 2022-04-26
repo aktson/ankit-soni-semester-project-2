@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://kit.fontawesome.com/e9fca197f4.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="css/style.css" />
-		<title>Login | e-commerce</title>
+		<title>Edit Product | e-commerce</title>
 	</head>
 	<body>
 		<header>
@@ -38,25 +38,61 @@
 		</header>
 		<main>
 			<section class="container">
-				<div class="row form-wrapper">
-					<form class="col-md-4">
-						<h1>Log in</h1>
+				<div class="row form-wrapper__add-product">
+					<form class="col-lg-5">
+						<h1>Add product</h1>
 						<div id="message-container"></div>
 						<div class="div-input-container">
-							<input type="text" class="form-control" id="username" placeholder="enter username/email" />
-							<label for="username" class="form-label">
-								Username
-								<span id="username-error"></span>
+							<input type="text" class="form-control" id="title" placeholder="enter title" />
+							<label for="title" class="form-label">
+								Title
+								<span id="title-error"></span>
 							</label>
+						</div>
+
+						<div class="row">
+							<div class="div-input-container col">
+								<input type="file" class="form-control" id="image" name="files" accept="image/*" />
+								<label for="image" class="form-label">
+									<span id="image-error"></span>
+								</label>
+							</div>
+							<div class="div-input-container col-md-6">
+								<input type="text" class="form-control" id="alttext" name="ref" placeholder="enter title" />
+								<label for="alttext" class="form-label">
+									Image alternative text
+									<span id="alttext-error"></span>
+								</label>
+							</div>
+						</div>
+						<div class="row align-items-baseline">
+							<div class="div-input-container col">
+								<input type="number" class="form-control" id="price" placeholder="enter price" />
+								<label for="price" class="form-label px-4">
+									Price
+									<span id="price-error"></span>
+								</label>
+							</div>
+							<div class="form-check form-switch col-6">
+								<input class="form-check-input" type="checkbox" id="featured" />
+								<label class="form-check-label" for="featured">Featured</label>
+							</div>
 						</div>
 						<div class="div-input-container">
-							<input type="password" class="form-control" id="password" placeholder="enter password" />
-							<label for="password" class="form-label">
-								Password
-								<span id="password-error"></span>
+							<textarea
+								type="description"
+								class="form-control"
+								id="description"
+								style="height: 100px"
+								name="description"
+								placeholder="enter description"
+							></textarea>
+							<label for="description" class="form-label">
+								Description
+								<span id="description-error"></span>
 							</label>
 						</div>
-						<button class="form-btn">Login</button>
+						<button class="form-btn">Add product</button>
 					</form>
 				</div>
 			</section>
@@ -71,6 +107,6 @@
 			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 			crossorigin="anonymous"
 		></script>
-		<script src="js/pages/login.js" type="module"></script>
+		<script src="js/pages/editProduct.js" type="module"></script>
 	</body>
 </html>

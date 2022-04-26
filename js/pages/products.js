@@ -1,8 +1,10 @@
 import { displayMessage } from "../generalFunctions/displayMessage.js";
+import { renderMenu } from "../generalFunctions/renderMenu.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { baseUrl } from "../settings.js";
 
 scrollToTop();
+renderMenu();
 
 (async function fetchProducts() {
 
@@ -41,17 +43,19 @@ function renderProducts(results) {
     const price = result.attributes.price;
 
     const img = result.attributes.image.data.attributes.url;
-    const altText = result.attributes.image.data.attributes.alternativeText;
+    const altText = result.attributes.image_alttext;
 
-
+    // <img src="${img}" alt="${altText}" class="product-image"/>
     productsContainer.innerHTML += `<a href="product-specific.html?id=${result.id}">
                                         <div class="col">
                                           <div class="card h-100 shadow-lg">
-                                          <img src="${img}" alt="${altText}" class="product-image"/>
-                                          <div class="card-body">
-                                            <h5 class="card-title">${title}</h5>
-                                            <p class="card-text">NOK ${price}</p>
-                                          </div>
+                                              <div style ="background: url('${img}') no-repeat center;background-size: cover;" class="product-image">
+                                                  <span  role="img" aria-label=${altText}></span>
+                                              </div>
+                                              <div class="card-body">
+                                                <h5 class="card-title">${title}</h5>
+                                                <p class="card-text">NOK ${price}</p>
+                                              </div>  
                                         </div>
                                       </div>
                                     </a>`
