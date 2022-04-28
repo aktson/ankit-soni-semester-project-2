@@ -2,18 +2,20 @@ import { displayMessage } from "../generalFunctions/displayMessage.js";
 import { renderMenu } from "../generalFunctions/renderMenu.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { baseUrl } from "../settings.js";
-import { getUser } from "../storage/storage.js";
+import { getUser, getToken } from "../storage/storage.js";
+import { searchProduct } from "../generalFunctions/searchProduct.js"
 
 
 scrollToTop();
 renderMenu();
 
+const token = getToken();
 const user = getUser();
+
 let cssClass = "visually-hidden";
 
 if (user) {
   cssClass = "";
-
 };
 
 (async function fetchProducts() {
@@ -42,7 +44,7 @@ if (user) {
 
 })();
 
-function renderProducts(results) {
+export function renderProducts(results) {
 
   const productsContainer = document.querySelector("#products-container");
 
@@ -55,6 +57,7 @@ function renderProducts(results) {
 
     const img = result.attributes.image.data.attributes.url;
     const altText = result.attributes.image_alttext;
+    const imageId = result.attributes.image.data.id;
 
     productsContainer.innerHTML += `<div class="col">
                                         <a href="product-specific.html?id=${result.id}">
@@ -68,7 +71,7 @@ function renderProducts(results) {
                                                   <p class="card-text">NOK ${price}</p>
                                                 </div>   
                                                 <div>
-                                                  <a href="editProduct.html?id=${result.id}" class="edit-product ${cssClass}"><i class="fa-solid fa-pen-to-square"></i> edit</a>
+                                                  <a href="editProduct.html?id=${result.id}&imageId=${imageId}" class="edit-product ${cssClass}"><i class="fa-solid fa-pen-to-square"></i> edit</a>
                                                   <button class="delete-product ${cssClass}" data-id=${result.id} ><i class="fa-solid fa-trash-can"></i> Delete</button>
                                                 </div>
                                               </div>                                    
@@ -76,27 +79,49 @@ function renderProducts(results) {
                                         </a>
                                     </div>`
   })
+  const deleteBtns = document.querySelectorAll(".delete-product");
+
+  deleteBtns.forEach(btn => {
+    btn.addEventListener("click", deleteProduct);
+  })
+
+};
+
+
+async function deleteProduct(event) {
+
+  try {
+    const id = event.target.dataset.id;
+
+    let doDelete = window.confirm("are you sure??");
+
+    if (doDelete) {
+      const url = baseUrl + `api/items/${id}?populate=*`;
+
+      const options = {
+        method: "DELETE",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        }
+      }
+      const response = await fetch(url, options);
+      const result = await response.json();
+
+      const imageId = result.data.attributes.image.data.id;
+
+      const imageUrl = baseUrl + `api/upload/files/${imageId}`;
+      const res = await fetch(imageUrl, options);
+
+      if (res.ok) {
+        displayMessage("success", "Product deleted!!", "#message-container");
+        location.reload();
+      }
+    }
+  }
+  catch (error) {
+    console.log(error)
+    displayMessage("danger", "Unknown error occured", "#message-container")
+  }
+
 }
 
-// filter products for search results on keyup event
-function searchProduct(results) {
-
-  const search = document.querySelector("#search");
-
-  search.addEventListener("keyup", (event) => {
-
-    const searchValue = event.target.value.trim().toLowerCase();
-
-    renderProducts(results)
-
-    const filteredResults = results.filter(result => result.attributes.title.toLowerCase().includes(searchValue));
-
-    if (filteredResults.length === 0) {
-      displayMessage("light", "Sorry no results found", "#products-container")
-    }
-    else {
-      renderProducts(filteredResults)
-    }
-
-  });
-}

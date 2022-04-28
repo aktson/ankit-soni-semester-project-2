@@ -44,7 +44,6 @@ const id = params.get("id");
 
 function renderSpecificPropduct(result) {
 
-
   let cssClass = "visually-hidden";
 
   const isItemInStorage = itemsSavedInStorage.find(function (fav) {
@@ -68,16 +67,16 @@ function renderSpecificPropduct(result) {
   productContainer.innerHTML = "";
 
   productContainer.innerHTML = `<div class="col-lg-8" style ="background: url('${img}') no-repeat center;background-size: cover; min-height:500px;" >
-                                  <span role="img" aria-label=${altText}></span>
-                                </div>
-                                <div class="col-lg-4 product-content"> 
-                                    <h2>${title}</h2> 
-                                    <p class="price" >NOK ${price} <span class = "badge ${cssClass}"><i class="fa-solid fa-circle-check me-2"></i> In the cart</span></p>
-                                    <button class="add-to-cart" data-title="${title}" data-id=${result.id} data-price="${price}" data-image="${img}" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-                                    <button class="delete-btn ${cssClass}" data-id=${result.id}>Remove item</button>
-                                    <p>${description}</p>
-                                </div>
-                                </div>`;
+                                    <span role="img" aria-label=${altText}></span>
+                                  </div>
+                                  <div class="col-lg-4 product-content"> 
+                                      <h2>${title}</h2> 
+                                      <p class="price" >NOK ${price} <span class = "badge ${cssClass}"><i class="fa-solid fa-circle-check me-2"></i> In the cart</span></p>
+                                      <button class="add-to-cart" data-title="${title}" data-id=${result.id} data-price="${price}" data-image="${img}" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+                                      <button class="delete-btn ${cssClass}" data-id=${result.id}>Remove item</button>
+                                      <p>${description}</p>
+                                  </div>
+                                  </div>`;
 
 
   const addTocartBtn = document.querySelector(".add-to-cart");

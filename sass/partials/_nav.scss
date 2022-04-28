@@ -28,7 +28,7 @@
 	background-color: transparent;
 	color: $primary !important;
 	font-weight: 400;
-	pointer-events: none;
+	pointer-events: none !important;
 }
 #logout {
 	cursor: pointer;

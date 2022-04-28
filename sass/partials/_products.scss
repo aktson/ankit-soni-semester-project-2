@@ -12,6 +12,10 @@
 	#display-message {
 		margin: 2em auto;
 	}
+	.card-body {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 .products {
@@ -37,14 +41,11 @@
 .edit-product {
 	@extend .btn, .btn-sm, .btn-warning;
 }
-.card-body {
-	display: flex;
-	justify-content: space-between;
-}
+
 .search-container {
 	@extend .inner-spacer;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 
 	#search {
