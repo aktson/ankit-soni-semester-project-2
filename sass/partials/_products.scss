@@ -1,13 +1,11 @@
-#hero-products {
-	@extend .spacer;
+.products {
+	@extend .container, .inner-spacer-top, .spacer;
 
-	#hero-products-banner {
-		height: 60vh;
-		background: url("../../images/shoes.jpg") no-repeat center;
-		background-size: cover;
-		margin: 0 auto;
+	.col {
+		@extend .inner-spacer-bottom;
 	}
 }
+
 #products-container {
 	#display-message {
 		margin: 2em auto;
@@ -18,22 +16,6 @@
 	}
 }
 
-.products {
-	@extend .spacer;
-	.loader {
-		margin: 0 auto;
-	}
-
-	.col {
-		@extend .inner-spacer;
-	}
-	a {
-		color: $dark;
-	}
-}
-.product-image {
-	height: 300px;
-}
 
 .delete-product {
 	@extend .btn, .btn-sm, .btn-danger;
@@ -43,7 +25,7 @@
 }
 
 .search-container {
-	@extend .inner-spacer;
+	@extend .inner-spacer-bottom;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

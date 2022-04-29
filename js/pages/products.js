@@ -60,12 +60,12 @@ export function renderProducts(results) {
     const imageId = result.attributes.image.data.id;
 
     productsContainer.innerHTML += `<div class="col">
-                                        <a href="product-specific.html?id=${result.id}">
-                                          <div class="card h-100 shadow-lg">
+                                        <a href="product-specific.html?id=${result.id}" id="product__link">
+                                          <div class="card">
                                               <div style ="background: url('${img}') no-repeat center;background-size: cover;" class="product-image">
                                                   <span  role="img" aria-label=${altText}></span>
                                               </div>
-                                              <div class="card-body ">
+                                              <div class="card-body">
                                                 <div> 
                                                   <h5 class="card-title">${title}</h5>
                                                   <p class="card-text">NOK ${price}</p>

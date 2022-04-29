@@ -22,10 +22,15 @@ form {
 		border-radius: 0;
 	}
 }
+.form-wrapper {
+	@extend .inner-spacer-top;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 .form-wrapper__add-edit-product {
 	@extend .form-wrapper;
-	margin-top: 20px;
 }
 .form-switch .form-check-input {
 	width: 3em;

@@ -40,7 +40,7 @@
 	@extend .spacer;
 
 	.col {
-		@extend .inner-spacer;
+		@extend .inner-spacer-bottom;
 		color: $dark;
 	}
 	&__link {
@@ -85,7 +85,7 @@
 		max-width: $mobile;
 	}
 	.newsletter-content h3 {
-		@extend .inner-spacer;
+		@extend .inner-spacer-bottom;
 		font-size: 3em;
 	}
 }
@@ -97,7 +97,7 @@
 		justify-content: center;
 	}
 	.services-col {
-		@extend .inner-spacer;
+		@extend .inner-spacer-bottom;
 		text-align: center;
 		@media (max-width: $mobile) {
 			max-width: 350px;

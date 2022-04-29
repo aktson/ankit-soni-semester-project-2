@@ -22,8 +22,11 @@ main {
 .spacer {
 	margin-bottom: 200px;
 }
-.inner-spacer {
+.inner-spacer-bottom {
 	margin-bottom: 1.5em;
+}
+.inner-spacer-top {
+	margin-top: 1.5em;
 }
 
 a {
@@ -33,9 +36,6 @@ a {
 	max-width: 100%;
 }
 
-.card {
-	border: 0;
-}
 .btn {
 	border-radius: 0;
 	padding: 0.7em 1.5em;
@@ -44,6 +44,9 @@ a {
 	color: $white;
 }
 
+.btn-outline-primary:hover {
+	color: $white;
+}
 #display-message {
 	padding: 1em;
 	width: auto;

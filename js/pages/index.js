@@ -66,17 +66,17 @@ function renderFeaturedProducts(results) {
     const price = result.attributes.price;
 
     productsContainer.innerHTML += `<div class="col">
-                                    <a href="product-specific.html?id=${result.id}" class="text-dark">
-                                      <div class="card h-100 shadow-lg">
-                                      <div style ="background: url('${img}') no-repeat center;background-size: cover;" class="product-image">
-                                      <span  role="img" aria-label=${altText}></span>
-                                      </div>
-                                        <div class="card-body">
-                                          <h5 class="card-title">${title}</h5>
-                                          <p class="card-text">NOK ${price}</p>
+                                      <a href="product-specific.html?id=${result.id}"  id="product__link">
+                                        <div class="card ">
+                                          <div style ="background: url('${img}') no-repeat center;background-size: cover;" class="product-image">
+                                            <span role="img" aria-label=${altText}></span>
+                                          </div>
+                                          <div class="card-body">
+                                              <h5 class="card-title">${title}</h5>
+                                              <p class="card-text">NOK ${price}</p>
+                                          </div>
                                         </div>
-                                      </div>
-                                    </a>
-                                  </div>`
+                                      </a>
+                                    </div>`
   })
 }

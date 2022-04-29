@@ -1,33 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&family=Tenor+Sans&display=swap");
 
 body {
-  font-family: "PT Serif", serif;
-  font-family: "Signika Negative", sans-serif;
-  font-weight: 300;
+	font-family: "PT Serif", serif;
+	font-family: "Signika Negative", sans-serif;
+	font-weight: 300;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Tenor Sans", sans-serif;
+	font-family: "Tenor Sans", sans-serif;
 }
 
 h1 {
-  @extend .inner-spacer;
-  font-size: 3em;
-  text-align: center;
+	@extend .inner-spacer-bottom;
+	font-size: 3em;
+	text-align: center;
 
-  @media (max-width: $mobile) {
-    font-size: 2.5em;
-  }
+	@media (max-width: $mobile) {
+		font-size: 2.5em;
+	}
 }
 
 h2 {
-  @extend .inner-spacer;
-  font-size: 2.5em;
-  text-align: center;
-  @media (max-width: $mobile) {
-    font-size: 2em;
-  }
+	@extend .inner-spacer-bottom;
+	font-size: 2.5em;
+	text-align: center;
+	@media (max-width: $mobile) {
+		font-size: 2em;
+	}
 }

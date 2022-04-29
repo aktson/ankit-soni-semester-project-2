@@ -1,0 +1,22 @@
+#product__link {
+	overflow: hidden;
+
+	.product-image {
+		height: 300px;
+	}
+	.col {
+		@extend .inner-spacer-bottom;
+	}
+}
+#product__link:hover .product-image {
+	transition: 0.5s transform;
+	transform: scale(1.1);
+}
+.card {
+	@extend .h-100, .shadow-lg;
+	border: 0;
+	overflow: hidden;
+}
+.card-body {
+	color: $dark;
+}

@@ -17,17 +17,17 @@
 		position: relative;
 	}
 	.price {
-		@extend .inner-spacer;
+		@extend .inner-spacer-bottom;
 		font-size: 1.2em;
 		font-weight: bold;
 	}
 	.add-to-cart {
-		@extend .inner-spacer;
+		@extend .inner-spacer-bottom;
 		@extend .btn, .btn-outline-primary, .btn-lg;
 		margin-right: 0.5em;
 	}
 	.delete-btn {
-		@extend .inner-spacer;
+		@extend .inner-spacer-bottom;
 		@extend .btn, .btn-lg, .btn-outline-danger;
 	}
 	.badge {

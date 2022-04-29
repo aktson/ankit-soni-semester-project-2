@@ -11,23 +11,21 @@
 .nav-link {
 	color: $dark !important;
 	font-size: 1.2em;
-	transition: all 1s;
+	transition: all 0.5s ease;
 }
 .nav-link:hover {
 	color: $primary !important;
-	font-weight: 400;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
 	color: $primary !important;
-	font-weight: 400;
+
 	pointer-events: none !important;
 }
 
 .dropdown-item.active {
 	background-color: transparent;
 	color: $primary !important;
-	font-weight: 400;
 	pointer-events: none !important;
 }
 #logout {
