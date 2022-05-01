@@ -19,8 +19,8 @@ renderMenu();
   const heroBanner = document.querySelector("#hero-banner");
 
   heroBanner.innerHTML = `<div style ="background: url('${img}') no-repeat center;background-size: cover;" class="hero__image">
-                      <span  role="img" aria-label=${altText}></span>
-                    </div>`;
+                            <span  role="img" aria-label=${altText}></span>
+                          </div>`;
 
 })();
 
@@ -32,7 +32,7 @@ renderMenu();
     const url = baseUrl + "api/items?populate=*";
 
     const response = await fetch(url);
-    console.log(response)
+
 
     if (response.ok) {
       const results = await response.json();
@@ -66,17 +66,18 @@ function renderFeaturedProducts(results) {
     const price = result.attributes.price;
 
     productsContainer.innerHTML += `<div class="col">
-                                      <a href="product-specific.html?id=${result.id}"  id="product__link">
-                                        <div class="card ">
-                                          <div style ="background: url('${img}') no-repeat center;background-size: cover;" class="product-image">
-                                            <span role="img" aria-label=${altText}></span>
+                                        <a href="product-specific.html?id=${result.id}"  id="product__link">
+                                          <div class="card ">
+                                              <div style ="background: url('${img}') no-repeat center;background-size: cover;" class="product-image">
+                                                <span role="img" aria-label=${altText}></span>
+                                              </div>
+                                              <div class="card-body">
+                                                <h5 class="card-title">${title}</h5>
+                                                <p class="card-text">NOK ${price}</p> 
+                                                <a></a>
+                                              </div>              
                                           </div>
-                                          <div class="card-body">
-                                              <h5 class="card-title">${title}</h5>
-                                              <p class="card-text">NOK ${price}</p>
-                                          </div>
-                                        </div>
-                                      </a>
+                                        </a>
                                     </div>`
   })
 }

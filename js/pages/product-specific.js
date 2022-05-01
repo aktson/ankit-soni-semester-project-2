@@ -72,8 +72,16 @@ function renderSpecificPropduct(result) {
                                   <div class="col-lg-4 product-content"> 
                                       <h2>${title}</h2> 
                                       <p class="price" >NOK ${price} <span class = "badge ${cssClass}"><i class="fa-solid fa-circle-check me-2"></i> In the cart</span></p>
-                                      <button class="add-to-cart" data-title="${title}" data-id=${result.id} data-price="${price}" data-image="${img}" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-                                      <button class="delete-btn ${cssClass}" data-id=${result.id}>Remove item</button>
+                                      <select aria-label=".form-select-sm " class="size">
+                                          <option value="">Select size</option>
+                                          <option value="41">41</option>
+                                          <option value="42">42</option>
+                                          <option value="43">43</option>
+                                          <option value="44">44</option>
+                                          <option value="45">45</option>
+                                        </select>
+                                      <button class="add-to-cart" data-title="${title}" data-id=${result.id} data-size="${result.size}" data-price="${price}" data-image="${img}" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+                                      <button class="delete-btn ${cssClass}" data-id=${result.id} >Remove item</button>
                                       <p>${description}</p>
                                   </div>
                                   </div>`;
@@ -88,8 +96,23 @@ function renderSpecificPropduct(result) {
 
 }
 
+
+
+
 //add item to cart
 function addToCart(event) {
+
+
+  //modal to show item added to cart
+  const modalTitle = document.querySelector(".modal-title")
+  const modalBody = document.querySelector(".modal-body");
+
+  modalTitle.innerHTML = "";
+  modalBody.innerHTML = "";
+
+  //size select to get value on user input
+  const size = document.querySelector(".size").value;
+
 
   const image = event.target.dataset.image;
   const title = event.target.dataset.title;
@@ -99,48 +122,84 @@ function addToCart(event) {
 
   let currentAddedProduct = getFromStorage(productKey);
 
-
   const findCurrentAddedProduct = currentAddedProduct.find(function (product) {
     return parseInt(product.id) === id;
   })
 
+  //check if user have choose the size else give message
+  if (!size) {
+    const modalTitle = document.querySelector(".modal-title")
+    modalTitle.innerHTML = `<p class="ms-auto">Please select size</p>`
 
-  if (!findCurrentAddedProduct) {
-    const product = { id, title, price, image, quantity };
+  }
 
-    currentAddedProduct.push(product);
+  //if user have choosen size then let user add the product and show modal with added product
+  else if (size) {
 
-    saveToStorage(productKey, currentAddedProduct);
+    if (!findCurrentAddedProduct) {
+      const product = { id, title, price, image, quantity, size };
 
-    const deleteBtn = document.querySelector(".delete-btn");
-    const badge = document.querySelector(".badge");
+      currentAddedProduct.push(product);
 
-    deleteBtn.classList.remove("visually-hidden");
-    badge.classList.remove("visually-hidden");
+      saveToStorage(productKey, currentAddedProduct);
 
-    const modalTitle = document.querySelector(".modal-body");
-    modalTitle.innerHTML = `<div class ="modal-body-content">
-                              <img src="${image}" class="modal-body-content__image"/>
-                              <h5>${title}</h5>
-                              <p class="ms-auto">NOK ${price}</p>
-                            </div>  
-                            <button type="button" class="btn btn-outline-primary btn-sm me-2" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
-                            <a href = "cart.html" class="btn btn-primary btn-sm"> Proceed to cart</a > `
-      ;
+      const deleteBtn = document.querySelector(".delete-btn");
+      const badge = document.querySelector(".badge");
 
-  } else {
-    const findCurrentAddedProduct = currentAddedProduct.find(product => parseInt(product.id) === id);
+      deleteBtn.classList.remove("visually-hidden");
+      badge.classList.remove("visually-hidden");
 
-    if (findCurrentAddedProduct) {
+      modalTitle.innerHTML = `<i class="fa-solid fa-circle-check me-2"></i><p>Added to cart</p>`
+      modalBody.innerHTML = `<div class ="modal-body-content">
+                                <img src="${image}" class="modal-body-content__image"/>
+                                <div>
+                                    <h5>${title}</h5>
+                                    <p>Size: ${size}</p>
+                                </div>
+                                <p class="ms-auto">NOK ${price}</p>
+                              </div>  
+                              <button type="button" class="btn btn-outline-primary btn-sm me-2" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
+                              <a href = "cart.html" class="btn btn-primary btn-sm"> Proceed to cart</a >`;
 
-      for (let i = 0; i < currentAddedProduct.length; i++) {
-        currentAddedProduct[i].quantity++;
-        console.log(quantity)
-        saveToStorage(productKey, currentAddedProduct)
+    }
+
+    //check if size matches if user adds same product again
+    else {
+
+      const findCurrentAddedProduct = currentAddedProduct.find(product => parseInt(product.size) === parseInt(size));
+
+      //if size does not match from item stored in storage then push new product with new size, show modal with new added product
+      if (!findCurrentAddedProduct) {
+        const product = { id, title, price, image, quantity, size };
+
+        currentAddedProduct.push(product);
+
+        modalTitle.innerHTML = `<i class="fa-solid fa-circle-check me-2"></i><p> Added to cart</p>`
+        modalBody.innerHTML = `<div class ="modal-body-content">
+                                  <img src="${image}" class="modal-body-content__image"/>
+                                  <div>
+                                    <h5>${title}</h5>
+                                    <p class="free-delivery">Size: ${size}</p>
+                                  </div>
+                                  <p class="ms-auto">NOK ${price}</p>
+                                </div>  
+                                <button type="button" class="btn btn-outline-primary btn-sm me-2" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
+                                <a href = "cart.html" class="btn btn-primary btn-sm"> Proceed to cart</a >`;
+
+        saveToStorage(productKey, currentAddedProduct);
 
       }
+      //if size matches then increase quantity with one and show modal that product is in cart already
+      else {
+        findCurrentAddedProduct.quantity++;
+        modalTitle.innerHTML = `<i class="fa-solid fa-circle-check me-2"></i><p>Already in cart</p>`
+        saveToStorage(productKey, currentAddedProduct)
+      }
+
     }
+
   }
+
 }
 
 // delete item from cart

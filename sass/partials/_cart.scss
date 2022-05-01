@@ -41,6 +41,7 @@
 		display: flex;
 		color: $dark;
 		gap: 1em;
+		flex: 1;
 	}
 	.cart-item-image {
 		width: 70px;
@@ -48,20 +49,19 @@
 		border-radius: 50%;
 	}
 
-	p {
-		margin-left: auto;
-	}
 	.delete-btn {
 		position: absolute;
 		right: 1em;
 		bottom: 1em;
 		cursor: pointer;
 	}
-	.free-delivery {
-		position: absolute;
-		left: 7em;
-		bottom: 1em;
-		color: $primary;
+
+	#minus-btn,
+	#plus-btn {
+		cursor: pointer;
+		color: $dark;
+		font-size: 0.9em;
+		padding: 0.4em 0.2em;
 	}
 }
 
@@ -81,6 +81,7 @@
 		display: flex;
 		justify-content: space-between;
 	}
+
 	h3 {
 		text-align: center;
 		margin-bottom: 1em;

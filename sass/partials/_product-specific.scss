@@ -36,33 +36,45 @@
 		padding: 0.5em;
 		font-size: 0.8em;
 		font-weight: 300;
-		margin-left: 0.52em;
+		margin-left: 0.5em;
+	}
+	.size {
+		@extend .form-select, .inner-spacer-bottom;
 	}
 }
 
 #product-container {
 	justify-content: center;
 }
-.btn-close {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
-}
 
 .modal-header {
 	border: none;
 	position: relative;
 	font-size: 1.3em;
+
+	.btn-close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+	.modal-title {
+		display: flex;
+		align-items: baseline;
+	}
 }
+
 .modal-body-content {
+	@extend .shadow-sm;
 	display: flex;
 	gap: 0.4em;
 	margin-bottom: 2em;
 	padding: 1em;
 
-	@extend .shadow-sm;
 	&__image {
 		width: 50px;
 		height: 50px;
+	}
+	p {
+		margin-bottom: 0;
 	}
 }

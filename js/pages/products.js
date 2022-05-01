@@ -3,11 +3,13 @@ import { renderMenu } from "../generalFunctions/renderMenu.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { baseUrl } from "../settings.js";
 import { getUser, getToken } from "../storage/storage.js";
-import { searchProduct } from "../generalFunctions/searchProduct.js"
+import { searchProduct } from "../generalFunctions/searchProduct.js";
+
 
 
 scrollToTop();
 renderMenu();
+
 
 const token = getToken();
 const user = getUser();
@@ -87,7 +89,6 @@ export function renderProducts(results) {
 
 };
 
-
 async function deleteProduct(event) {
 
   try {
@@ -124,4 +125,3 @@ async function deleteProduct(event) {
   }
 
 }
-
