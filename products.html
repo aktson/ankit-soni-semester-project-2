@@ -8,6 +8,7 @@
 			name="description"
 			content="Browse from already thousand of product at logo. Order shoes today from logo, free and fast delivery, easy tracking,from more than 1000 of products"
 		/>
+		<meta name="keywords" content="online store, e-commerce, shoes, sports shoes, nike, sale, online shopping" />
 		<script src="https://kit.fontawesome.com/e9fca197f4.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="css/style.css" />
 		<title>Products | e-commerce</title>
@@ -44,8 +45,13 @@
 			<section class="products">
 				<h1>Products</h1>
 				<div class="search-container">
+					<select class="sort-product" aria-label="Default select example">
+						<option value="">Sort by price</option>
+						<option value="lowest">Lowest price</option>
+						<option value="highest">Highest price</option>
+					</select>
 					<div id="message-container"></div>
-					<input class="form-control" id="search" placeholder="search product" />
+					<input class="form-control" id="search" placeholder="Search product" />
 				</div>
 				<div class="row row-cols-1 row-cols-md-3 g-4" id="products-container"><div class="loader"></div></div>
 			</section>

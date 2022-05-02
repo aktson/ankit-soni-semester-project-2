@@ -1,6 +1,16 @@
-import { getUser, tokenKey, userKey } from "../storage/storage.js";
+import { getFromStorage, getUser, productKey, tokenKey, userKey } from "../storage/storage.js";
 
 
+
+const itemInStorage = getFromStorage(productKey);
+
+
+console.log(itemInStorage)
+
+for (let i = 0; i < itemInStorage.length; i++) {
+    let quantity = itemInStorage[i].quantity;
+    console.log(quantity)
+}
 
 
 

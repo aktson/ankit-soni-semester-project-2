@@ -129,7 +129,6 @@ function plusQuantity(event) {
 
   const size = event.target.dataset.size;
 
-
   const findCurrentAddedProduct = itemsSavedInStorage.find(function (product) {
     return parseInt(product.size) === parseInt(size);
   })

@@ -1,9 +1,9 @@
 #product__link {
 	overflow: hidden;
-	transition: all 1s ease;
 
 	.product-image {
 		height: 300px;
+		transition: 0.7s transform;
 	}
 	.col {
 		@extend .inner-spacer-bottom;

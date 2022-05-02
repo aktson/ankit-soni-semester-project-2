@@ -3,6 +3,7 @@ import { renderMenu } from "../generalFunctions/renderMenu.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { baseUrl } from "../settings.js";
 import { getFromStorage, saveToStorage, productKey } from "../storage/storage.js";
+import { renderModal, showMessageWithModal } from "../generalFunctions/modalProductSpecific.js"
 
 
 scrollToTop();
@@ -97,18 +98,8 @@ function renderSpecificPropduct(result) {
 }
 
 
-
-
 //add item to cart
 function addToCart(event) {
-
-
-  //modal to show item added to cart
-  const modalTitle = document.querySelector(".modal-title")
-  const modalBody = document.querySelector(".modal-body");
-
-  modalTitle.innerHTML = "";
-  modalBody.innerHTML = "";
 
   //size select to get value on user input
   const size = document.querySelector(".size").value;
@@ -128,8 +119,7 @@ function addToCart(event) {
 
   //check if user have choose the size else give message
   if (!size) {
-    const modalTitle = document.querySelector(".modal-title")
-    modalTitle.innerHTML = `<p class="ms-auto">Please select size</p>`
+    showMessageWithModal("<i class='fa-solid fa-circle-exclamation me-2'></i>Please select size")
 
   }
 
@@ -149,17 +139,8 @@ function addToCart(event) {
       deleteBtn.classList.remove("visually-hidden");
       badge.classList.remove("visually-hidden");
 
-      modalTitle.innerHTML = `<i class="fa-solid fa-circle-check me-2"></i><p>Added to cart</p>`
-      modalBody.innerHTML = `<div class ="modal-body-content">
-                                <img src="${image}" class="modal-body-content__image"/>
-                                <div>
-                                    <h5>${title}</h5>
-                                    <p>Size: ${size}</p>
-                                </div>
-                                <p class="ms-auto">NOK ${price}</p>
-                              </div>  
-                              <button type="button" class="btn btn-outline-primary btn-sm me-2" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
-                              <a href = "cart.html" class="btn btn-primary btn-sm"> Proceed to cart</a >`;
+      showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Added to cart");
+      renderModal(image, title, size, price)
 
     }
 
@@ -174,17 +155,8 @@ function addToCart(event) {
 
         currentAddedProduct.push(product);
 
-        modalTitle.innerHTML = `<i class="fa-solid fa-circle-check me-2"></i><p> Added to cart</p>`
-        modalBody.innerHTML = `<div class ="modal-body-content">
-                                  <img src="${image}" class="modal-body-content__image"/>
-                                  <div>
-                                    <h5>${title}</h5>
-                                    <p class="free-delivery">Size: ${size}</p>
-                                  </div>
-                                  <p class="ms-auto">NOK ${price}</p>
-                                </div>  
-                                <button type="button" class="btn btn-outline-primary btn-sm me-2" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
-                                <a href = "cart.html" class="btn btn-primary btn-sm"> Proceed to cart</a >`;
+        renderModal(image, title, size, price)
+        showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Added to cart");
 
         saveToStorage(productKey, currentAddedProduct);
 
@@ -192,8 +164,17 @@ function addToCart(event) {
       //if size matches then increase quantity with one and show modal that product is in cart already
       else {
         findCurrentAddedProduct.quantity++;
-        modalTitle.innerHTML = `<i class="fa-solid fa-circle-check me-2"></i><p>Already in cart</p>`
+
         saveToStorage(productKey, currentAddedProduct)
+
+        showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Quantity updated in shopping cart")
+
+        const modalBody = document.querySelector(".modal-body");
+        modalBody.innerHTML = "";
+
+        modalBody.innerHTML = `<button type="button" class="btn btn-outline-primary btn-sm me-2" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
+         <a href = "cart.html" class="btn btn-primary btn-sm"> Proceed to cart</a >`;
+
       }
 
     }
@@ -205,10 +186,10 @@ function addToCart(event) {
 // delete item from cart
 function deleteFromCart(event) {
 
-  const id = +event.target.dataset.id;
+  const id = event.target.dataset.id;
 
   const findItemToDelete = itemsSavedInStorage.filter(function (item) {
-    return parseInt(item.id) !== id;
+    return parseInt(item.id) !== parseInt(id);
   });
 
   let doRemove = window.confirm("are your sure?");
@@ -224,3 +205,4 @@ function deleteFromCart(event) {
   }
 
 }
+

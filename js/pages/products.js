@@ -2,13 +2,17 @@ import { displayMessage } from "../generalFunctions/displayMessage.js";
 import { renderMenu } from "../generalFunctions/renderMenu.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { baseUrl } from "../settings.js";
-import { getUser, getToken } from "../storage/storage.js";
+import { getUser, getToken, getFromStorage, productKey } from "../storage/storage.js";
 import { searchProduct } from "../generalFunctions/searchProduct.js";
+import { sortByPrice } from "../generalFunctions/sortByPrice.js";
 
 
 
 scrollToTop();
 renderMenu();
+
+const itemsSavedInStorage = getFromStorage(productKey);
+console.log(itemsSavedInStorage)
 
 
 const token = getToken();
@@ -29,10 +33,10 @@ if (user) {
 
     if (response.ok) {
       const results = await response.json();
-      console.log(results.data)
 
       renderProducts(results.data);
-      searchProduct(results.data)
+      searchProduct(results.data);
+      sortByPrice(results.data);
 
     } else {
       throw new Error(response.statusText);
@@ -46,6 +50,8 @@ if (user) {
 
 })();
 
+
+// render products
 export function renderProducts(results) {
 
   const productsContainer = document.querySelector("#products-container");
@@ -61,15 +67,24 @@ export function renderProducts(results) {
     const altText = result.attributes.image_alttext;
     const imageId = result.attributes.image.data.id;
 
+    let showInCartBadge = "";
+
+    const filterProductInStorage = itemsSavedInStorage.find(product => parseInt(product.id) === parseInt(result.id))
+
+    if (filterProductInStorage) {
+      showInCartBadge = `<p class="badge">In the cart</p>`;
+    }
+
     productsContainer.innerHTML += `<div class="col">
+                                        ${showInCartBadge} 
                                         <a href="product-specific.html?id=${result.id}" id="product__link">
-                                          <div class="card">
+                                          <div class="card">                                                                            
                                               <div style ="background: url('${img}') no-repeat center;background-size: cover;" class="product-image">
                                                   <span  role="img" aria-label=${altText}></span>
                                               </div>
                                               <div class="card-body">
                                                 <div> 
-                                                  <h5 class="card-title">${title}</h5>
+                                                  <h5 class="card-title">${title}  </h5>
                                                   <p class="card-text">NOK ${price}</p>
                                                 </div>   
                                                 <div>
@@ -89,6 +104,8 @@ export function renderProducts(results) {
 
 };
 
+
+// delete request to delete item from api only for authenticated user
 async function deleteProduct(event) {
 
   try {
