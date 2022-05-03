@@ -73,7 +73,10 @@
 		font-size: 1.5em;
 	}
 }
-
+//carousel/slider
+.slider {
+	@extend .spacer, .container;
+}
 //section newsletter
 .newsletter {
 	@extend .spacer;

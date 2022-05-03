@@ -106,15 +106,13 @@ function addToCart(event) {
 
   //size select to get value on user input
   const size = document.querySelector(".size").value;
-
+  const modalBody = document.querySelector(".modal-body");
 
   const image = event.target.dataset.image;
   const title = event.target.dataset.title;
   const price = event.target.dataset.price;
   const id = +event.target.dataset.id;
   let quantity = 1;
-
-
 
   let currentAddedProduct = getFromStorage(productKey);
 
@@ -124,8 +122,10 @@ function addToCart(event) {
 
   renderCartQuantity(findCurrentAddedProduct);
 
-  //check if user have choose the size else give message
+  //check if user have choosen the size else give message
   if (!size) {
+
+    modalBody.innerHTML = "";
     showMessageWithModal("<i class='fa-solid fa-circle-exclamation me-2'></i>Please select size")
   }
 
@@ -179,7 +179,6 @@ function addToCart(event) {
 
         showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i> Quantity updated in shopping cart")
 
-        const modalBody = document.querySelector(".modal-body");
         modalBody.innerHTML = "";
 
         modalBody.innerHTML = `<button type="button" class=" btn-continue-shopping" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
