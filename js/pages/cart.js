@@ -16,7 +16,7 @@ renderCartItems(itemsSavedInStorage);
 renderCartQuantity(itemsSavedInStorage);
 
 if (itemsSavedInStorage.length === 0) {
-  displayMessage("light", "Your cart is empty", ".cart-wrapper");
+  displayMessage("light", "Your shopping cart is empty", ".cart-wrapper");
 
 }
 
@@ -113,10 +113,10 @@ function renderCartItems(itemsToRender) {
         cartTotalItemContainer.innerHTML = "";
 
         renderCartItems(newSavedItems);
-        renderCartQuantity(filteritemsSavedInStorage);
+        renderCartQuantity(newSavedItems);
 
         if (newSavedItems.length === 0) {
-          displayMessage("light", "Your cart is empty", ".cart-wrapper");
+          displayMessage("light", "Your shopping cart is empty", ".cart-wrapper");
         }
       }
     }
@@ -135,11 +135,14 @@ function plusQuantity(event) {
   const size = event.target.dataset.size;
   const id = event.target.dataset.id;
 
-  const findCurrentAddedProduct = itemsSavedInStorage.find(product => +product.size === +size && +product.id === +id);
+  // const findCurrentAddedProduct = itemsSavedInStorage.find(product => +product.size === +size && +product.id === +id);
 
-  findCurrentAddedProduct.quantity++;
+  const findCurrentAddedProduct = itemsSavedInStorage.filter(product => +product.size === +size && +product.id === +id);
 
-  saveToStorage(productKey, itemsSavedInStorage)
+  for (let i = 0; i < findCurrentAddedProduct.length; i++) {
+    findCurrentAddedProduct[i].quantity++;
+    saveToStorage(productKey, findCurrentAddedProduct)
+  }
 
   cartItemContainer.innerHTML = "";
   cartTotalItemContainer.innerHTML = "";
@@ -147,9 +150,6 @@ function plusQuantity(event) {
   const newSavedItems = getFromStorage(productKey)
 
   renderCartItems(newSavedItems);
-
-
-
 }
 ///////////////////// end of pluss qunatity event//////////////////////////////////////
 
@@ -163,15 +163,15 @@ function minusQuantity(event) {
   const size = event.target.dataset.size;
   const id = event.target.dataset.id;
 
-  const findCurrentAddedProduct = itemsSavedInStorage.find(product => +product.size === +size && +product.id === +id);
+  const findCurrentAddedProduct = itemsSavedInStorage.filter(product => +product.size === +size && +product.id === +id);
 
   if (findCurrentAddedProduct.quantity === 1) {
     return;
   }
-
-  findCurrentAddedProduct.quantity--;
-
-  saveToStorage(productKey, itemsSavedInStorage)
+  for (let i = 0; i < findCurrentAddedProduct.length; i++) {
+    findCurrentAddedProduct[i].quantity--;
+    saveToStorage(productKey, findCurrentAddedProduct)
+  }
 
   cartItemContainer.innerHTML = "";
   cartTotalItemContainer.innerHTML = "";
