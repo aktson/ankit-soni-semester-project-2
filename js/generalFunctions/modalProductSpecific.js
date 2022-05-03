@@ -12,8 +12,8 @@ export function renderModal(image, title, size, price) {
                           </div>
                           <p class="ms-auto">NOK ${price}</p>
                         </div>  
-                        <button type="button" class="btn btn-outline-primary btn-sm me-2" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
-                        <a href = "cart.html" class="btn btn-primary btn-sm"> Proceed to cart</a >`
+                        <button type="button" class="btn-continue-shopping" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
+                        <a href = "cart.html" class="btn-to-cart"> Proceed to cart</a >`
 
 }
 

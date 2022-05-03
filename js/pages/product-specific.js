@@ -1,13 +1,15 @@
 import { displayMessage } from "../generalFunctions/displayMessage.js";
-import { renderCartQuantity, renderMenu } from "../generalFunctions/renderMenu.js";
+import { renderMenu } from "../generalFunctions/renderMenu.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { baseUrl } from "../settings.js";
 import { getFromStorage, saveToStorage, productKey } from "../storage/storage.js";
 import { renderModal, showMessageWithModal } from "../generalFunctions/modalProductSpecific.js"
+import { renderCartQuantity } from "../generalFunctions/renderCartQuantity.js";
 
 
 scrollToTop();
 renderMenu();
+
 
 
 const itemsSavedInStorage = getFromStorage(productKey);
@@ -96,6 +98,7 @@ function renderSpecificPropduct(result) {
   const deleteBtn = document.querySelector(".delete-btn");
   deleteBtn.addEventListener("click", deleteFromCart);
 
+
 }
 
 
@@ -144,6 +147,8 @@ function addToCart(event) {
 
       showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Added to cart");
       renderModal(image, title, size, price)
+      renderCartQuantity();
+
     }
 
     //check if size matches if user adds same product again
@@ -161,6 +166,8 @@ function addToCart(event) {
         showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Added to cart");
 
         saveToStorage(productKey, currentAddedProduct);
+        renderCartQuantity();
+
 
       }
 
@@ -171,12 +178,13 @@ function addToCart(event) {
         saveToStorage(productKey, currentAddedProduct)
 
         showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i> Quantity updated in shopping cart")
-
+        renderCartQuantity();
         const modalBody = document.querySelector(".modal-body");
         modalBody.innerHTML = "";
 
         modalBody.innerHTML = `<button type="button" class=" btn-continue-shopping" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
                                <a href = "cart.html" class="btn-to-cart"> Proceed to cart</a >`;
+
 
       }
 
@@ -208,4 +216,3 @@ function deleteFromCart(event) {
   }
 
 }
-

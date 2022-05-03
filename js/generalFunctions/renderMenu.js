@@ -1,11 +1,12 @@
-import { getFromStorage, getUser, productKey, saveToStorage, tokenKey, userKey } from "../storage/storage.js";
+import { getFromStorage, getUser, productKey, tokenKey, userKey } from "../storage/storage.js";
+import { renderCartQuantity } from "../generalFunctions/renderCartQuantity.js";
 
 
 
-const itemInStorage = getFromStorage(productKey);
+const itemsSavedInStorage = getFromStorage(productKey);
 
 
-console.log(itemInStorage)
+console.log(itemsSavedInStorage)
 
 
 const username = getUser();
@@ -60,30 +61,26 @@ export function renderMenu() {
         })
 
     }
-
     renderCartQuantity();
-
 }
 
 
+// export function renderCartQuantity() {
+//     let quantity = 0;
 
+//     const cartItems = document.querySelector(".cart-quantity");
+//     cartItems.innerHTML = "";
 
-export function renderCartQuantity() {
-    let quantity = 0;
+//     cartItems.innerHTML = quantity;
 
-    const cartItems = document.querySelector(".cart-quantity");
-    cartItems.innerHTML = "";
+//     for (let i = 0; i < itemsSavedInStorage.length; i++) {
 
-    cartItems.innerHTML = quantity;
+//         quantity += itemsSavedInStorage[i].quantity;
 
-    for (let i = 0; i < itemInStorage.length; i++) {
+//         cartItems.innerHTML = quantity;
 
-        quantity += itemInStorage[i].quantity;
-
-        cartItems.innerHTML = quantity;
-
-    }
-    if (quantity === 0) {
-        cartItems.classList.add("visually-hidden");
-    }
-}
+//     }
+//     if (quantity === 0) {
+//         cartItems.classList.add("visually-hidden");
+//     }
+// }

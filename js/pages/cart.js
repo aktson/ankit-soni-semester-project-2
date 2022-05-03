@@ -3,6 +3,8 @@ import { formatPrice } from "../generalFunctions/formatPrice.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { getFromStorage, saveToStorage, productKey } from "../storage/storage.js";
 import { renderMenu } from "../generalFunctions/renderMenu.js";
+import { renderCartQuantity } from "../generalFunctions/renderCartQuantity.js";
+
 
 renderMenu();
 scrollToTop();
@@ -64,7 +66,24 @@ function renderCartItems(itemsToRender) {
     total += parseFloat(item.price) * parseFloat(item.quantity);
     totalPriceContainer.innerHTML = `NOK ${formatPrice(total)} `;
 
+    let quantity = 0;
+
+    const cartItems = document.querySelector(".cart-quantity");
+    cartItems.innerHTML = "";
+
+    cartItems.innerHTML = quantity;
+
+    for (let i = 0; i < itemsSavedInStorage.length; i++) {
+      quantity += itemsSavedInStorage[i].quantity;
+      cartItems.innerHTML = quantity;
+    }
+    if (quantity === 0) {
+      cartItems.classList.add("visually-hidden");
+    }
   })
+
+
+
   ///////////////////// end of foreach itemstorender loop//////////////////////////////////////
 
   const deleteItemBtns = document.querySelectorAll(".delete-btn")
@@ -175,3 +194,4 @@ function minusQuantity(event) {
 
 }
 ///////////////////////// end of minus quantity event//////////////////////////////////////
+
