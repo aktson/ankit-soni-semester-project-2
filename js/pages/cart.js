@@ -44,12 +44,12 @@ function renderCartItems(itemsToRender) {
                                         </div>
                                       </a>
                                       <div class="d-flex gap-1">
-                                        <i class="fa-solid fa-circle-minus" id="minus-btn" data-size="${item.size}"></i>  
+                                        <i class="fa-solid fa-circle-minus" id="minus-btn" data-size="${item.size}" data-id=${item.id}></i>  
                                         <p class="cart-price lead">${item.quantity}</p>
-                                        <i class="fa-solid fa-circle-plus" id="plus-btn" data-size="${item.size}"></i>
+                                        <i class="fa-solid fa-circle-plus" id="plus-btn" data-size="${item.size}" data-id=${item.id}></i>
                                       </div>
                                       <p class="ms-auto">NOK ${price} </p>
-                                      <i class="fa-solid fa-trash-can delete-btn" data-size="${item.size}"></i>
+                                      <i class="fa-solid fa-trash-can delete-btn" data-size="${item.size}" data-id=${item.id}></i>
                                     </div>`
 
     cartTotalItemContainer.innerHTML += `<div class="row">
@@ -95,10 +95,9 @@ function renderCartItems(itemsToRender) {
       if (doDelete) {
 
         const size = event.target.dataset.size;
+        const id = event.target.dataset.id;
 
-        const filteritemsSavedInStorage = itemsToRender.filter(function (item) {
-          return parseInt(item.size) !== parseInt(size);
-        });
+        const filteritemsSavedInStorage = itemsToRender.filter(product => !(+product.size === +size && +product.id === +id))
 
         saveToStorage(productKey, filteritemsSavedInStorage);
 
@@ -112,7 +111,6 @@ function renderCartItems(itemsToRender) {
         if (newSavedItems.length === 0) {
           displayMessage("light", "Your cart is empty", ".cart-wrapper");
         }
-
       }
     }
     ///////////////////// end of delete function//////////////////////////////////////
@@ -128,24 +126,22 @@ function plusQuantity(event) {
   const cartTotalItemContainer = document.querySelector(".cart-total");
 
   const size = event.target.dataset.size;
+  const id = event.target.dataset.id;
 
-  const findCurrentAddedProduct = itemsSavedInStorage.find(function (product) {
-    return parseInt(product.size) === parseInt(size);
-  })
+  const findCurrentAddedProduct = itemsSavedInStorage.find(product => +product.size === +size && +product.id === +id);
 
-  if (findCurrentAddedProduct) {
-    findCurrentAddedProduct.quantity++;
+  findCurrentAddedProduct.quantity++;
 
-    saveToStorage(productKey, itemsSavedInStorage)
+  saveToStorage(productKey, itemsSavedInStorage)
 
-    cartItemContainer.innerHTML = "";
-    cartTotalItemContainer.innerHTML = "";
+  cartItemContainer.innerHTML = "";
+  cartTotalItemContainer.innerHTML = "";
 
-    const newSavedItems = getFromStorage(productKey)
+  const newSavedItems = getFromStorage(productKey)
 
-    renderCartItems(newSavedItems);
+  renderCartItems(newSavedItems);
 
-  }
+
 
 }
 ///////////////////// end of pluss qunatity event//////////////////////////////////////
@@ -158,10 +154,9 @@ function minusQuantity(event) {
   const cartTotalItemContainer = document.querySelector(".cart-total");
 
   const size = event.target.dataset.size;
+  const id = event.target.dataset.id;
 
-  const findCurrentAddedProduct = itemsSavedInStorage.find(function (product) {
-    return parseInt(product.size) === parseInt(size);
-  })
+  const findCurrentAddedProduct = itemsSavedInStorage.find(product => +product.size === +size && +product.id === +id);
 
   if (findCurrentAddedProduct.quantity === 1) {
     return;

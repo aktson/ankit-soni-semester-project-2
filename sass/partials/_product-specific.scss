@@ -77,4 +77,11 @@
 	p {
 		margin-bottom: 0;
 	}
+
+	.btn-continue-shopping {
+		@extend .btn, .btn-outline-primary, .btn-sm, .me-2;
+	}
+	.btn-to-cart {
+		@extend .btn, .btn-primary, .btn-sm;
+	}
 }

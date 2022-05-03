@@ -33,6 +33,9 @@
 			height: 40vh;
 		}
 	}
+	.loader {
+		@extend .d-flex, .inner-spacer-top;
+	}
 }
 
 // section featured products

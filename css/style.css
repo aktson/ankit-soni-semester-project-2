@@ -2663,7 +2663,7 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 
-.btn-check[disabled] + .btn, form .btn-check[disabled] + .form-btn, .btn-check[disabled] + .featured-products__link, .btn-check[disabled] + .delete-product, .btn-check[disabled] + .edit-product, .product-specific .btn-check[disabled] + .add-to-cart, .product-specific .btn-check[disabled] + .delete-btn, .btn-check[disabled] + .back-button, .btn-check:disabled + .btn, form .btn-check:disabled + .form-btn, .btn-check:disabled + .featured-products__link, .btn-check:disabled + .delete-product, .btn-check:disabled + .edit-product, .product-specific .btn-check:disabled + .add-to-cart, .product-specific .btn-check:disabled + .delete-btn, .btn-check:disabled + .back-button {
+.btn-check[disabled] + .btn, form .btn-check[disabled] + .form-btn, .btn-check[disabled] + .featured-products__link, .btn-check[disabled] + .delete-product, .btn-check[disabled] + .edit-product, .product-specific .btn-check[disabled] + .add-to-cart, .product-specific .btn-check[disabled] + .delete-btn, .modal-body-content .btn-check[disabled] + .btn-continue-shopping, .modal-body-content .btn-check[disabled] + .btn-to-cart, .btn-check[disabled] + .back-button, .btn-check:disabled + .btn, form .btn-check:disabled + .form-btn, .btn-check:disabled + .featured-products__link, .btn-check:disabled + .delete-product, .btn-check:disabled + .edit-product, .product-specific .btn-check:disabled + .add-to-cart, .product-specific .btn-check:disabled + .delete-btn, .modal-body-content .btn-check:disabled + .btn-continue-shopping, .modal-body-content .btn-check:disabled + .btn-to-cart, .btn-check:disabled + .back-button {
   pointer-events: none;
   -webkit-filter: none;
           filter: none;
@@ -2916,12 +2916,12 @@ form .product-specific .textarea-container > .size ~ label,
   z-index: 3;
 }
 
-.input-group .btn, .input-group form .form-btn, form .input-group .form-btn, .input-group .featured-products__link, .input-group .delete-product, .input-group .edit-product, .input-group .product-specific .add-to-cart, .product-specific .input-group .add-to-cart, .input-group .product-specific .delete-btn, .product-specific .input-group .delete-btn, .input-group .back-button {
+.input-group .btn, .input-group form .form-btn, form .input-group .form-btn, .input-group .featured-products__link, .input-group .delete-product, .input-group .edit-product, .input-group .product-specific .add-to-cart, .product-specific .input-group .add-to-cart, .input-group .product-specific .delete-btn, .product-specific .input-group .delete-btn, .input-group .modal-body-content .btn-continue-shopping, .modal-body-content .input-group .btn-continue-shopping, .input-group .modal-body-content .btn-to-cart, .modal-body-content .input-group .btn-to-cart, .input-group .back-button {
   position: relative;
   z-index: 2;
 }
 
-.input-group .btn:focus, .input-group form .form-btn:focus, form .input-group .form-btn:focus, .input-group .featured-products__link:focus, .input-group .delete-product:focus, .input-group .edit-product:focus, .input-group .product-specific .add-to-cart:focus, .product-specific .input-group .add-to-cart:focus, .input-group .product-specific .delete-btn:focus, .product-specific .input-group .delete-btn:focus, .input-group .back-button:focus {
+.input-group .btn:focus, .input-group form .form-btn:focus, form .input-group .form-btn:focus, .input-group .featured-products__link:focus, .input-group .delete-product:focus, .input-group .edit-product:focus, .input-group .product-specific .add-to-cart:focus, .product-specific .input-group .add-to-cart:focus, .input-group .product-specific .delete-btn:focus, .product-specific .input-group .delete-btn:focus, .input-group .modal-body-content .btn-continue-shopping:focus, .modal-body-content .input-group .btn-continue-shopping:focus, .input-group .modal-body-content .btn-to-cart:focus, .modal-body-content .input-group .btn-to-cart:focus, .input-group .back-button:focus {
   z-index: 3;
 }
 
@@ -2955,6 +2955,8 @@ form .input-group-lg > .form-btn,
 .input-group-lg > .edit-product,
 .product-specific .input-group-lg > .add-to-cart,
 .product-specific .input-group-lg > .delete-btn,
+.modal-body-content .input-group-lg > .btn-continue-shopping,
+.modal-body-content .input-group-lg > .btn-to-cart,
 .input-group-lg > .back-button {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
@@ -2972,6 +2974,8 @@ form .input-group-sm > .form-btn,
 .input-group-sm > .edit-product,
 .product-specific .input-group-sm > .add-to-cart,
 .product-specific .input-group-sm > .delete-btn,
+.modal-body-content .input-group-sm > .btn-continue-shopping,
+.modal-body-content .input-group-sm > .btn-to-cart,
 .input-group-sm > .back-button {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
@@ -3206,7 +3210,7 @@ form .input-group-sm > .form-btn,
   z-index: 3;
 }
 
-.btn, form .form-btn, .featured-products__link, .delete-product, .edit-product, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
+.btn, form .form-btn, .featured-products__link, .delete-product, .edit-product, .product-specific .add-to-cart, .product-specific .delete-btn, .modal-body-content .btn-continue-shopping, .modal-body-content .btn-to-cart, .back-button {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -3231,23 +3235,23 @@ form .input-group-sm > .form-btn,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn, form .form-btn, .featured-products__link, .delete-product, .edit-product, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
+  .btn, form .form-btn, .featured-products__link, .delete-product, .edit-product, .product-specific .add-to-cart, .product-specific .delete-btn, .modal-body-content .btn-continue-shopping, .modal-body-content .btn-to-cart, .back-button {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.btn:hover, form .form-btn:hover, .featured-products__link:hover, .delete-product:hover, .edit-product:hover, .product-specific .add-to-cart:hover, .product-specific .delete-btn:hover, .back-button:hover {
+.btn:hover, form .form-btn:hover, .featured-products__link:hover, .delete-product:hover, .edit-product:hover, .product-specific .add-to-cart:hover, .product-specific .delete-btn:hover, .modal-body-content .btn-continue-shopping:hover, .modal-body-content .btn-to-cart:hover, .back-button:hover {
   color: #212529;
 }
 
-.btn-check:focus + .btn, form .btn-check:focus + .form-btn, .btn-check:focus + .featured-products__link, .btn-check:focus + .delete-product, .btn-check:focus + .edit-product, .product-specific .btn-check:focus + .add-to-cart, .product-specific .btn-check:focus + .delete-btn, .btn-check:focus + .back-button, .btn:focus, form .form-btn:focus, .featured-products__link:focus, .delete-product:focus, .edit-product:focus, .product-specific .add-to-cart:focus, .product-specific .delete-btn:focus, .back-button:focus {
+.btn-check:focus + .btn, form .btn-check:focus + .form-btn, .btn-check:focus + .featured-products__link, .btn-check:focus + .delete-product, .btn-check:focus + .edit-product, .product-specific .btn-check:focus + .add-to-cart, .product-specific .btn-check:focus + .delete-btn, .modal-body-content .btn-check:focus + .btn-continue-shopping, .modal-body-content .btn-check:focus + .btn-to-cart, .btn-check:focus + .back-button, .btn:focus, form .form-btn:focus, .featured-products__link:focus, .delete-product:focus, .edit-product:focus, .product-specific .add-to-cart:focus, .product-specific .delete-btn:focus, .modal-body-content .btn-continue-shopping:focus, .modal-body-content .btn-to-cart:focus, .back-button:focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.25);
 }
 
-.btn:disabled, form .form-btn:disabled, .featured-products__link:disabled, .delete-product:disabled, .edit-product:disabled, .product-specific .add-to-cart:disabled, .product-specific .delete-btn:disabled, .back-button:disabled, .btn.disabled, form .disabled.form-btn, .disabled.featured-products__link, .disabled.delete-product, .disabled.edit-product, .product-specific .disabled.add-to-cart, .product-specific .disabled.delete-btn, .disabled.back-button,
+.btn:disabled, form .form-btn:disabled, .featured-products__link:disabled, .delete-product:disabled, .edit-product:disabled, .product-specific .add-to-cart:disabled, .product-specific .delete-btn:disabled, .modal-body-content .btn-continue-shopping:disabled, .modal-body-content .btn-to-cart:disabled, .back-button:disabled, .btn.disabled, form .disabled.form-btn, .disabled.featured-products__link, .disabled.delete-product, .disabled.edit-product, .product-specific .disabled.add-to-cart, .product-specific .disabled.delete-btn, .modal-body-content .disabled.btn-continue-shopping, .modal-body-content .disabled.btn-to-cart, .disabled.back-button,
 fieldset:disabled .btn,
 fieldset:disabled form .form-btn,
 form fieldset:disabled .form-btn,
@@ -3258,24 +3262,28 @@ fieldset:disabled .product-specific .add-to-cart,
 .product-specific fieldset:disabled .add-to-cart,
 fieldset:disabled .product-specific .delete-btn,
 .product-specific fieldset:disabled .delete-btn,
+fieldset:disabled .modal-body-content .btn-continue-shopping,
+.modal-body-content fieldset:disabled .btn-continue-shopping,
+fieldset:disabled .modal-body-content .btn-to-cart,
+.modal-body-content fieldset:disabled .btn-to-cart,
 fieldset:disabled .back-button {
   pointer-events: none;
   opacity: 0.65;
 }
 
-.btn-primary, form .form-btn {
+.btn-primary, form .form-btn, .modal-body-content .btn-to-cart {
   color: #212426;
   background-color: #7273ff;
   border-color: #7273ff;
 }
 
-.btn-primary:hover, form .form-btn:hover {
+.btn-primary:hover, form .form-btn:hover, .modal-body-content .btn-to-cart:hover {
   color: #212426;
   background-color: #8788ff;
   border-color: #8081ff;
 }
 
-.btn-check:focus + .btn-primary, form .btn-check:focus + .form-btn, .btn-primary:focus, form .form-btn:focus {
+.btn-check:focus + .btn-primary, form .btn-check:focus + .form-btn, .modal-body-content .btn-check:focus + .btn-to-cart, .btn-primary:focus, form .form-btn:focus, .modal-body-content .btn-to-cart:focus {
   color: #212426;
   background-color: #8788ff;
   border-color: #8081ff;
@@ -3283,26 +3291,30 @@ fieldset:disabled .back-button {
           box-shadow: 0 0 0 0.25rem rgba(102, 103, 222, 0.5);
 }
 
-.btn-check:checked + .btn-primary, form .btn-check:checked + .form-btn,
+.btn-check:checked + .btn-primary, form .btn-check:checked + .form-btn, .modal-body-content .btn-check:checked + .btn-to-cart,
 .btn-check:active + .btn-primary,
-form .btn-check:active + .form-btn, .btn-primary:active, form .form-btn:active, .btn-primary.active, form .active.form-btn,
+form .btn-check:active + .form-btn,
+.modal-body-content .btn-check:active + .btn-to-cart, .btn-primary:active, form .form-btn:active, .modal-body-content .btn-to-cart:active, .btn-primary.active, form .active.form-btn, .modal-body-content .active.btn-to-cart,
 .show > .btn-primary.dropdown-toggle,
-form .show > .dropdown-toggle.form-btn {
+form .show > .dropdown-toggle.form-btn,
+.modal-body-content .show > .dropdown-toggle.btn-to-cart {
   color: #212426;
   background-color: #8e8fff;
   border-color: #8081ff;
 }
 
-.btn-check:checked + .btn-primary:focus, form .btn-check:checked + .form-btn:focus,
+.btn-check:checked + .btn-primary:focus, form .btn-check:checked + .form-btn:focus, .modal-body-content .btn-check:checked + .btn-to-cart:focus,
 .btn-check:active + .btn-primary:focus,
-form .btn-check:active + .form-btn:focus, .btn-primary:active:focus, form .form-btn:active:focus, .btn-primary.active:focus, form .active.form-btn:focus,
+form .btn-check:active + .form-btn:focus,
+.modal-body-content .btn-check:active + .btn-to-cart:focus, .btn-primary:active:focus, form .form-btn:active:focus, .modal-body-content .btn-to-cart:active:focus, .btn-primary.active:focus, form .active.form-btn:focus, .modal-body-content .active.btn-to-cart:focus,
 .show > .btn-primary.dropdown-toggle:focus,
-form .show > .dropdown-toggle.form-btn:focus {
+form .show > .dropdown-toggle.form-btn:focus,
+.modal-body-content .show > .dropdown-toggle.btn-to-cart:focus {
   -webkit-box-shadow: 0 0 0 0.25rem rgba(102, 103, 222, 0.5);
           box-shadow: 0 0 0 0.25rem rgba(102, 103, 222, 0.5);
 }
 
-.btn-primary:disabled, form .form-btn:disabled, .btn-primary.disabled, form .disabled.form-btn {
+.btn-primary:disabled, form .form-btn:disabled, .modal-body-content .btn-to-cart:disabled, .btn-primary.disabled, form .disabled.form-btn, .modal-body-content .disabled.btn-to-cart {
   color: #212426;
   background-color: #7273ff;
   border-color: #7273ff;
@@ -3603,42 +3615,44 @@ form .show > .dropdown-toggle.form-btn:focus {
   border-color: #3c3f40;
 }
 
-.btn-outline-primary, .featured-products__link, .product-specific .add-to-cart, .back-button {
+.btn-outline-primary, .featured-products__link, .product-specific .add-to-cart, .modal-body-content .btn-continue-shopping, .back-button {
   color: #7273ff;
   border-color: #7273ff;
 }
 
-.btn-outline-primary:hover, .featured-products__link:hover, .product-specific .add-to-cart:hover, .back-button:hover {
+.btn-outline-primary:hover, .featured-products__link:hover, .product-specific .add-to-cart:hover, .modal-body-content .btn-continue-shopping:hover, .back-button:hover {
   color: #212426;
   background-color: #7273ff;
   border-color: #7273ff;
 }
 
-.btn-check:focus + .btn-outline-primary, .btn-check:focus + .featured-products__link, .product-specific .btn-check:focus + .add-to-cart, .btn-check:focus + .back-button, .btn-outline-primary:focus, .featured-products__link:focus, .product-specific .add-to-cart:focus, .back-button:focus {
+.btn-check:focus + .btn-outline-primary, .btn-check:focus + .featured-products__link, .product-specific .btn-check:focus + .add-to-cart, .modal-body-content .btn-check:focus + .btn-continue-shopping, .btn-check:focus + .back-button, .btn-outline-primary:focus, .featured-products__link:focus, .product-specific .add-to-cart:focus, .modal-body-content .btn-continue-shopping:focus, .back-button:focus {
   -webkit-box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.5);
           box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.5);
 }
 
-.btn-check:checked + .btn-outline-primary, .btn-check:checked + .featured-products__link, .product-specific .btn-check:checked + .add-to-cart, .btn-check:checked + .back-button,
+.btn-check:checked + .btn-outline-primary, .btn-check:checked + .featured-products__link, .product-specific .btn-check:checked + .add-to-cart, .modal-body-content .btn-check:checked + .btn-continue-shopping, .btn-check:checked + .back-button,
 .btn-check:active + .btn-outline-primary,
 .btn-check:active + .featured-products__link,
 .product-specific .btn-check:active + .add-to-cart,
-.btn-check:active + .back-button, .btn-outline-primary:active, .featured-products__link:active, .product-specific .add-to-cart:active, .back-button:active, .btn-outline-primary.active, .active.featured-products__link, .product-specific .active.add-to-cart, .active.back-button, .btn-outline-primary.dropdown-toggle.show, .dropdown-toggle.show.featured-products__link, .product-specific .dropdown-toggle.show.add-to-cart, .dropdown-toggle.show.back-button {
+.modal-body-content .btn-check:active + .btn-continue-shopping,
+.btn-check:active + .back-button, .btn-outline-primary:active, .featured-products__link:active, .product-specific .add-to-cart:active, .modal-body-content .btn-continue-shopping:active, .back-button:active, .btn-outline-primary.active, .active.featured-products__link, .product-specific .active.add-to-cart, .modal-body-content .active.btn-continue-shopping, .active.back-button, .btn-outline-primary.dropdown-toggle.show, .dropdown-toggle.show.featured-products__link, .product-specific .dropdown-toggle.show.add-to-cart, .modal-body-content .dropdown-toggle.show.btn-continue-shopping, .dropdown-toggle.show.back-button {
   color: #212426;
   background-color: #7273ff;
   border-color: #7273ff;
 }
 
-.btn-check:checked + .btn-outline-primary:focus, .btn-check:checked + .featured-products__link:focus, .product-specific .btn-check:checked + .add-to-cart:focus, .btn-check:checked + .back-button:focus,
+.btn-check:checked + .btn-outline-primary:focus, .btn-check:checked + .featured-products__link:focus, .product-specific .btn-check:checked + .add-to-cart:focus, .modal-body-content .btn-check:checked + .btn-continue-shopping:focus, .btn-check:checked + .back-button:focus,
 .btn-check:active + .btn-outline-primary:focus,
 .btn-check:active + .featured-products__link:focus,
 .product-specific .btn-check:active + .add-to-cart:focus,
-.btn-check:active + .back-button:focus, .btn-outline-primary:active:focus, .featured-products__link:active:focus, .product-specific .add-to-cart:active:focus, .back-button:active:focus, .btn-outline-primary.active:focus, .active.featured-products__link:focus, .product-specific .active.add-to-cart:focus, .active.back-button:focus, .btn-outline-primary.dropdown-toggle.show:focus, .dropdown-toggle.show.featured-products__link:focus, .product-specific .dropdown-toggle.show.add-to-cart:focus, .dropdown-toggle.show.back-button:focus {
+.modal-body-content .btn-check:active + .btn-continue-shopping:focus,
+.btn-check:active + .back-button:focus, .btn-outline-primary:active:focus, .featured-products__link:active:focus, .product-specific .add-to-cart:active:focus, .modal-body-content .btn-continue-shopping:active:focus, .back-button:active:focus, .btn-outline-primary.active:focus, .active.featured-products__link:focus, .product-specific .active.add-to-cart:focus, .modal-body-content .active.btn-continue-shopping:focus, .active.back-button:focus, .btn-outline-primary.dropdown-toggle.show:focus, .dropdown-toggle.show.featured-products__link:focus, .product-specific .dropdown-toggle.show.add-to-cart:focus, .modal-body-content .dropdown-toggle.show.btn-continue-shopping:focus, .dropdown-toggle.show.back-button:focus {
   -webkit-box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.5);
           box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.5);
 }
 
-.btn-outline-primary:disabled, .featured-products__link:disabled, .product-specific .add-to-cart:disabled, .back-button:disabled, .btn-outline-primary.disabled, .disabled.featured-products__link, .product-specific .disabled.add-to-cart, .disabled.back-button {
+.btn-outline-primary:disabled, .featured-products__link:disabled, .product-specific .add-to-cart:disabled, .modal-body-content .btn-continue-shopping:disabled, .back-button:disabled, .btn-outline-primary.disabled, .disabled.featured-products__link, .product-specific .disabled.add-to-cart, .modal-body-content .disabled.btn-continue-shopping, .disabled.back-button {
   color: #7273ff;
   background-color: transparent;
 }
@@ -3897,13 +3911,13 @@ form .show > .dropdown-toggle.form-btn:focus {
   color: #6c757d;
 }
 
-.btn-lg, .btn-group-lg > .btn, form .btn-group-lg > .form-btn, .btn-group-lg > .featured-products__link, .btn-group-lg > .delete-product, .btn-group-lg > .edit-product, .btn-group-lg > .back-button, .product-specific .add-to-cart, .product-specific .delete-btn {
+.btn-lg, .btn-group-lg > .btn, form .btn-group-lg > .form-btn, .btn-group-lg > .featured-products__link, .btn-group-lg > .delete-product, .btn-group-lg > .edit-product, .modal-body-content .btn-group-lg > .btn-continue-shopping, .modal-body-content .btn-group-lg > .btn-to-cart, .btn-group-lg > .back-button, .product-specific .add-to-cart, .product-specific .delete-btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.3rem;
 }
 
-.btn-sm, .btn-group-sm > .btn, form .btn-group-sm > .form-btn, .btn-group-sm > .featured-products__link, .btn-group-sm > .delete-product, .btn-group-sm > .edit-product, .product-specific .btn-group-sm > .add-to-cart, .product-specific .btn-group-sm > .delete-btn, .btn-group-sm > .back-button, .delete-product, .edit-product {
+.btn-sm, .btn-group-sm > .btn, form .btn-group-sm > .form-btn, .btn-group-sm > .featured-products__link, .btn-group-sm > .delete-product, .btn-group-sm > .edit-product, .product-specific .btn-group-sm > .add-to-cart, .product-specific .btn-group-sm > .delete-btn, .btn-group-sm > .back-button, .delete-product, .edit-product, .modal-body-content .btn-continue-shopping, .modal-body-content .btn-to-cart {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem;
@@ -4297,7 +4311,7 @@ form .show > .dropdown-toggle.form-btn:focus {
   vertical-align: middle;
 }
 
-.btn-group > .btn, form .btn-group > .form-btn, .btn-group > .featured-products__link, .btn-group > .delete-product, .btn-group > .edit-product, .product-specific .btn-group > .add-to-cart, .product-specific .btn-group > .delete-btn, .btn-group > .back-button,
+.btn-group > .btn, form .btn-group > .form-btn, .btn-group > .featured-products__link, .btn-group > .delete-product, .btn-group > .edit-product, .product-specific .btn-group > .add-to-cart, .product-specific .btn-group > .delete-btn, .modal-body-content .btn-group > .btn-continue-shopping, .modal-body-content .btn-group > .btn-to-cart, .btn-group > .back-button,
 .btn-group-vertical > .btn,
 form .btn-group-vertical > .form-btn,
 .btn-group-vertical > .featured-products__link,
@@ -4305,6 +4319,8 @@ form .btn-group-vertical > .form-btn,
 .btn-group-vertical > .edit-product,
 .product-specific .btn-group-vertical > .add-to-cart,
 .product-specific .btn-group-vertical > .delete-btn,
+.modal-body-content .btn-group-vertical > .btn-continue-shopping,
+.modal-body-content .btn-group-vertical > .btn-to-cart,
 .btn-group-vertical > .back-button {
   position: relative;
   -webkit-box-flex: 1;
@@ -4312,7 +4328,7 @@ form .btn-group-vertical > .form-btn,
           flex: 1 1 auto;
 }
 
-.btn-group > .btn-check:checked + .btn, form .btn-group > .btn-check:checked + .form-btn, .btn-group > .btn-check:checked + .featured-products__link, .btn-group > .btn-check:checked + .delete-product, .btn-group > .btn-check:checked + .edit-product, .product-specific .btn-group > .btn-check:checked + .add-to-cart, .product-specific .btn-group > .btn-check:checked + .delete-btn, .btn-group > .btn-check:checked + .back-button,
+.btn-group > .btn-check:checked + .btn, form .btn-group > .btn-check:checked + .form-btn, .btn-group > .btn-check:checked + .featured-products__link, .btn-group > .btn-check:checked + .delete-product, .btn-group > .btn-check:checked + .edit-product, .product-specific .btn-group > .btn-check:checked + .add-to-cart, .product-specific .btn-group > .btn-check:checked + .delete-btn, .modal-body-content .btn-group > .btn-check:checked + .btn-continue-shopping, .modal-body-content .btn-group > .btn-check:checked + .btn-to-cart, .btn-group > .btn-check:checked + .back-button,
 .btn-group > .btn-check:focus + .btn,
 form .btn-group > .btn-check:focus + .form-btn,
 .btn-group > .btn-check:focus + .featured-products__link,
@@ -4320,6 +4336,8 @@ form .btn-group > .btn-check:focus + .form-btn,
 .btn-group > .btn-check:focus + .edit-product,
 .product-specific .btn-group > .btn-check:focus + .add-to-cart,
 .product-specific .btn-group > .btn-check:focus + .delete-btn,
+.modal-body-content .btn-group > .btn-check:focus + .btn-continue-shopping,
+.modal-body-content .btn-group > .btn-check:focus + .btn-to-cart,
 .btn-group > .btn-check:focus + .back-button,
 .btn-group > .btn:hover,
 form .btn-group > .form-btn:hover,
@@ -4328,6 +4346,8 @@ form .btn-group > .form-btn:hover,
 .btn-group > .edit-product:hover,
 .product-specific .btn-group > .add-to-cart:hover,
 .product-specific .btn-group > .delete-btn:hover,
+.modal-body-content .btn-group > .btn-continue-shopping:hover,
+.modal-body-content .btn-group > .btn-to-cart:hover,
 .btn-group > .back-button:hover,
 .btn-group > .btn:focus,
 form .btn-group > .form-btn:focus,
@@ -4336,6 +4356,8 @@ form .btn-group > .form-btn:focus,
 .btn-group > .edit-product:focus,
 .product-specific .btn-group > .add-to-cart:focus,
 .product-specific .btn-group > .delete-btn:focus,
+.modal-body-content .btn-group > .btn-continue-shopping:focus,
+.modal-body-content .btn-group > .btn-to-cart:focus,
 .btn-group > .back-button:focus,
 .btn-group > .btn:active,
 form .btn-group > .form-btn:active,
@@ -4344,6 +4366,8 @@ form .btn-group > .form-btn:active,
 .btn-group > .edit-product:active,
 .product-specific .btn-group > .add-to-cart:active,
 .product-specific .btn-group > .delete-btn:active,
+.modal-body-content .btn-group > .btn-continue-shopping:active,
+.modal-body-content .btn-group > .btn-to-cart:active,
 .btn-group > .back-button:active,
 .btn-group > .btn.active,
 form .btn-group > .active.form-btn,
@@ -4352,6 +4376,8 @@ form .btn-group > .active.form-btn,
 .btn-group > .active.edit-product,
 .product-specific .btn-group > .active.add-to-cart,
 .product-specific .btn-group > .active.delete-btn,
+.modal-body-content .btn-group > .active.btn-continue-shopping,
+.modal-body-content .btn-group > .active.btn-to-cart,
 .btn-group > .active.back-button,
 .btn-group-vertical > .btn-check:checked + .btn,
 form .btn-group-vertical > .btn-check:checked + .form-btn,
@@ -4360,6 +4386,8 @@ form .btn-group-vertical > .btn-check:checked + .form-btn,
 .btn-group-vertical > .btn-check:checked + .edit-product,
 .product-specific .btn-group-vertical > .btn-check:checked + .add-to-cart,
 .product-specific .btn-group-vertical > .btn-check:checked + .delete-btn,
+.modal-body-content .btn-group-vertical > .btn-check:checked + .btn-continue-shopping,
+.modal-body-content .btn-group-vertical > .btn-check:checked + .btn-to-cart,
 .btn-group-vertical > .btn-check:checked + .back-button,
 .btn-group-vertical > .btn-check:focus + .btn,
 form .btn-group-vertical > .btn-check:focus + .form-btn,
@@ -4368,6 +4396,8 @@ form .btn-group-vertical > .btn-check:focus + .form-btn,
 .btn-group-vertical > .btn-check:focus + .edit-product,
 .product-specific .btn-group-vertical > .btn-check:focus + .add-to-cart,
 .product-specific .btn-group-vertical > .btn-check:focus + .delete-btn,
+.modal-body-content .btn-group-vertical > .btn-check:focus + .btn-continue-shopping,
+.modal-body-content .btn-group-vertical > .btn-check:focus + .btn-to-cart,
 .btn-group-vertical > .btn-check:focus + .back-button,
 .btn-group-vertical > .btn:hover,
 form .btn-group-vertical > .form-btn:hover,
@@ -4376,6 +4406,8 @@ form .btn-group-vertical > .form-btn:hover,
 .btn-group-vertical > .edit-product:hover,
 .product-specific .btn-group-vertical > .add-to-cart:hover,
 .product-specific .btn-group-vertical > .delete-btn:hover,
+.modal-body-content .btn-group-vertical > .btn-continue-shopping:hover,
+.modal-body-content .btn-group-vertical > .btn-to-cart:hover,
 .btn-group-vertical > .back-button:hover,
 .btn-group-vertical > .btn:focus,
 form .btn-group-vertical > .form-btn:focus,
@@ -4384,6 +4416,8 @@ form .btn-group-vertical > .form-btn:focus,
 .btn-group-vertical > .edit-product:focus,
 .product-specific .btn-group-vertical > .add-to-cart:focus,
 .product-specific .btn-group-vertical > .delete-btn:focus,
+.modal-body-content .btn-group-vertical > .btn-continue-shopping:focus,
+.modal-body-content .btn-group-vertical > .btn-to-cart:focus,
 .btn-group-vertical > .back-button:focus,
 .btn-group-vertical > .btn:active,
 form .btn-group-vertical > .form-btn:active,
@@ -4392,6 +4426,8 @@ form .btn-group-vertical > .form-btn:active,
 .btn-group-vertical > .edit-product:active,
 .product-specific .btn-group-vertical > .add-to-cart:active,
 .product-specific .btn-group-vertical > .delete-btn:active,
+.modal-body-content .btn-group-vertical > .btn-continue-shopping:active,
+.modal-body-content .btn-group-vertical > .btn-to-cart:active,
 .btn-group-vertical > .back-button:active,
 .btn-group-vertical > .btn.active,
 form .btn-group-vertical > .active.form-btn,
@@ -4400,6 +4436,8 @@ form .btn-group-vertical > .active.form-btn,
 .btn-group-vertical > .active.edit-product,
 .product-specific .btn-group-vertical > .active.add-to-cart,
 .product-specific .btn-group-vertical > .active.delete-btn,
+.modal-body-content .btn-group-vertical > .active.btn-continue-shopping,
+.modal-body-content .btn-group-vertical > .active.btn-to-cart,
 .btn-group-vertical > .active.back-button {
   z-index: 1;
 }
@@ -4419,12 +4457,12 @@ form .btn-group-vertical > .active.form-btn,
   width: auto;
 }
 
-.btn-group > .btn:not(:first-child), form .btn-group > .form-btn:not(:first-child), .btn-group > .featured-products__link:not(:first-child), .btn-group > .delete-product:not(:first-child), .btn-group > .edit-product:not(:first-child), .product-specific .btn-group > .add-to-cart:not(:first-child), .product-specific .btn-group > .delete-btn:not(:first-child), .btn-group > .back-button:not(:first-child),
+.btn-group > .btn:not(:first-child), form .btn-group > .form-btn:not(:first-child), .btn-group > .featured-products__link:not(:first-child), .btn-group > .delete-product:not(:first-child), .btn-group > .edit-product:not(:first-child), .product-specific .btn-group > .add-to-cart:not(:first-child), .product-specific .btn-group > .delete-btn:not(:first-child), .modal-body-content .btn-group > .btn-continue-shopping:not(:first-child), .modal-body-content .btn-group > .btn-to-cart:not(:first-child), .btn-group > .back-button:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), form .btn-group > .form-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .featured-products__link:not(:last-child):not(.dropdown-toggle), .btn-group > .delete-product:not(:last-child):not(.dropdown-toggle), .btn-group > .edit-product:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .delete-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-button:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), form .btn-group > .form-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .featured-products__link:not(:last-child):not(.dropdown-toggle), .btn-group > .delete-product:not(:last-child):not(.dropdown-toggle), .btn-group > .edit-product:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group > .delete-btn:not(:last-child):not(.dropdown-toggle), .modal-body-content .btn-group > .btn-continue-shopping:not(:last-child):not(.dropdown-toggle), .modal-body-content .btn-group > .btn-to-cart:not(:last-child):not(.dropdown-toggle), .btn-group > .back-button:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
 form .btn-group > .btn-group:not(:last-child) > .form-btn,
 .btn-group > .btn-group:not(:last-child) > .featured-products__link,
@@ -4432,12 +4470,14 @@ form .btn-group > .btn-group:not(:last-child) > .form-btn,
 .btn-group > .btn-group:not(:last-child) > .edit-product,
 .product-specific .btn-group > .btn-group:not(:last-child) > .add-to-cart,
 .product-specific .btn-group > .btn-group:not(:last-child) > .delete-btn,
+.modal-body-content .btn-group > .btn-group:not(:last-child) > .btn-continue-shopping,
+.modal-body-content .btn-group > .btn-group:not(:last-child) > .btn-to-cart,
 .btn-group > .btn-group:not(:last-child) > .back-button {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.btn-group > .btn:nth-child(n + 3), form .btn-group > .form-btn:nth-child(n + 3), .btn-group > .featured-products__link:nth-child(n + 3), .btn-group > .delete-product:nth-child(n + 3), .btn-group > .edit-product:nth-child(n + 3), .product-specific .btn-group > .add-to-cart:nth-child(n + 3), .product-specific .btn-group > .delete-btn:nth-child(n + 3), .btn-group > .back-button:nth-child(n + 3),
+.btn-group > .btn:nth-child(n + 3), form .btn-group > .form-btn:nth-child(n + 3), .btn-group > .featured-products__link:nth-child(n + 3), .btn-group > .delete-product:nth-child(n + 3), .btn-group > .edit-product:nth-child(n + 3), .product-specific .btn-group > .add-to-cart:nth-child(n + 3), .product-specific .btn-group > .delete-btn:nth-child(n + 3), .modal-body-content .btn-group > .btn-continue-shopping:nth-child(n + 3), .modal-body-content .btn-group > .btn-to-cart:nth-child(n + 3), .btn-group > .back-button:nth-child(n + 3),
 .btn-group > :not(.btn-check) + .btn,
 form .btn-group > :not(.btn-check) + .form-btn,
 .btn-group > :not(.btn-check) + .featured-products__link,
@@ -4445,6 +4485,8 @@ form .btn-group > :not(.btn-check) + .form-btn,
 .btn-group > :not(.btn-check) + .edit-product,
 .product-specific .btn-group > :not(.btn-check) + .add-to-cart,
 .product-specific .btn-group > :not(.btn-check) + .delete-btn,
+.modal-body-content .btn-group > :not(.btn-check) + .btn-continue-shopping,
+.modal-body-content .btn-group > :not(.btn-check) + .btn-to-cart,
 .btn-group > :not(.btn-check) + .back-button,
 .btn-group > .btn-group:not(:first-child) > .btn,
 form .btn-group > .btn-group:not(:first-child) > .form-btn,
@@ -4453,6 +4495,8 @@ form .btn-group > .btn-group:not(:first-child) > .form-btn,
 .btn-group > .btn-group:not(:first-child) > .edit-product,
 .product-specific .btn-group > .btn-group:not(:first-child) > .add-to-cart,
 .product-specific .btn-group > .btn-group:not(:first-child) > .delete-btn,
+.modal-body-content .btn-group > .btn-group:not(:first-child) > .btn-continue-shopping,
+.modal-body-content .btn-group > .btn-group:not(:first-child) > .btn-to-cart,
 .btn-group > .btn-group:not(:first-child) > .back-button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -4473,12 +4517,12 @@ form .btn-group > .btn-group:not(:first-child) > .form-btn,
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, form .btn-group-sm > .form-btn + .dropdown-toggle-split, .btn-group-sm > .featured-products__link + .dropdown-toggle-split, .btn-group-sm > .delete-product + .dropdown-toggle-split, .btn-group-sm > .edit-product + .dropdown-toggle-split, .product-specific .btn-group-sm > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-sm > .delete-btn + .dropdown-toggle-split, .btn-group-sm > .back-button + .dropdown-toggle-split, .delete-product + .dropdown-toggle-split, .edit-product + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, form .btn-group-sm > .form-btn + .dropdown-toggle-split, .btn-group-sm > .featured-products__link + .dropdown-toggle-split, .btn-group-sm > .delete-product + .dropdown-toggle-split, .btn-group-sm > .edit-product + .dropdown-toggle-split, .product-specific .btn-group-sm > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-sm > .delete-btn + .dropdown-toggle-split, .modal-body-content .btn-group-sm > .btn-continue-shopping + .dropdown-toggle-split, .modal-body-content .btn-group-sm > .btn-to-cart + .dropdown-toggle-split, .btn-group-sm > .back-button + .dropdown-toggle-split, .delete-product + .dropdown-toggle-split, .edit-product + .dropdown-toggle-split, .modal-body-content .btn-continue-shopping + .dropdown-toggle-split, .modal-body-content .btn-to-cart + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, form .btn-group-lg > .form-btn + .dropdown-toggle-split, .btn-group-lg > .featured-products__link + .dropdown-toggle-split, .btn-group-lg > .delete-product + .dropdown-toggle-split, .btn-group-lg > .edit-product + .dropdown-toggle-split, .product-specific .btn-group-lg > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-lg > .delete-btn + .dropdown-toggle-split, .btn-group-lg > .back-button + .dropdown-toggle-split, .product-specific .add-to-cart + .dropdown-toggle-split, .product-specific .delete-btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, form .btn-group-lg > .form-btn + .dropdown-toggle-split, .btn-group-lg > .featured-products__link + .dropdown-toggle-split, .btn-group-lg > .delete-product + .dropdown-toggle-split, .btn-group-lg > .edit-product + .dropdown-toggle-split, .product-specific .btn-group-lg > .add-to-cart + .dropdown-toggle-split, .product-specific .btn-group-lg > .delete-btn + .dropdown-toggle-split, .modal-body-content .btn-group-lg > .btn-continue-shopping + .dropdown-toggle-split, .modal-body-content .btn-group-lg > .btn-to-cart + .dropdown-toggle-split, .btn-group-lg > .back-button + .dropdown-toggle-split, .product-specific .add-to-cart + .dropdown-toggle-split, .product-specific .delete-btn + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -4504,17 +4548,19 @@ form .btn-group-vertical > .form-btn,
 .btn-group-vertical > .edit-product,
 .product-specific .btn-group-vertical > .add-to-cart,
 .product-specific .btn-group-vertical > .delete-btn,
+.modal-body-content .btn-group-vertical > .btn-continue-shopping,
+.modal-body-content .btn-group-vertical > .btn-to-cart,
 .btn-group-vertical > .back-button,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
 
-.btn-group-vertical > .btn:not(:first-child), form .btn-group-vertical > .form-btn:not(:first-child), .btn-group-vertical > .featured-products__link:not(:first-child), .btn-group-vertical > .delete-product:not(:first-child), .btn-group-vertical > .edit-product:not(:first-child), .product-specific .btn-group-vertical > .add-to-cart:not(:first-child), .product-specific .btn-group-vertical > .delete-btn:not(:first-child), .btn-group-vertical > .back-button:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), form .btn-group-vertical > .form-btn:not(:first-child), .btn-group-vertical > .featured-products__link:not(:first-child), .btn-group-vertical > .delete-product:not(:first-child), .btn-group-vertical > .edit-product:not(:first-child), .product-specific .btn-group-vertical > .add-to-cart:not(:first-child), .product-specific .btn-group-vertical > .delete-btn:not(:first-child), .modal-body-content .btn-group-vertical > .btn-continue-shopping:not(:first-child), .modal-body-content .btn-group-vertical > .btn-to-cart:not(:first-child), .btn-group-vertical > .back-button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
 
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), form .btn-group-vertical > .form-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .featured-products__link:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .delete-product:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .edit-product:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .delete-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-button:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), form .btn-group-vertical > .form-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .featured-products__link:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .delete-product:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .edit-product:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .add-to-cart:not(:last-child):not(.dropdown-toggle), .product-specific .btn-group-vertical > .delete-btn:not(:last-child):not(.dropdown-toggle), .modal-body-content .btn-group-vertical > .btn-continue-shopping:not(:last-child):not(.dropdown-toggle), .modal-body-content .btn-group-vertical > .btn-to-cart:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-button:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
 form .btn-group-vertical > .btn-group:not(:last-child) > .form-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .featured-products__link,
@@ -4522,12 +4568,14 @@ form .btn-group-vertical > .btn-group:not(:last-child) > .form-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .edit-product,
 .product-specific .btn-group-vertical > .btn-group:not(:last-child) > .add-to-cart,
 .product-specific .btn-group-vertical > .btn-group:not(:last-child) > .delete-btn,
+.modal-body-content .btn-group-vertical > .btn-group:not(:last-child) > .btn-continue-shopping,
+.modal-body-content .btn-group-vertical > .btn-group:not(:last-child) > .btn-to-cart,
 .btn-group-vertical > .btn-group:not(:last-child) > .back-button {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn ~ .btn, form .btn-group-vertical > .form-btn ~ .btn, .btn-group-vertical > .featured-products__link ~ .btn, .btn-group-vertical > .delete-product ~ .btn, .btn-group-vertical > .edit-product ~ .btn, .product-specific .btn-group-vertical > .add-to-cart ~ .btn, .product-specific .btn-group-vertical > .delete-btn ~ .btn, .btn-group-vertical > .back-button ~ .btn, form .btn-group-vertical > .btn ~ .form-btn, form .btn-group-vertical > .form-btn ~ .form-btn, form .btn-group-vertical > .featured-products__link ~ .form-btn, form .btn-group-vertical > .delete-product ~ .form-btn, form .btn-group-vertical > .edit-product ~ .form-btn, .product-specific form .btn-group-vertical > .add-to-cart ~ .form-btn, form .product-specific .btn-group-vertical > .add-to-cart ~ .form-btn, .product-specific form .btn-group-vertical > .delete-btn ~ .form-btn, form .product-specific .btn-group-vertical > .delete-btn ~ .form-btn, form .btn-group-vertical > .back-button ~ .form-btn, .btn-group-vertical > .btn ~ .featured-products__link, form .btn-group-vertical > .form-btn ~ .featured-products__link, .btn-group-vertical > .featured-products__link ~ .featured-products__link, .btn-group-vertical > .delete-product ~ .featured-products__link, .btn-group-vertical > .edit-product ~ .featured-products__link, .product-specific .btn-group-vertical > .add-to-cart ~ .featured-products__link, .product-specific .btn-group-vertical > .delete-btn ~ .featured-products__link, .btn-group-vertical > .back-button ~ .featured-products__link, .btn-group-vertical > .btn ~ .delete-product, form .btn-group-vertical > .form-btn ~ .delete-product, .btn-group-vertical > .featured-products__link ~ .delete-product, .btn-group-vertical > .delete-product ~ .delete-product, .btn-group-vertical > .edit-product ~ .delete-product, .product-specific .btn-group-vertical > .add-to-cart ~ .delete-product, .product-specific .btn-group-vertical > .delete-btn ~ .delete-product, .btn-group-vertical > .back-button ~ .delete-product, .btn-group-vertical > .btn ~ .edit-product, form .btn-group-vertical > .form-btn ~ .edit-product, .btn-group-vertical > .featured-products__link ~ .edit-product, .btn-group-vertical > .delete-product ~ .edit-product, .btn-group-vertical > .edit-product ~ .edit-product, .product-specific .btn-group-vertical > .add-to-cart ~ .edit-product, .product-specific .btn-group-vertical > .delete-btn ~ .edit-product, .btn-group-vertical > .back-button ~ .edit-product, .product-specific .btn-group-vertical > .btn ~ .add-to-cart, form .product-specific .btn-group-vertical > .form-btn ~ .add-to-cart, .product-specific form .btn-group-vertical > .form-btn ~ .add-to-cart, .product-specific .btn-group-vertical > .featured-products__link ~ .add-to-cart, .product-specific .btn-group-vertical > .delete-product ~ .add-to-cart, .product-specific .btn-group-vertical > .edit-product ~ .add-to-cart, .product-specific .btn-group-vertical > .add-to-cart ~ .add-to-cart, .product-specific .btn-group-vertical > .delete-btn ~ .add-to-cart, .product-specific .btn-group-vertical > .back-button ~ .add-to-cart, .product-specific .btn-group-vertical > .btn ~ .delete-btn, form .product-specific .btn-group-vertical > .form-btn ~ .delete-btn, .product-specific form .btn-group-vertical > .form-btn ~ .delete-btn, .product-specific .btn-group-vertical > .featured-products__link ~ .delete-btn, .product-specific .btn-group-vertical > .delete-product ~ .delete-btn, .product-specific .btn-group-vertical > .edit-product ~ .delete-btn, .product-specific .btn-group-vertical > .add-to-cart ~ .delete-btn, .product-specific .btn-group-vertical > .delete-btn ~ .delete-btn, .product-specific .btn-group-vertical > .back-button ~ .delete-btn, .btn-group-vertical > .btn ~ .back-button, form .btn-group-vertical > .form-btn ~ .back-button, .btn-group-vertical > .featured-products__link ~ .back-button, .btn-group-vertical > .delete-product ~ .back-button, .btn-group-vertical > .edit-product ~ .back-button, .product-specific .btn-group-vertical > .add-to-cart ~ .back-button, .product-specific .btn-group-vertical > .delete-btn ~ .back-button, .btn-group-vertical > .back-button ~ .back-button,
+.btn-group-vertical > .btn ~ .btn, form .btn-group-vertical > .form-btn ~ .btn, .btn-group-vertical > .featured-products__link ~ .btn, .btn-group-vertical > .delete-product ~ .btn, .btn-group-vertical > .edit-product ~ .btn, .product-specific .btn-group-vertical > .add-to-cart ~ .btn, .product-specific .btn-group-vertical > .delete-btn ~ .btn, .modal-body-content .btn-group-vertical > .btn-continue-shopping ~ .btn, .modal-body-content .btn-group-vertical > .btn-to-cart ~ .btn, .btn-group-vertical > .back-button ~ .btn, form .btn-group-vertical > .btn ~ .form-btn, form .btn-group-vertical > .form-btn ~ .form-btn, form .btn-group-vertical > .featured-products__link ~ .form-btn, form .btn-group-vertical > .delete-product ~ .form-btn, form .btn-group-vertical > .edit-product ~ .form-btn, .product-specific form .btn-group-vertical > .add-to-cart ~ .form-btn, form .product-specific .btn-group-vertical > .add-to-cart ~ .form-btn, .product-specific form .btn-group-vertical > .delete-btn ~ .form-btn, form .product-specific .btn-group-vertical > .delete-btn ~ .form-btn, .modal-body-content form .btn-group-vertical > .btn-continue-shopping ~ .form-btn, form .modal-body-content .btn-group-vertical > .btn-continue-shopping ~ .form-btn, .modal-body-content form .btn-group-vertical > .btn-to-cart ~ .form-btn, form .modal-body-content .btn-group-vertical > .btn-to-cart ~ .form-btn, form .btn-group-vertical > .back-button ~ .form-btn, .btn-group-vertical > .btn ~ .featured-products__link, form .btn-group-vertical > .form-btn ~ .featured-products__link, .btn-group-vertical > .featured-products__link ~ .featured-products__link, .btn-group-vertical > .delete-product ~ .featured-products__link, .btn-group-vertical > .edit-product ~ .featured-products__link, .product-specific .btn-group-vertical > .add-to-cart ~ .featured-products__link, .product-specific .btn-group-vertical > .delete-btn ~ .featured-products__link, .modal-body-content .btn-group-vertical > .btn-continue-shopping ~ .featured-products__link, .modal-body-content .btn-group-vertical > .btn-to-cart ~ .featured-products__link, .btn-group-vertical > .back-button ~ .featured-products__link, .btn-group-vertical > .btn ~ .delete-product, form .btn-group-vertical > .form-btn ~ .delete-product, .btn-group-vertical > .featured-products__link ~ .delete-product, .btn-group-vertical > .delete-product ~ .delete-product, .btn-group-vertical > .edit-product ~ .delete-product, .product-specific .btn-group-vertical > .add-to-cart ~ .delete-product, .product-specific .btn-group-vertical > .delete-btn ~ .delete-product, .modal-body-content .btn-group-vertical > .btn-continue-shopping ~ .delete-product, .modal-body-content .btn-group-vertical > .btn-to-cart ~ .delete-product, .btn-group-vertical > .back-button ~ .delete-product, .btn-group-vertical > .btn ~ .edit-product, form .btn-group-vertical > .form-btn ~ .edit-product, .btn-group-vertical > .featured-products__link ~ .edit-product, .btn-group-vertical > .delete-product ~ .edit-product, .btn-group-vertical > .edit-product ~ .edit-product, .product-specific .btn-group-vertical > .add-to-cart ~ .edit-product, .product-specific .btn-group-vertical > .delete-btn ~ .edit-product, .modal-body-content .btn-group-vertical > .btn-continue-shopping ~ .edit-product, .modal-body-content .btn-group-vertical > .btn-to-cart ~ .edit-product, .btn-group-vertical > .back-button ~ .edit-product, .product-specific .btn-group-vertical > .btn ~ .add-to-cart, form .product-specific .btn-group-vertical > .form-btn ~ .add-to-cart, .product-specific form .btn-group-vertical > .form-btn ~ .add-to-cart, .product-specific .btn-group-vertical > .featured-products__link ~ .add-to-cart, .product-specific .btn-group-vertical > .delete-product ~ .add-to-cart, .product-specific .btn-group-vertical > .edit-product ~ .add-to-cart, .product-specific .btn-group-vertical > .add-to-cart ~ .add-to-cart, .product-specific .btn-group-vertical > .delete-btn ~ .add-to-cart, .modal-body-content .product-specific .btn-group-vertical > .btn-continue-shopping ~ .add-to-cart, .product-specific .modal-body-content .btn-group-vertical > .btn-continue-shopping ~ .add-to-cart, .modal-body-content .product-specific .btn-group-vertical > .btn-to-cart ~ .add-to-cart, .product-specific .modal-body-content .btn-group-vertical > .btn-to-cart ~ .add-to-cart, .product-specific .btn-group-vertical > .back-button ~ .add-to-cart, .product-specific .btn-group-vertical > .btn ~ .delete-btn, form .product-specific .btn-group-vertical > .form-btn ~ .delete-btn, .product-specific form .btn-group-vertical > .form-btn ~ .delete-btn, .product-specific .btn-group-vertical > .featured-products__link ~ .delete-btn, .product-specific .btn-group-vertical > .delete-product ~ .delete-btn, .product-specific .btn-group-vertical > .edit-product ~ .delete-btn, .product-specific .btn-group-vertical > .add-to-cart ~ .delete-btn, .product-specific .btn-group-vertical > .delete-btn ~ .delete-btn, .modal-body-content .product-specific .btn-group-vertical > .btn-continue-shopping ~ .delete-btn, .product-specific .modal-body-content .btn-group-vertical > .btn-continue-shopping ~ .delete-btn, .modal-body-content .product-specific .btn-group-vertical > .btn-to-cart ~ .delete-btn, .product-specific .modal-body-content .btn-group-vertical > .btn-to-cart ~ .delete-btn, .product-specific .btn-group-vertical > .back-button ~ .delete-btn, .modal-body-content .btn-group-vertical > .btn ~ .btn-continue-shopping, form .modal-body-content .btn-group-vertical > .form-btn ~ .btn-continue-shopping, .modal-body-content form .btn-group-vertical > .form-btn ~ .btn-continue-shopping, .modal-body-content .btn-group-vertical > .featured-products__link ~ .btn-continue-shopping, .modal-body-content .btn-group-vertical > .delete-product ~ .btn-continue-shopping, .modal-body-content .btn-group-vertical > .edit-product ~ .btn-continue-shopping, .product-specific .modal-body-content .btn-group-vertical > .add-to-cart ~ .btn-continue-shopping, .modal-body-content .product-specific .btn-group-vertical > .add-to-cart ~ .btn-continue-shopping, .product-specific .modal-body-content .btn-group-vertical > .delete-btn ~ .btn-continue-shopping, .modal-body-content .product-specific .btn-group-vertical > .delete-btn ~ .btn-continue-shopping, .modal-body-content .btn-group-vertical > .btn-continue-shopping ~ .btn-continue-shopping, .modal-body-content .btn-group-vertical > .btn-to-cart ~ .btn-continue-shopping, .modal-body-content .btn-group-vertical > .back-button ~ .btn-continue-shopping, .modal-body-content .btn-group-vertical > .btn ~ .btn-to-cart, form .modal-body-content .btn-group-vertical > .form-btn ~ .btn-to-cart, .modal-body-content form .btn-group-vertical > .form-btn ~ .btn-to-cart, .modal-body-content .btn-group-vertical > .featured-products__link ~ .btn-to-cart, .modal-body-content .btn-group-vertical > .delete-product ~ .btn-to-cart, .modal-body-content .btn-group-vertical > .edit-product ~ .btn-to-cart, .product-specific .modal-body-content .btn-group-vertical > .add-to-cart ~ .btn-to-cart, .modal-body-content .product-specific .btn-group-vertical > .add-to-cart ~ .btn-to-cart, .product-specific .modal-body-content .btn-group-vertical > .delete-btn ~ .btn-to-cart, .modal-body-content .product-specific .btn-group-vertical > .delete-btn ~ .btn-to-cart, .modal-body-content .btn-group-vertical > .btn-continue-shopping ~ .btn-to-cart, .modal-body-content .btn-group-vertical > .btn-to-cart ~ .btn-to-cart, .modal-body-content .btn-group-vertical > .back-button ~ .btn-to-cart, .btn-group-vertical > .btn ~ .back-button, form .btn-group-vertical > .form-btn ~ .back-button, .btn-group-vertical > .featured-products__link ~ .back-button, .btn-group-vertical > .delete-product ~ .back-button, .btn-group-vertical > .edit-product ~ .back-button, .product-specific .btn-group-vertical > .add-to-cart ~ .back-button, .product-specific .btn-group-vertical > .delete-btn ~ .back-button, .modal-body-content .btn-group-vertical > .btn-continue-shopping ~ .back-button, .modal-body-content .btn-group-vertical > .btn-to-cart ~ .back-button, .btn-group-vertical > .back-button ~ .back-button,
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
 form .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .featured-products__link,
@@ -4535,6 +4583,8 @@ form .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .edit-product,
 .product-specific .btn-group-vertical > .btn-group:not(:first-child) > .add-to-cart,
 .product-specific .btn-group-vertical > .btn-group:not(:first-child) > .delete-btn,
+.modal-body-content .btn-group-vertical > .btn-group:not(:first-child) > .btn-continue-shopping,
+.modal-body-content .btn-group-vertical > .btn-group:not(:first-child) > .btn-to-cart,
 .btn-group-vertical > .btn-group:not(:first-child) > .back-button {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -7282,7 +7332,7 @@ form .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
   opacity: 0.5;
 }
 
-.placeholder.btn::before, form .placeholder.form-btn::before, .placeholder.featured-products__link::before, .placeholder.delete-product::before, .placeholder.edit-product::before, .product-specific .placeholder.add-to-cart::before, .product-specific .placeholder.delete-btn::before, .placeholder.back-button::before {
+.placeholder.btn::before, form .placeholder.form-btn::before, .placeholder.featured-products__link::before, .placeholder.delete-product::before, .placeholder.edit-product::before, .product-specific .placeholder.add-to-cart::before, .product-specific .placeholder.delete-btn::before, .modal-body-content .placeholder.btn-continue-shopping::before, .modal-body-content .placeholder.btn-to-cart::before, .placeholder.back-button::before {
   display: inline-block;
   content: "";
 }
@@ -7683,7 +7733,7 @@ form .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
   display: table-cell !important;
 }
 
-.d-flex, .footer, .search-container {
+.d-flex, .footer, #hero .loader, .search-container {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -8368,7 +8418,7 @@ form .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
   margin-right: 0.25rem !important;
 }
 
-.me-2 {
+.me-2, .modal-body-content .btn-continue-shopping {
   margin-right: 0.5rem !important;
 }
 
@@ -8452,7 +8502,7 @@ form .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
   padding: 0.25rem !important;
 }
 
-.p-2, .products .badge {
+.p-2, .cart-quantity, .products .badge {
   padding: 0.5rem !important;
 }
 
@@ -8704,7 +8754,7 @@ form .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
   text-align: right !important;
 }
 
-.text-center {
+.text-center, .search-container .sort-product {
   text-align: center !important;
 }
 
@@ -8848,7 +8898,7 @@ form .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
   background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-success, .products .badge {
+.bg-success, .cart-quantity, .products .badge {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
 }
@@ -8971,7 +9021,7 @@ form .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
   border-radius: 0.3rem !important;
 }
 
-.rounded-circle {
+.rounded-circle, .cart-quantity {
   border-radius: 50% !important;
 }
 
@@ -9573,7 +9623,7 @@ form .btn-group-vertical > .btn-group:not(:first-child) > .form-btn,
   .ps-sm-5 {
     padding-left: 3rem !important;
   }
-  .text-sm-start {
+  .text-sm-start, .search-container .sort-product {
     text-align: left !important;
   }
   .text-sm-end {
@@ -12017,7 +12067,7 @@ main {
   margin-bottom: 1.5em;
 }
 
-.inner-spacer-top, .form-wrapper, .form-wrapper__add-edit-product, .products {
+.inner-spacer-top, .form-wrapper, .form-wrapper__add-edit-product, #hero .loader, .products {
   margin-top: 1.5em;
 }
 
@@ -12029,16 +12079,16 @@ a {
   max-width: 100%;
 }
 
-.btn, form .form-btn, .featured-products__link, .delete-product, .edit-product, .product-specific .add-to-cart, .product-specific .delete-btn, .back-button {
+.btn, form .form-btn, .featured-products__link, .delete-product, .edit-product, .product-specific .add-to-cart, .product-specific .delete-btn, .modal-body-content .btn-continue-shopping, .modal-body-content .btn-to-cart, .back-button {
   border-radius: 0;
   padding: 0.7em 1.5em;
 }
 
-.btn-primary, form .form-btn {
+.btn-primary, form .form-btn, .modal-body-content .btn-to-cart {
   color: #ffffff;
 }
 
-.btn-outline-primary:hover, .featured-products__link:hover, .product-specific .add-to-cart:hover, .back-button:hover {
+.btn-outline-primary:hover, .featured-products__link:hover, .product-specific .add-to-cart:hover, .modal-body-content .btn-continue-shopping:hover, .back-button:hover {
   color: #ffffff;
 }
 
@@ -12237,6 +12287,18 @@ form .form-control {
   cursor: pointer;
 }
 
+.modal-backdrop.show {
+  opacity: 0;
+}
+
+.cart-quantity {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 0.5em;
+  color: #3c3f40;
+}
+
 .footer {
   background-color: #3c3f40;
   color: #ffffff;
@@ -12424,7 +12486,6 @@ form .form-control {
 .search-container .sort-product {
   width: auto;
   border: none;
-  text-align: center;
   background-color: #eeefe9;
   padding: 1.2em 2em;
   font-size: 1em;

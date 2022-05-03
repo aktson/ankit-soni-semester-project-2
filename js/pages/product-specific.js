@@ -1,5 +1,5 @@
 import { displayMessage } from "../generalFunctions/displayMessage.js";
-import { renderMenu } from "../generalFunctions/renderMenu.js";
+import { renderCartQuantity, renderMenu } from "../generalFunctions/renderMenu.js";
 import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { baseUrl } from "../settings.js";
 import { getFromStorage, saveToStorage, productKey } from "../storage/storage.js";
@@ -8,6 +8,7 @@ import { renderModal, showMessageWithModal } from "../generalFunctions/modalProd
 
 scrollToTop();
 renderMenu();
+
 
 const itemsSavedInStorage = getFromStorage(productKey);
 
@@ -111,6 +112,8 @@ function addToCart(event) {
   const id = +event.target.dataset.id;
   let quantity = 1;
 
+
+
   let currentAddedProduct = getFromStorage(productKey);
 
   const findCurrentAddedProduct = currentAddedProduct.find(function (product) {
@@ -141,7 +144,6 @@ function addToCart(event) {
 
       showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Added to cart");
       renderModal(image, title, size, price)
-
     }
 
     //check if size matches if user adds same product again
@@ -161,19 +163,20 @@ function addToCart(event) {
         saveToStorage(productKey, currentAddedProduct);
 
       }
+
       //if size matches then increase quantity with one and show modal that product is in cart already
       else {
         findCurrentAddedProduct.quantity++;
 
         saveToStorage(productKey, currentAddedProduct)
 
-        showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Quantity updated in shopping cart")
+        showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i> Quantity updated in shopping cart")
 
         const modalBody = document.querySelector(".modal-body");
         modalBody.innerHTML = "";
 
-        modalBody.innerHTML = `<button type="button" class="btn btn-outline-primary btn-sm me-2" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
-         <a href = "cart.html" class="btn btn-primary btn-sm"> Proceed to cart</a >`;
+        modalBody.innerHTML = `<button type="button" class=" btn-continue-shopping" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
+                               <a href = "cart.html" class="btn-to-cart"> Proceed to cart</a >`;
 
       }
 

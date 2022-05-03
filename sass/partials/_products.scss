@@ -45,10 +45,9 @@
 		padding: 1.2em 0.5em;
 	}
 	.sort-product {
-		@extend .form-select-lg;
+		@extend .form-select-lg, .text-center, .text-sm-start;
 		width: auto;
 		border: none;
-		text-align: center;
 		background-color: $light;
 		padding: 1.2em 2em;
 		font-size: 1em;

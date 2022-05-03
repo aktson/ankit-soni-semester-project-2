@@ -1,4 +1,4 @@
-import { getFromStorage, getUser, productKey, tokenKey, userKey } from "../storage/storage.js";
+import { getFromStorage, getUser, productKey, saveToStorage, tokenKey, userKey } from "../storage/storage.js";
 
 
 
@@ -6,12 +6,6 @@ const itemInStorage = getFromStorage(productKey);
 
 
 console.log(itemInStorage)
-
-for (let i = 0; i < itemInStorage.length; i++) {
-    let quantity = itemInStorage[i].quantity;
-    console.log(quantity)
-}
-
 
 
 const username = getUser();
@@ -39,6 +33,8 @@ if (username) {
 export function renderMenu() {
     const menuContainer = document.querySelector("#menu-container");
 
+    menuContainer.innerHTML = "";
+
     menuContainer.innerHTML = `<li class="nav-item">
                             <a class="nav-link ${pathname === "/index.html" || pathname === "/" ? "active" : ""}" aria-current="page" href="index.html">Home</a>
                             </li>
@@ -48,7 +44,7 @@ export function renderMenu() {
                             <li class="nav-item">
                             <a class="nav-link  ${pathname === "/cart.html" ? "active" : ""}" href="cart.html">
                                 Cart
-                                <i class="fa-solid fa-bag-shopping"></i>
+                                <i class="fa-solid fa-bag-shopping position-relative"><span class="cart-quantity"></span></i>
                             </a>
                             </li>
                             ${authLink}`;
@@ -65,9 +61,29 @@ export function renderMenu() {
 
     }
 
+    renderCartQuantity();
 
 }
 
 
 
 
+export function renderCartQuantity() {
+    let quantity = 0;
+
+    const cartItems = document.querySelector(".cart-quantity");
+    cartItems.innerHTML = "";
+
+    cartItems.innerHTML = quantity;
+
+    for (let i = 0; i < itemInStorage.length; i++) {
+
+        quantity += itemInStorage[i].quantity;
+
+        cartItems.innerHTML = quantity;
+
+    }
+    if (quantity === 0) {
+        cartItems.classList.add("visually-hidden");
+    }
+}
