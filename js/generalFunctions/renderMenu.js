@@ -27,7 +27,7 @@ if (username) {
                 </li>`
 }
 export function renderMenu() {
-    const menuContainer = document.querySelector("#menu-container");
+    const menuContainer = document.querySelector(".nav-menu-container");
 
     menuContainer.innerHTML = "";
 

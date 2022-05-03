@@ -19,7 +19,6 @@
 
 .navbar-light .navbar-nav .nav-link.active {
 	color: $primary !important;
-
 	pointer-events: none !important;
 }
 
@@ -28,6 +27,11 @@
 	color: $primary !important;
 	pointer-events: none !important;
 }
+
+.nav-menu-container {
+	@extend .navbar-nav, .navbar-ul;
+}
+
 #logout {
 	cursor: pointer;
 }
