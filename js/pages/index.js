@@ -16,7 +16,7 @@ renderMenu();
   const img = result.data.attributes.hero_banner.data.attributes.url;
   const altText = result.data.attributes.hero_banner_alt_text;
 
-  const heroBanner = document.querySelector("#hero-banner");
+  const heroBanner = document.querySelector(".hero-banner");
 
   heroBanner.innerHTML = `<div style ="background: url('${img}') no-repeat center;background-size: cover;" class="hero__image">
                             <span  role="img" aria-label=${altText}></span>
@@ -44,7 +44,7 @@ renderMenu();
 
   } catch (error) {
     console.log(error)
-    displayMessage("danger", "Unknown error occured", "#featured-product-container");
+    displayMessage("danger", "Unknown error occured", ".featured-products-container");
   }
 
 })();
@@ -52,7 +52,7 @@ renderMenu();
 // render featured products function
 function renderFeaturedProducts(results) {
 
-  const productsContainer = document.querySelector("#featured-product-container");
+  const productsContainer = document.querySelector(".featured-products-container");
 
   productsContainer.innerHTML = "";
 

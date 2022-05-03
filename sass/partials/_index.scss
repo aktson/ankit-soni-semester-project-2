@@ -1,5 +1,6 @@
-#hero {
-	@extend .spacer;
+.hero {
+	@extend .spacer, .container;
+	margin-top: 50px;
 	overflow-x: hidden;
 
 	.container-fluid {
@@ -18,13 +19,12 @@
 	}
 
 	.hero-content {
+		@extend .col-sm-6, .order-2, .order-sm-0, .d-flex, .flex-column, .justify-content-center, .align-items-center, .text-center;
 		background-color: $secondary;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
 		padding: 0.5em;
+	}
+	.hero-banner {
+		@extend .col-sm-6;
 	}
 
 	.hero__image {
@@ -40,8 +40,11 @@
 
 // section featured products
 .featured-products {
-	@extend .spacer;
+	@extend .spacer, .container;
 
+	.featured-products-container {
+		@extend .row, .row-cols-1, .row-cols-md-3, .g-4;
+	}
 	.col {
 		@extend .inner-spacer-bottom;
 		color: $dark;
@@ -52,6 +55,9 @@
 	#display-message {
 		margin: 0 auto;
 	}
+	.loader {
+		width: 48px;
+	}
 }
 
 //section member campaign
@@ -59,11 +65,9 @@
 	@extend .spacer;
 
 	&__content {
+		@extend .d-flex, .align-items-center, .text-center;
 		background-color: $dark;
 		color: $light;
-		text-align: center;
-		align-items: center;
-		display: flex;
 		padding: 0.5em;
 	}
 	&__content h3 {
@@ -87,6 +91,7 @@
 	align-items: center;
 
 	.newsletter-content {
+		@extend .container;
 		text-align: center;
 		max-width: $mobile;
 	}
