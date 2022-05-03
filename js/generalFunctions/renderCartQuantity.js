@@ -9,6 +9,7 @@ export function renderCartQuantity(itemsSavedInStorage) {
 
             totalQuantity += itemsSavedInStorage[i].quantity;
 
+            cartItems.classList.remove("visually-hidden");
             cartItems.innerHTML = totalQuantity;
 
         }

@@ -98,7 +98,6 @@ function renderSpecificPropduct(result) {
   const deleteBtn = document.querySelector(".delete-btn");
   deleteBtn.addEventListener("click", deleteFromCart);
 
-
 }
 
 
@@ -123,10 +122,11 @@ function addToCart(event) {
     return parseInt(product.id) === id;
   })
 
+  renderCartQuantity(findCurrentAddedProduct);
+
   //check if user have choose the size else give message
   if (!size) {
     showMessageWithModal("<i class='fa-solid fa-circle-exclamation me-2'></i>Please select size")
-
   }
 
   //if user have choosen size then let user add the product and show modal with added product
@@ -138,6 +138,7 @@ function addToCart(event) {
       currentAddedProduct.push(product);
 
       saveToStorage(productKey, currentAddedProduct);
+      renderCartQuantity(currentAddedProduct);
 
       const deleteBtn = document.querySelector(".delete-btn");
       const badge = document.querySelector(".badge");
@@ -147,14 +148,13 @@ function addToCart(event) {
 
       showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Added to cart");
       renderModal(image, title, size, price)
-      renderCartQuantity(currentAddedProduct);
+
 
     }
 
     //check if size matches if user adds same product again
     else {
-
-      const findCurrentAddedProduct = currentAddedProduct.find(product => parseInt(product.size) === parseInt(size));
+      const findCurrentAddedProduct = currentAddedProduct.find(produt => +produt.size === +size);
 
       //if size does not match from item stored in storage then push new product with new size, show modal with new added product
       if (!findCurrentAddedProduct) {
@@ -167,8 +167,6 @@ function addToCart(event) {
 
         saveToStorage(productKey, currentAddedProduct);
         renderCartQuantity(currentAddedProduct);
-
-
       }
 
       //if size matches then increase quantity with one and show modal that product is in cart already
@@ -200,9 +198,7 @@ function deleteFromCart(event) {
 
   const id = event.target.dataset.id;
 
-  const findItemToDelete = itemsSavedInStorage.filter(function (item) {
-    return parseInt(item.id) !== parseInt(id);
-  });
+  const findItemToDelete = itemsSavedInStorage.filter(product => +product.id !== +id);
 
   let doRemove = window.confirm("are your sure?");
 
@@ -210,6 +206,7 @@ function deleteFromCart(event) {
     const badge = document.querySelector(".badge");
 
     saveToStorage(productKey, findItemToDelete);
+    renderCartQuantity(findItemToDelete);
 
     event.target.classList.add("visually-hidden");
     badge.classList.add("visually-hidden");

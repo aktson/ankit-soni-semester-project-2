@@ -12,8 +12,6 @@ scrollToTop();
 renderMenu();
 
 const itemsSavedInStorage = getFromStorage(productKey);
-console.log(itemsSavedInStorage)
-
 
 const token = getToken();
 const user = getUser();
