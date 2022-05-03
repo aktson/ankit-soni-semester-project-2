@@ -83,12 +83,9 @@
 }
 //section newsletter
 .newsletter {
-	@extend .spacer;
+	@extend .spacer, .d-flex, .justify-content-center, .align-items-center;
 	height: 50vh;
 	background-color: $secondary;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 
 	.newsletter-content {
 		@extend .container;

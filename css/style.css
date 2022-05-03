@@ -6513,7 +6513,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   display: table-cell !important;
 }
 
-.d-flex, .footer, .hero .hero-content, .hero .loader, .member-campaign__content, .search-container {
+.d-flex, .footer, .hero .hero-content, .hero .loader, .member-campaign__content, .newsletter, .search-container {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -6900,7 +6900,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           justify-content: flex-end !important;
 }
 
-.justify-content-center, .footer, .hero .hero-content {
+.justify-content-center, .footer, .hero .hero-content, .newsletter {
   -webkit-box-pack: center !important;
       -ms-flex-pack: center !important;
           justify-content: center !important;
@@ -6935,7 +6935,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           align-items: flex-end !important;
 }
 
-.align-items-center, .footer, .hero .hero-content, .member-campaign__content {
+.align-items-center, .footer, .hero .hero-content, .member-campaign__content, .newsletter {
   -webkit-box-align: center !important;
       -ms-flex-align: center !important;
           align-items: center !important;
@@ -11175,15 +11175,6 @@ form .form-control {
 .newsletter {
   height: 50vh;
   background-color: #ffff9d;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .newsletter .newsletter-content {
