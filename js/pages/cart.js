@@ -13,7 +13,7 @@ scrollToTop();
 const itemsSavedInStorage = getFromStorage(productKey);
 
 renderCartItems(itemsSavedInStorage);
-
+renderCartQuantity(itemsSavedInStorage);
 
 if (itemsSavedInStorage.length === 0) {
   displayMessage("light", "Your cart is empty", ".cart-wrapper");
@@ -66,20 +66,7 @@ function renderCartItems(itemsToRender) {
     total += parseFloat(item.price) * parseFloat(item.quantity);
     totalPriceContainer.innerHTML = `NOK ${formatPrice(total)} `;
 
-    let quantity = 0;
-
-    const cartItems = document.querySelector(".cart-quantity");
-    cartItems.innerHTML = "";
-
-    cartItems.innerHTML = quantity;
-
-    for (let i = 0; i < itemsSavedInStorage.length; i++) {
-      quantity += itemsSavedInStorage[i].quantity;
-      cartItems.innerHTML = quantity;
-    }
-    if (quantity === 0) {
-      cartItems.classList.add("visually-hidden");
-    }
+    renderCartQuantity(itemsToRender)
   })
 
 
@@ -126,6 +113,7 @@ function renderCartItems(itemsToRender) {
         cartTotalItemContainer.innerHTML = "";
 
         renderCartItems(newSavedItems);
+        renderCartQuantity(filteritemsSavedInStorage);
 
         if (newSavedItems.length === 0) {
           displayMessage("light", "Your cart is empty", ".cart-wrapper");

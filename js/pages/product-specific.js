@@ -147,7 +147,7 @@ function addToCart(event) {
 
       showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Added to cart");
       renderModal(image, title, size, price)
-      renderCartQuantity();
+      renderCartQuantity(currentAddedProduct);
 
     }
 
@@ -166,7 +166,7 @@ function addToCart(event) {
         showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Added to cart");
 
         saveToStorage(productKey, currentAddedProduct);
-        renderCartQuantity();
+        renderCartQuantity(currentAddedProduct);
 
 
       }
@@ -175,16 +175,17 @@ function addToCart(event) {
       else {
         findCurrentAddedProduct.quantity++;
 
-        saveToStorage(productKey, currentAddedProduct)
+        saveToStorage(productKey, currentAddedProduct);
+
+        renderCartQuantity(currentAddedProduct);
 
         showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i> Quantity updated in shopping cart")
-        renderCartQuantity();
+
         const modalBody = document.querySelector(".modal-body");
         modalBody.innerHTML = "";
 
         modalBody.innerHTML = `<button type="button" class=" btn-continue-shopping" data-bs-dismiss="modal" aria-label="Close">Continue Shopping</button>
                                <a href = "cart.html" class="btn-to-cart"> Proceed to cart</a >`;
-
 
       }
 

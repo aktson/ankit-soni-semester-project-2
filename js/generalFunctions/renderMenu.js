@@ -5,10 +5,6 @@ import { renderCartQuantity } from "../generalFunctions/renderCartQuantity.js";
 
 const itemsSavedInStorage = getFromStorage(productKey);
 
-
-console.log(itemsSavedInStorage)
-
-
 const username = getUser();
 
 const { pathname } = document.location;
@@ -28,8 +24,7 @@ if (username) {
                      <span class="dropdown-item" id="logout">Logout</span>
                    </li>
                     </ul>
-                </li>
-               `
+                </li>`
 }
 export function renderMenu() {
     const menuContainer = document.querySelector("#menu-container");
@@ -61,7 +56,7 @@ export function renderMenu() {
         })
 
     }
-    renderCartQuantity();
+    renderCartQuantity(itemsSavedInStorage);
 }
 
 
