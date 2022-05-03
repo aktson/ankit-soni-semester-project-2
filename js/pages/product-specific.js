@@ -40,7 +40,7 @@ const id = params.get("id");
   }
   catch (error) {
     console.log(error);
-    displayMessage("danger", "Unknown error occured", "#product-container");
+    displayMessage("danger", "Unknown error occured", ".product-container");
   }
 
 })();
@@ -58,7 +58,7 @@ function renderSpecificPropduct(result) {
     cssClass = "";
   }
 
-  const productContainer = document.querySelector("#product-container");
+  const productContainer = document.querySelector(".product-container");
 
   const title = result.attributes.title;
   const price = result.attributes.price;

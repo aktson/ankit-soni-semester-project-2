@@ -43,7 +43,7 @@ if (user) {
   }
   catch (error) {
     console.log(error);
-    displayMessage("danger", "Unknown error occured", "#products-container");
+    displayMessage("danger", "Unknown error occured", ".products-container");
   }
 
 })();
@@ -52,7 +52,7 @@ if (user) {
 // render products
 export function renderProducts(results) {
 
-  const productsContainer = document.querySelector("#products-container");
+  const productsContainer = document.querySelector(".products-container");
 
   productsContainer.innerHTML = "";
 

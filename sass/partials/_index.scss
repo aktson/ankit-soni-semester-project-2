@@ -97,13 +97,13 @@
 }
 //section services
 .services {
-	@extend .spacer;
+	@extend .spacer, .container;
 
 	.row {
 		justify-content: center;
 	}
 	.services-col {
-		@extend .inner-spacer-bottom;
+		@extend .inner-spacer-bottom, .col-sm-6, .col-md-3;
 		text-align: center;
 		@media (max-width: $mobile) {
 			max-width: 350px;

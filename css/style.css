@@ -632,7 +632,7 @@ progress {
   color: #6c757d;
 }
 
-.container, .slider, .products,
+.container, .slider, .services, .products, .product-specific,
 .container-fluid,
 .container-sm,
 .container-md,
@@ -647,36 +647,36 @@ progress {
 }
 
 @media (min-width: 576px) {
-  .container, .slider, .products, .container-sm {
+  .container, .slider, .services, .products, .product-specific, .container-sm {
     max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
-  .container, .slider, .products, .container-sm, .container-md {
+  .container, .slider, .services, .products, .product-specific, .container-sm, .container-md {
     max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
-  .container, .slider, .products, .container-sm, .container-md, .container-lg {
+  .container, .slider, .services, .products, .product-specific, .container-sm, .container-md, .container-lg {
     max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container, .slider, .products, .container-sm, .container-md, .container-lg, .container-xl {
+  .container, .slider, .services, .products, .product-specific, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1140px;
   }
 }
 
 @media (min-width: 1400px) {
-  .container, .slider, .products, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+  .container, .slider, .services, .products, .product-specific, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
     max-width: 1320px;
   }
 }
 
-.row {
+.row, .products-container {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: -webkit-box;
@@ -689,7 +689,7 @@ progress {
   margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
-.row > * {
+.row > *, .products-container > * {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   width: 100%;
@@ -712,7 +712,7 @@ progress {
   width: auto;
 }
 
-.row-cols-1 > * {
+.row-cols-1 > *, .products-container > * {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -929,12 +929,12 @@ progress {
   --bs-gutter-y: 1rem;
 }
 
-.g-4,
+.g-4, .products-container,
 .gx-4 {
   --bs-gutter-x: 1.5rem;
 }
 
-.g-4,
+.g-4, .products-container,
 .gy-4 {
   --bs-gutter-y: 1.5rem;
 }
@@ -1033,7 +1033,7 @@ progress {
             flex: 0 0 auto;
     width: 41.66667%;
   }
-  .col-sm-6 {
+  .col-sm-6, .services .services-col {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -1185,7 +1185,7 @@ progress {
             flex: 0 0 auto;
     width: 50%;
   }
-  .row-cols-md-3 > * {
+  .row-cols-md-3 > *, .products-container > * {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -1227,7 +1227,7 @@ progress {
             flex: 0 0 auto;
     width: 16.66667%;
   }
-  .col-md-3 {
+  .col-md-3, .services .services-col {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -4433,7 +4433,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   padding-bottom: 0.5rem;
 }
 
-.navbar > .container, .navbar > .slider, .navbar > .products,
+.navbar > .container, .navbar > .slider, .navbar > .services, .navbar > .products, .navbar > .product-specific,
 .navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11125,7 +11125,7 @@ form .form-control {
   }
 }
 
-#hero .row > * {
+#hero .row > *, #hero .products-container > * {
   padding: 0;
   gap: 0;
 }
@@ -11211,7 +11211,7 @@ form .form-control {
   font-size: 3em;
 }
 
-.services .row {
+.services .row, .services .products-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -11246,11 +11246,11 @@ form .form-control {
   z-index: 1;
 }
 
-#products-container #display-message {
+.products-container #display-message {
   margin: 2em auto;
 }
 
-#products-container .card-body {
+.products-container .card-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11321,7 +11321,7 @@ form .form-control {
   margin-left: 0.5em;
 }
 
-#product-container {
+.product-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
