@@ -15,24 +15,26 @@
 
 .footer__content {
 	@extend .container, .p-4;
-}
-.footer__content-row {
-	@extend .row, .justify-content-between, .text-dark, .mx-auto;
-}
-.footer__content-logo {
-	@extend .col-md-4, .d-flex, .flex-column, .gap-2;
-}
-.social {
-	display: flex;
-	gap: 1em;
-	font-size: 1.5em;
-}
-
-.footer__content-menu {
-	@extend .col-md-4, .d-flex, .flex-column, .gap-2;
-}
-.footer__content-payment {
-	@extend .col-md-4;
+	.footer__content-row {
+		@extend .row, .justify-content-between, .text-dark, .mx-auto;
+	}
+	// col 1
+	.footer__content-logo {
+		@extend .col-sm-6, .col-md-4, .d-flex, .flex-column, .gap-2, .mb-5;
+	}
+	.social {
+		display: flex;
+		gap: 1em;
+		font-size: 1.5em;
+	}
+	// col 2
+	.footer__content-menu {
+		@extend .col-md-4, .d-none, .d-md-flex, .flex-column, .gap-2;
+	}
+	// col 3
+	.footer__content-payment {
+		@extend .col-sm-6, .col-md-4;
+	}
 }
 
 .footer__copyright {

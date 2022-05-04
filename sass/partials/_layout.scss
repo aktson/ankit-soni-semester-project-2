@@ -21,6 +21,9 @@ main {
 }
 .spacer {
 	margin-bottom: 200px;
+	@media (max-width: $mobile) {
+		margin-bottom: 100px;
+	}
 }
 .inner-spacer-bottom {
 	margin-bottom: 1.5em;

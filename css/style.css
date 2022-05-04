@@ -678,7 +678,7 @@ progress {
   }
 }
 
-.row, .footer__content-row, .featured-products .featured-products-container, .products-container {
+.row, .footer__content .footer__content-row, .featured-products .featured-products-container, .products-container {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: -webkit-box;
@@ -691,7 +691,7 @@ progress {
   margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
-.row > *, .footer__content-row > *, .featured-products .featured-products-container > *, .products-container > * {
+.row > *, .footer__content .footer__content-row > *, .featured-products .featured-products-container > *, .products-container > * {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   width: 100%;
@@ -1035,7 +1035,7 @@ progress {
             flex: 0 0 auto;
     width: 41.66667%;
   }
-  .col-sm-6, .services .services-col {
+  .col-sm-6, .footer__content .footer__content-logo, .footer__content .footer__content-payment, .services .services-col {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -1235,7 +1235,7 @@ progress {
             flex: 0 0 auto;
     width: 25%;
   }
-  .col-md-4, .footer__content-logo, .footer__content-menu, .footer__content-payment {
+  .col-md-4, .footer__content .footer__content-logo, .footer__content .footer__content-menu, .footer__content .footer__content-payment {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -6515,7 +6515,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   display: table-cell !important;
 }
 
-.d-flex, .footer, .footer__content-logo, .footer__content-menu, .hero .hero-content, .hero .loader, .member-campaign__content, .newsletter, .search-container {
+.d-flex, .footer, .footer__content .footer__content-logo, .hero .hero-content, .hero .loader, .member-campaign__content, .newsletter, .search-container {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -6527,7 +6527,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   display: inline-flex !important;
 }
 
-.d-none {
+.d-none, .footer__content .footer__content-menu {
   display: none !important;
 }
 
@@ -6808,7 +6808,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           flex-direction: row !important;
 }
 
-.flex-column, .footer, .footer__content-logo, .footer__content-menu, .hero .hero-content, .search-container {
+.flex-column, .footer, .footer__content .footer__content-logo, .footer__content .footer__content-menu, .hero .hero-content, .search-container {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
       -ms-flex-direction: column !important;
@@ -6874,7 +6874,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   gap: 0.25rem !important;
 }
 
-.gap-2, .footer__content-logo, .footer__content-menu {
+.gap-2, .footer__content .footer__content-logo, .footer__content .footer__content-menu {
   gap: 0.5rem !important;
 }
 
@@ -6908,7 +6908,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           justify-content: center !important;
 }
 
-.justify-content-between, .footer__content-row, .search-container {
+.justify-content-between, .footer__content .footer__content-row, .search-container {
   -webkit-box-pack: justify !important;
       -ms-flex-pack: justify !important;
           justify-content: space-between !important;
@@ -7124,7 +7124,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   margin-left: 3rem !important;
 }
 
-.mx-auto, .footer__content-row {
+.mx-auto, .footer__content .footer__content-row {
   margin-right: auto !important;
   margin-left: auto !important;
 }
@@ -7240,7 +7240,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   margin-bottom: 1.5rem !important;
 }
 
-.mb-5 {
+.mb-5, .footer__content .footer__content-logo {
   margin-bottom: 3rem !important;
 }
 
@@ -7614,7 +7614,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-dark, .footer__content-row {
+.text-dark, .footer__content .footer__content-row {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
 }
@@ -8448,7 +8448,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   .d-md-table-cell {
     display: table-cell !important;
   }
-  .d-md-flex {
+  .d-md-flex, .footer__content .footer__content-menu {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
@@ -10845,6 +10845,12 @@ main {
   margin-bottom: 200px;
 }
 
+@media (max-width: 576px) {
+  .spacer, .loader, .hero, .featured-products, .member-campaign, .slider, .newsletter, .services, .products, .product-specific, .cart {
+    margin-bottom: 100px;
+  }
+}
+
 .inner-spacer-bottom, h1, .h1, h2, .h2, #product__link .col, .featured-products .col, .newsletter .newsletter-content h3, .newsletter .newsletter-content .h3, .services .services-col, .products .col, .search-container, .product-specific .price, .product-specific .add-to-cart, .product-specific .delete-btn, .product-specific .size {
   margin-bottom: 1.5em;
 }
@@ -11100,7 +11106,7 @@ form .form-control {
   cursor: pointer;
 }
 
-.social {
+.footer__content .social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11130,7 +11136,7 @@ form .form-control {
   }
 }
 
-.hero .row > *, .hero .footer__content-row > *, .hero .featured-products .featured-products-container > *, .featured-products .hero .featured-products-container > *, .hero .products-container > * {
+.hero .row > *, .hero .footer__content .footer__content-row > *, .footer__content .hero .footer__content-row > *, .hero .featured-products .featured-products-container > *, .featured-products .hero .featured-products-container > *, .hero .products-container > * {
   padding: 0;
   gap: 0;
 }
@@ -11201,7 +11207,7 @@ form .form-control {
   font-size: 3em;
 }
 
-.services .row, .services .footer__content-row, .services .featured-products .featured-products-container, .featured-products .services .featured-products-container, .services .products-container {
+.services .row, .services .footer__content .footer__content-row, .footer__content .services .footer__content-row, .services .featured-products .featured-products-container, .featured-products .services .featured-products-container, .services .products-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

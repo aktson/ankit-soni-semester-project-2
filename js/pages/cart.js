@@ -73,23 +73,73 @@ function renderCartItems(itemsToRender) {
 
   ///////////////////// end of foreach itemstorender loop//////////////////////////////////////
 
-  const deleteItemBtns = document.querySelectorAll(".delete-btn")
-  const minusBtns = document.querySelectorAll("#minus-btn");
-  const plusBtns = document.querySelectorAll("#plus-btn");
-
   if (itemsToRender.length > 0) {
 
     // plus button event to add quantity in cart 
+    const plusBtns = document.querySelectorAll("#plus-btn");
     plusBtns.forEach(plusBtn => {
       plusBtn.addEventListener("click", plusQuantity)
     })
+    function plusQuantity(event) {
+
+      const cartItemContainer = document.querySelector(".cart-item-container");
+      const cartTotalItemContainer = document.querySelector(".cart-total");
+
+      const size = event.target.dataset.size;
+      const id = event.target.dataset.id;
+
+      renderCartItems(itemsToRender);
+
+      const findCurrentAddedProduct = itemsToRender.find(product => +product.size === +size && +product.id === +id);
+      findCurrentAddedProduct.quantity++;
+
+      saveToStorage(productKey, itemsToRender)
+      cartItemContainer.innerHTML = "";
+      cartTotalItemContainer.innerHTML = "";
+
+      const newSavedItems = getFromStorage(productKey)
+
+      renderCartItems(newSavedItems);
+    }
+    ///////////////////// end of pluss qunatity event//////////////////////////////////////
 
     // minus button event to reduce quantity in cart 
+    const minusBtns = document.querySelectorAll("#minus-btn");
     minusBtns.forEach(minusBtn => {
       minusBtn.addEventListener("click", minusQuantity)
     })
+    function minusQuantity(event) {
+
+      const cartItemContainer = document.querySelector(".cart-item-container");
+      const cartTotalItemContainer = document.querySelector(".cart-total");
+
+      const size = event.target.dataset.size;
+      const id = event.target.dataset.id;
+
+      renderCartItems(itemsToRender)
+
+      const findCurrentAddedProduct = itemsToRender.find(product => +product.size === +size && +product.id === +id);
+
+      if (findCurrentAddedProduct.quantity === 1) {
+        return;
+      }
+
+      findCurrentAddedProduct.quantity--;
+
+      saveToStorage(productKey, itemsToRender)
+
+      cartItemContainer.innerHTML = "";
+      cartTotalItemContainer.innerHTML = "";
+
+      const newSavedItems = getFromStorage(productKey)
+
+      renderCartItems(newSavedItems);
+
+    }
+    ///////////////////////// end of minus quantity event//////////////////////////////////////
 
     // delet items from cart 
+    const deleteItemBtns = document.querySelectorAll(".delete-btn")
     deleteItemBtns.forEach(deleteItemBtn => {
       deleteItemBtn.addEventListener("click", deleteItem)
     })
@@ -126,60 +176,8 @@ function renderCartItems(itemsToRender) {
 }
 
 
-// plus button event to add quantity in cart 
-function plusQuantity(event) {
-
-  const cartItemContainer = document.querySelector(".cart-item-container");
-  const cartTotalItemContainer = document.querySelector(".cart-total");
-
-  const size = event.target.dataset.size;
-  const id = event.target.dataset.id;
-
-  // const findCurrentAddedProduct = itemsSavedInStorage.find(product => +product.size === +size && +product.id === +id);
-
-  const findCurrentAddedProduct = itemsSavedInStorage.filter(product => +product.size === +size && +product.id === +id);
-
-  for (let i = 0; i < findCurrentAddedProduct.length; i++) {
-    findCurrentAddedProduct[i].quantity++;
-    saveToStorage(productKey, findCurrentAddedProduct)
-  }
-
-  cartItemContainer.innerHTML = "";
-  cartTotalItemContainer.innerHTML = "";
-
-  const newSavedItems = getFromStorage(productKey)
-
-  renderCartItems(newSavedItems);
-}
-///////////////////// end of pluss qunatity event//////////////////////////////////////
 
 
-// minus button event to reduce quantity in cart 
-function minusQuantity(event) {
 
-  const cartItemContainer = document.querySelector(".cart-item-container");
-  const cartTotalItemContainer = document.querySelector(".cart-total");
 
-  const size = event.target.dataset.size;
-  const id = event.target.dataset.id;
-
-  const findCurrentAddedProduct = itemsSavedInStorage.filter(product => +product.size === +size && +product.id === +id);
-
-  if (findCurrentAddedProduct.quantity === 1) {
-    return;
-  }
-  for (let i = 0; i < findCurrentAddedProduct.length; i++) {
-    findCurrentAddedProduct[i].quantity--;
-    saveToStorage(productKey, findCurrentAddedProduct)
-  }
-
-  cartItemContainer.innerHTML = "";
-  cartTotalItemContainer.innerHTML = "";
-
-  const newSavedItems = getFromStorage(productKey)
-
-  renderCartItems(newSavedItems);
-
-}
-///////////////////////// end of minus quantity event//////////////////////////////////////
 
