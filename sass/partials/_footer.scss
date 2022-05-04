@@ -1,25 +1,3 @@
-// .footer {
-// 	@extend .d-flex, .flex-column, .flex-md-row;
-// 	@extend .justify-content-center, .justify-content-md-around, .align-items-center, .gap-4;
-// 	background-color: $dark;
-// 	color: $white;
-// 	padding: 3em 1em;
-// 	position: relative;
-// }
-// .to-top-btn {
-// 	position: absolute;
-// 	right: 1em;
-// 	bottom: 5.5em;
-// 	font-size: 1.5em;
-// 	color: $dark;
-// 	cursor: pointer;
-// }
-// .social {
-// 	display: flex;
-// 	gap: 2em;
-// 	font-size: 1.5em;
-// }
-
 .footer {
 	@extend .d-flex, .flex-column;
 	position: relative;
@@ -41,7 +19,7 @@
 		@extend .container;
 	}
 	.footer__content-row {
-		@extend .row, .justify-content-between, .p-4, .text-dark;
+		@extend .row, .justify-content-center, .p-4, .text-dark;
 	}
 	.footer__content-logo {
 		@extend .col-md-3, .d-flex, .flex-column, .gap-2;
@@ -63,6 +41,6 @@
 .footer__content-wrapper2 {
 	background-color: $dark;
 	.footer__copyright {
-		@extend .container, .d-flex, .justify-content-between, .align-items-center, .gap-4, .bg-dark, .p-4, .text-white;
+		@extend .container, .d-flex, .justify-content-evenly, .align-items-center, .gap-4, .bg-dark, .p-4, .text-white;
 	}
 }
