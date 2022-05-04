@@ -1,34 +1,39 @@
 .hero {
-	@extend .spacer, .container;
-	margin-top: 50px;
+	@extend .spacer, .container-lg, .shadow;
 	overflow-x: hidden;
+	margin-top: 50px;
 
-	.container-fluid {
-		padding: 0;
+	@media (max-width: $tablet) {
+		margin-top: 0;
 	}
+
 	h1 {
 		font-size: 4em;
+		margin-bottom: 1em;
 		@media (max-width: $mobile) {
 			font-size: 2.5em;
 		}
 	}
-
 	.row > * {
 		padding: 0;
 		gap: 0;
 	}
 
 	.hero-content {
-		@extend .col-sm-6, .order-2, .order-sm-0, .d-flex, .flex-column, .justify-content-center, .align-items-center, .text-center;
-		background-color: $secondary;
-		padding: 0.5em;
+		@extend .col-lg-4, .col-md-5, .order-2, .order-md-0, .d-flex, .flex-column, .justify-content-center, .align-items-center, .text-center;
+		padding: 1em 0.5em;
 	}
 	.hero-banner {
-		@extend .col-sm-6;
+		@extend .col-lg-8, .col-md-7;
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 23% 100%);
+		@media (max-width: $tablet) {
+			clip-path: none;
+		}
 	}
 
 	.hero__image {
 		height: 70vh;
+
 		@media (max-width: $mobile) {
 			height: 40vh;
 		}
@@ -79,7 +84,7 @@
 }
 //carousel/slider
 .slider {
-	@extend .spacer, .container;
+	@extend .spacer, .container-xl;
 }
 //section newsletter
 .newsletter {

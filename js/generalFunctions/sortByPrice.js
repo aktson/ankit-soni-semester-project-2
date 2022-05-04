@@ -26,6 +26,5 @@ export function sortByPrice(results) {
             renderProducts(highestToLowest)
         }
 
-
     })
 }
