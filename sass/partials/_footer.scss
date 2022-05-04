@@ -1,46 +1,40 @@
 .footer {
-	@extend .d-flex, .flex-column;
+	@extend .d-flex, .flex-column, .gap-4;
 	position: relative;
+	background-color: $light;
 
 	.to-top-btn {
 		position: absolute;
 		right: 1em;
-		bottom: 5.5em;
+		top: 1em;
 		font-size: 1.5em;
 		color: $dark;
 		cursor: pointer;
 	}
 }
 
-.footer__content-wrapper1 {
-	background-color: $light;
-
-	.footer__content {
-		@extend .container;
-	}
-	.footer__content-row {
-		@extend .row, .justify-content-center, .p-4, .text-dark;
-	}
-	.footer__content-logo {
-		@extend .col-md-3, .d-flex, .flex-column, .gap-2;
-	}
-	.social {
-		display: flex;
-		gap: 1em;
-		font-size: 1.5em;
-	}
-
-	.footer__content-menu {
-		@extend .col-md-3, .d-flex, .flex-column, .gap-2;
-	}
-	.footer__content-payment {
-		@extend .col-md-3;
-	}
+.footer__content {
+	@extend .container, .p-4;
+}
+.footer__content-row {
+	@extend .row, .justify-content-between, .text-dark, .mx-auto;
+}
+.footer__content-logo {
+	@extend .col-md-4, .d-flex, .flex-column, .gap-2;
+}
+.social {
+	display: flex;
+	gap: 1em;
+	font-size: 1.5em;
 }
 
-.footer__content-wrapper2 {
-	background-color: $dark;
-	.footer__copyright {
-		@extend .container, .d-flex, .justify-content-evenly, .align-items-center, .gap-4, .bg-dark, .p-4, .text-white;
-	}
+.footer__content-menu {
+	@extend .col-md-4, .d-flex, .flex-column, .gap-2;
+}
+.footer__content-payment {
+	@extend .col-md-4;
+}
+
+.footer__copyright {
+	@extend .text-center, .p-4, .bg-dark, .text-white;
 }
