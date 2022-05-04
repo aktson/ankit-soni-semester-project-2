@@ -11106,6 +11106,10 @@ form .form-control {
   cursor: pointer;
 }
 
+.footer .footer-icons {
+  max-width: 25px;
+}
+
 .footer__content .social {
   display: -webkit-box;
   display: -ms-flexbox;

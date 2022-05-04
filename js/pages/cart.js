@@ -16,28 +16,28 @@ renderCartItems(itemsSavedInStorage);
 renderCartQuantity(itemsSavedInStorage);
 
 if (itemsSavedInStorage.length === 0) {
-  displayMessage("light", "Your shopping cart is empty", ".cart-wrapper");
+    displayMessage("light", "Your shopping cart is empty", ".cart-wrapper");
 
 }
 
 function renderCartItems(itemsToRender) {
 
-  const cartItemContainer = document.querySelector(".cart-item-container");
-  const cartTotalItemContainer = document.querySelector(".cart-total");
-  const totalPriceContainer = document.querySelector(".total-price-container");
+    const cartItemContainer = document.querySelector(".cart-item-container");
+    const cartTotalItemContainer = document.querySelector(".cart-total");
+    const totalPriceContainer = document.querySelector(".total-price-container");
 
-  let total = 0;
+    let total = 0;
 
 
-  cartItemContainer.innerHTML = "";
-  cartTotalItemContainer.innerHTML = "";
+    cartItemContainer.innerHTML = "";
+    cartTotalItemContainer.innerHTML = "";
 
-  itemsToRender.forEach(item => {
+    itemsToRender.forEach(item => {
 
-    const price = formatPrice(item.price);
-    const itemTotal = formatPrice(item.price * item.quantity);
+        const price = formatPrice(item.price);
+        const itemTotal = formatPrice(item.price * item.quantity);
 
-    cartItemContainer.innerHTML += `<div class="cart-item ">
+        cartItemContainer.innerHTML += `<div class="cart-item ">
                                       <a href="product-specific.html?id=${item.id}" class="cart-item-link"> 
                                         <img src="${item.image}" class="cart-item-image" alt="${item.title}" />
                                         <div>
@@ -54,7 +54,7 @@ function renderCartItems(itemsToRender) {
                                       <i class="fa-solid fa-trash-can delete-btn" data-size="${item.size}" data-id=${item.id}></i>
                                     </div>`
 
-    cartTotalItemContainer.innerHTML += `<div class="row">
+        cartTotalItemContainer.innerHTML += `<div class="row">
                                           <p class="col text-start fw-bold">${item.title}</p>
                                           <p class="col text-start">Qty. ${item.quantity}  x  ${price}</p>
                                           <p class="col text-end">${itemTotal}</p>
@@ -63,115 +63,115 @@ function renderCartItems(itemsToRender) {
 
 
 
-    total += parseFloat(item.price) * parseFloat(item.quantity);
-    totalPriceContainer.innerHTML = `NOK ${formatPrice(total)} `;
+        total += parseFloat(item.price) * parseFloat(item.quantity);
+        totalPriceContainer.innerHTML = `NOK ${formatPrice(total)} `;
 
-    renderCartQuantity(itemsToRender)
-  })
-
-
-
-  ///////////////////// end of foreach itemstorender loop//////////////////////////////////////
-
-  if (itemsToRender.length > 0) {
-
-    // plus button event to add quantity in cart 
-    const plusBtns = document.querySelectorAll("#plus-btn");
-    plusBtns.forEach(plusBtn => {
-      plusBtn.addEventListener("click", plusQuantity)
-    })
-    function plusQuantity(event) {
-
-      const cartItemContainer = document.querySelector(".cart-item-container");
-      const cartTotalItemContainer = document.querySelector(".cart-total");
-
-      const size = event.target.dataset.size;
-      const id = event.target.dataset.id;
-
-      renderCartItems(itemsToRender);
-
-      const findCurrentAddedProduct = itemsToRender.find(product => +product.size === +size && +product.id === +id);
-      findCurrentAddedProduct.quantity++;
-
-      saveToStorage(productKey, itemsToRender)
-      cartItemContainer.innerHTML = "";
-      cartTotalItemContainer.innerHTML = "";
-
-      const newSavedItems = getFromStorage(productKey)
-
-      renderCartItems(newSavedItems);
-    }
-    ///////////////////// end of pluss qunatity event//////////////////////////////////////
-
-    // minus button event to reduce quantity in cart 
-    const minusBtns = document.querySelectorAll("#minus-btn");
-    minusBtns.forEach(minusBtn => {
-      minusBtn.addEventListener("click", minusQuantity)
-    })
-    function minusQuantity(event) {
-
-      const cartItemContainer = document.querySelector(".cart-item-container");
-      const cartTotalItemContainer = document.querySelector(".cart-total");
-
-      const size = event.target.dataset.size;
-      const id = event.target.dataset.id;
-
-      renderCartItems(itemsToRender)
-
-      const findCurrentAddedProduct = itemsToRender.find(product => +product.size === +size && +product.id === +id);
-
-      if (findCurrentAddedProduct.quantity === 1) {
-        return;
-      }
-
-      findCurrentAddedProduct.quantity--;
-
-      saveToStorage(productKey, itemsToRender)
-
-      cartItemContainer.innerHTML = "";
-      cartTotalItemContainer.innerHTML = "";
-
-      const newSavedItems = getFromStorage(productKey)
-
-      renderCartItems(newSavedItems);
-
-    }
-    ///////////////////////// end of minus quantity event//////////////////////////////////////
-
-    // delet items from cart 
-    const deleteItemBtns = document.querySelectorAll(".delete-btn")
-    deleteItemBtns.forEach(deleteItemBtn => {
-      deleteItemBtn.addEventListener("click", deleteItem)
+        renderCartQuantity(itemsToRender)
     })
 
-    function deleteItem(event) {
 
-      let doDelete = window.confirm("Would you like to delete?");
 
-      if (doDelete) {
+    ///////////////////// end of foreach itemstorender loop//////////////////////////////////////
 
-        const size = event.target.dataset.size;
-        const id = event.target.dataset.id;
+    if (itemsToRender.length > 0) {
 
-        const filteritemsSavedInStorage = itemsToRender.filter(product => !(+product.size === +size && +product.id === +id))
+        // plus button event to add quantity in cart 
+        const plusBtns = document.querySelectorAll("#plus-btn");
+        plusBtns.forEach(plusBtn => {
+            plusBtn.addEventListener("click", plusQuantity)
+        })
+        function plusQuantity(event) {
 
-        saveToStorage(productKey, filteritemsSavedInStorage);
+            const cartItemContainer = document.querySelector(".cart-item-container");
+            const cartTotalItemContainer = document.querySelector(".cart-total");
 
-        const newSavedItems = getFromStorage(productKey);
+            const size = event.target.dataset.size;
+            const id = event.target.dataset.id;
 
-        cartItemContainer.innerHTML = "";
-        cartTotalItemContainer.innerHTML = "";
+            renderCartItems(itemsToRender);
 
-        renderCartItems(newSavedItems);
-        renderCartQuantity(newSavedItems);
+            const findCurrentAddedProduct = itemsToRender.find(product => +product.size === +size && +product.id === +id);
+            findCurrentAddedProduct.quantity++;
 
-        if (newSavedItems.length === 0) {
-          displayMessage("light", "Your shopping cart is empty", ".cart-wrapper");
+            saveToStorage(productKey, itemsToRender)
+            cartItemContainer.innerHTML = "";
+            cartTotalItemContainer.innerHTML = "";
+
+            const newSavedItems = getFromStorage(productKey)
+
+            renderCartItems(newSavedItems);
         }
-      }
+        ///////////////////// end of pluss qunatity event//////////////////////////////////////
+
+        // minus button event to reduce quantity in cart 
+        const minusBtns = document.querySelectorAll("#minus-btn");
+        minusBtns.forEach(minusBtn => {
+            minusBtn.addEventListener("click", minusQuantity)
+        })
+        function minusQuantity(event) {
+
+            const cartItemContainer = document.querySelector(".cart-item-container");
+            const cartTotalItemContainer = document.querySelector(".cart-total");
+
+            const size = event.target.dataset.size;
+            const id = event.target.dataset.id;
+
+            renderCartItems(itemsToRender)
+
+            const findCurrentAddedProduct = itemsToRender.find(product => +product.size === +size && +product.id === +id);
+
+            if (findCurrentAddedProduct.quantity === 1) {
+                return;
+            }
+
+            findCurrentAddedProduct.quantity--;
+
+            saveToStorage(productKey, itemsToRender)
+
+            cartItemContainer.innerHTML = "";
+            cartTotalItemContainer.innerHTML = "";
+
+            const newSavedItems = getFromStorage(productKey)
+
+            renderCartItems(newSavedItems);
+
+        }
+        ///////////////////////// end of minus quantity event//////////////////////////////////////
+
+        // delet items from cart 
+        const deleteItemBtns = document.querySelectorAll(".delete-btn")
+        deleteItemBtns.forEach(deleteItemBtn => {
+            deleteItemBtn.addEventListener("click", deleteItem)
+        })
+
+        function deleteItem(event) {
+
+            let doDelete = window.confirm("Would you like to delete?");
+
+            if (doDelete) {
+
+                const size = event.target.dataset.size;
+                const id = event.target.dataset.id;
+
+                const filteritemsSavedInStorage = itemsToRender.filter(product => !(+product.size === +size && +product.id === +id))
+
+                saveToStorage(productKey, filteritemsSavedInStorage);
+
+                const newSavedItems = getFromStorage(productKey);
+
+                cartItemContainer.innerHTML = "";
+                cartTotalItemContainer.innerHTML = "";
+
+                renderCartItems(newSavedItems);
+                renderCartQuantity(newSavedItems);
+
+                if (newSavedItems.length === 0) {
+                    displayMessage("light", "Your shopping cart is empty", ".cart-wrapper");
+                }
+            }
+        }
+        ///////////////////// end of delete function//////////////////////////////////////
     }
-    ///////////////////// end of delete function//////////////////////////////////////
-  }
 
 }
 
