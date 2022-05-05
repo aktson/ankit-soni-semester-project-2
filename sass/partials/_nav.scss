@@ -47,3 +47,21 @@
 	font-size: 0.5em;
 	color: $dark;
 }
+.site-slogan {
+	@extend .d-none, .d-sm-flex, .bg-secondary, .justify-content-around, .align-items-center, .px-4, .py-2;
+	p {
+		margin-bottom: 0;
+		font-size: 0.9em;
+		transition: 0.5s transform;
+		animation: slide-up forwards 1s ease;
+		font-family: $heading-fonts;
+	}
+	@keyframes slide-up {
+		0% {
+			transform: translateY(-100px);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+}

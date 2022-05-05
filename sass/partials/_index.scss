@@ -84,11 +84,11 @@
 }
 //carousel/slider
 .slider {
-	@extend .spacer, .container-xl;
+	@extend .spacer, .container-fluid, .p-0;
 }
 //section newsletter
 .newsletter {
-	@extend .spacer, .d-flex, .justify-content-center, .align-items-center;
+	@extend .d-flex, .justify-content-center, .align-items-center;
 	height: 50vh;
 	background-color: $secondary;
 

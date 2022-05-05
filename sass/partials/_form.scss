@@ -1,3 +1,10 @@
+.form-control {
+	border: transparent;
+	border-bottom: 1px solid $dark;
+	background-color: transparent;
+	border-radius: 0;
+}
+
 form {
 	@extend .shadow-sm;
 	padding: 2em !important;
@@ -15,13 +22,8 @@ form {
 		@extend .form-floating;
 		margin-bottom: 2.5em;
 	}
-	.form-control {
-		border: transparent;
-		border-bottom: 1px solid $black;
-		background-color: transparent;
-		border-radius: 0;
-	}
 }
+
 .form-wrapper {
 	@extend .inner-spacer-top;
 	display: flex;
