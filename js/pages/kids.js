@@ -20,13 +20,16 @@ renderFooter();
         if (response.ok) {
             const results = await response.json();
 
-            const filterWomenData = results.data.filter(result => {
-                return result.attributes.categories.data[0].attributes.name === "women";
+            const filterKidsData = results.data.filter(result => {
+                return result.attributes.categories.data[0].attributes.name === "kids";
             })
 
-            renderProducts(filterWomenData);
+            renderProducts(filterKidsData);
             searchProduct(results.data);
             sortByPrice(results.data);
+
+            console.log(results.data)
+
 
         } else {
             throw new Error(response.statusText);

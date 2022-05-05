@@ -31,7 +31,7 @@ export function renderMenu() {
 
     menuContainer.innerHTML = "";
 
-    menuContainer.innerHTML = ` <a class="navbar-brand d-none d-md-block" href="index.html">Logo</a>
+    menuContainer.innerHTML = ` <a class="navbar-brand " href="index.html">Logo</a>
                                 <div class="d-flex flex-column flex-md-row">
                                     <li class="nav-item">
                                         <a class="nav-link ${pathname === "/index.html" || pathname === "/" ? "active" : ""}" aria-current="page" href="index.html">Home</a>
@@ -41,6 +41,9 @@ export function renderMenu() {
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link ${pathname === "/women.html" ? "active" : ""}" href="women.html">Women</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link ${pathname === "/kids.html" ? "active" : ""}" href="kids.html">Kids</a>
                                     </li>
                                 </div>
                                 <div class="d-flex ">
