@@ -10,7 +10,7 @@ const username = getUser();
 const { pathname } = document.location;
 
 let authLink = `<li class="nav-item">
-                   <a class="nav-link ${pathname === "/login.html" ? "active" : ""}" href="login.html">Login <i class="fa-solid fa-user"></i></a>
+                   <a class="nav-link ${pathname === "/login.html" ? "active" : ""}" href="login.html"><i class="fa-solid fa-user"></i></a>
                 </li>`;
 
 if (username) {
@@ -31,23 +31,26 @@ export function renderMenu() {
 
     menuContainer.innerHTML = "";
 
-    menuContainer.innerHTML = `<li class="nav-item">
-                            <a class="nav-link ${pathname === "/index.html" || pathname === "/" ? "active" : ""}" aria-current="page" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link ${pathname === "/men.html" ? "active" : ""}" href="men.html">Men</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link ${pathname === "/women.html" ? "active" : ""}" href="women.html">Women</a>
-                            </li>
-                       
-                            <li class="nav-item">
-                            <a class="nav-link  ${pathname === "/cart.html" ? "active" : ""}" href="cart.html">
-                                Cart
-                                <i class="fa-solid fa-bag-shopping position-relative"><span class="cart-quantity"></span></i>
-                            </a>
-                            </li>
-                            ${authLink}`;
+    menuContainer.innerHTML = ` <a class="navbar-brand d-none d-md-block" href="index.html">Logo</a>
+                                <div class="d-flex flex-column flex-md-row">
+                                    <li class="nav-item">
+                                        <a class="nav-link ${pathname === "/index.html" || pathname === "/" ? "active" : ""}" aria-current="page" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link ${pathname === "/men.html" ? "active" : ""}" href="men.html">Men</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link ${pathname === "/women.html" ? "active" : ""}" href="women.html">Women</a>
+                                    </li>
+                                </div>
+                                <div class="d-flex ">
+                                    <li class="nav-item">
+                                        <a class="nav-link  ${pathname === "/cart.html" ? "active" : ""}" href="cart.html">
+                                            <i class="fa-solid fa-bag-shopping position-relative"><span class="cart-quantity"></span></i>
+                                        </a>
+                                    </li>
+                                    ${authLink}
+                                </div>`;
 
     if (username) {
         const logout = document.querySelector("#logout");

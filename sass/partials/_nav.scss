@@ -9,10 +9,17 @@
 	gap: 1em;
 	align-items: center;
 }
+.navbar-brand {
+	@extend .d-none, .d-md-block;
+}
 .nav-link {
 	color: $dark !important;
 	font-size: 1.1em;
 	transition: all 0.5s ease;
+	i {
+		font-size: 1.3em;
+		margin-right: 0.3em;
+	}
 }
 .nav-link:hover {
 	color: $primary !important;
@@ -31,6 +38,7 @@
 
 .nav-menu-container {
 	@extend .navbar-nav, .navbar-ul;
+	justify-content: space-between;
 }
 
 #logout {
@@ -47,22 +55,4 @@
 	right: -20px;
 	font-size: 0.5em;
 	color: $dark;
-}
-.site-slogan {
-	@extend .d-none, .d-sm-flex, .bg-secondary, .justify-content-around, .align-items-center, .px-4, .py-2;
-	p {
-		margin-bottom: 0;
-		font-size: 0.9em;
-		transition: 0.5s transform;
-		animation: slide-up forwards 1s ease;
-		font-family: $heading-fonts;
-	}
-	@keyframes slide-up {
-		0% {
-			transform: translateY(-100px);
-		}
-		100% {
-			transform: translateY(0);
-		}
-	}
 }
