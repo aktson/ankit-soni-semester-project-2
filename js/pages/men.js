@@ -22,20 +22,13 @@ renderFooter();
     if (response.ok) {
       const results = await response.json();
 
-      renderProducts(results.data);
-      searchProduct(results.data);
-      sortByPrice(results.data);
-      console.log(results.data)
-
       const filterMenData = results.data.filter(result => {
         return result.attributes.categories.data[0].attributes.name === "men";
       })
-      // console.log(filterData)
 
-
-      const filterWomenData = results.data.filter(result => {
-        return result.attributes.categories.data[0].attributes.name === "women";
-      })
+      renderProducts(filterMenData);
+      searchProduct(results.data);
+      sortByPrice(results.data);
 
 
     } else {
