@@ -1,14 +1,16 @@
 import { displayMessage } from "../generalFunctions/displayMessage.js";
-import { renderMenu } from "../generalFunctions/renderMenu.js";
-import { scrollToTop } from "../generalFunctions/scrollToTop.js";
+import { renderMenu } from "../render/renderMenu.js";
+import { renderFooter } from "../render/renderFooter.js";
 import { baseUrl } from "../settings.js";
 import { getFromStorage, saveToStorage, productKey } from "../storage/storage.js";
-import { renderModal, showMessageWithModal } from "../generalFunctions/modalProductSpecific.js"
-import { renderCartQuantity } from "../generalFunctions/renderCartQuantity.js";
+import { renderModal, showMessageWithModal } from "../render/modalProductSpecific.js"
+import { renderCartQuantity } from "../render/renderCartQuantity.js";
 
 
-scrollToTop();
+
+
 renderMenu();
+renderFooter();
 
 
 

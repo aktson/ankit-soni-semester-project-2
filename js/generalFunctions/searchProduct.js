@@ -1,4 +1,4 @@
-import { renderProducts } from "../pages/products.js";
+import { renderProducts } from "../render/renderProducts.js";
 import { displayMessage } from "./displayMessage.js";
 
 // filter products for search results on keyup event

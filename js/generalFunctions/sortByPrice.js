@@ -1,4 +1,4 @@
-import { renderProducts } from "../pages/products.js";
+import { renderProducts } from "../render/renderProducts.js";
 
 // sort products by price
 export function sortByPrice(results) {

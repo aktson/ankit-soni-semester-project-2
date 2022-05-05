@@ -1,11 +1,12 @@
 import { baseUrl } from "../settings.js";
 import { saveToken, saveUser } from "../storage/storage.js";
-import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
-import { renderMenu } from "../generalFunctions/renderMenu.js";
+import { renderMenu } from "../render/renderMenu.js";
+import { renderFooter } from "../render/renderFooter.js";
 
-scrollToTop();
+
 renderMenu();
+renderFooter();
 
 const form = document.querySelector("form");
 const username = document.querySelector("#username");

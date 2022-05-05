@@ -1,13 +1,16 @@
 import { displayMessage } from "../generalFunctions/displayMessage.js";
+import { renderMenu } from "../render/renderMenu.js";
+import { renderFooter } from "../render/renderFooter.js";
 import { formatPrice } from "../generalFunctions/formatPrice.js";
-import { scrollToTop } from "../generalFunctions/scrollToTop.js";
 import { getFromStorage, saveToStorage, productKey } from "../storage/storage.js";
-import { renderMenu } from "../generalFunctions/renderMenu.js";
-import { renderCartQuantity } from "../generalFunctions/renderCartQuantity.js";
+
+import { renderCartQuantity } from "../render/renderCartQuantity.js";
+
 
 
 renderMenu();
-scrollToTop();
+renderFooter();
+
 
 
 const itemsSavedInStorage = getFromStorage(productKey);

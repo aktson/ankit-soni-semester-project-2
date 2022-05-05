@@ -1,5 +1,5 @@
-import { renderMenu } from "../generalFunctions/renderMenu.js";
-import { scrollToTop } from "../generalFunctions/scrollToTop.js";
+import { renderMenu } from "../render/renderMenu.js";
+import { renderFooter } from "../render/renderFooter.js";
 import { baseUrl } from "../settings.js";
 import { getUser } from "../storage/storage.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
@@ -8,8 +8,10 @@ import { removeMessage } from "../generalFunctions/removeMessage.js";
 
 
 
+
 renderMenu();
-scrollToTop();
+renderFooter();
+
 
 const user = getUser();
 

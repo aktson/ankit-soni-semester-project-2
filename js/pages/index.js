@@ -1,10 +1,10 @@
 import { baseUrl } from "../settings.js";
-import { scrollToTop } from "../generalFunctions/scrollToTop.js";
-import { renderMenu } from "../generalFunctions/renderMenu.js";
+import { renderMenu } from "../render/renderMenu.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
+import { renderFooter } from "../render/renderFooter.js";
 
-scrollToTop();
 renderMenu();
+renderFooter();
 
 
 // hero section fetch request

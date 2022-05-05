@@ -10840,12 +10840,12 @@ main {
       flex-shrink: 0;
 }
 
-.spacer, .loader, .hero, .featured-products, .member-campaign, .slider, .services, .products, .product-specific, .cart {
+.spacer, .loader, form, .hero, .featured-products, .member-campaign, .slider, .services, .products, .product-specific, .cart {
   margin-bottom: 200px;
 }
 
 @media (max-width: 576px) {
-  .spacer, .loader, .hero, .featured-products, .member-campaign, .slider, .services, .products, .product-specific, .cart {
+  .spacer, .loader, form, .hero, .featured-products, .member-campaign, .slider, .services, .products, .product-specific, .cart {
     margin-bottom: 100px;
   }
 }

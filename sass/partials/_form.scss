@@ -6,7 +6,7 @@
 }
 
 form {
-	@extend .shadow-sm;
+	@extend .shadow-sm, .spacer;
 	padding: 2em !important;
 
 	span > div {

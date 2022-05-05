@@ -1,13 +1,14 @@
 import { baseUrl } from "../settings.js";
-import { scrollToTop } from "../generalFunctions/scrollToTop.js";
-import { renderMenu } from "../generalFunctions/renderMenu.js";
+import { renderMenu } from "../render/renderMenu.js";
+import { renderFooter } from "../render/renderFooter.js";
 import { getUser, getToken } from "../storage/storage.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
 import { checkInput, checkLength, emptyInnerhtml } from "../generalFunctions/formFunctions.js";
 
 
+
 renderMenu();
-scrollToTop();
+renderFooter();
 
 const token = getToken();
 

@@ -1,5 +1,5 @@
 import { getFromStorage, getUser, productKey, tokenKey, userKey } from "../storage/storage.js";
-import { renderCartQuantity } from "../generalFunctions/renderCartQuantity.js";
+import { renderCartQuantity } from "../render/renderCartQuantity.js";
 
 
 
@@ -35,8 +35,12 @@ export function renderMenu() {
                             <a class="nav-link ${pathname === "/index.html" || pathname === "/" ? "active" : ""}" aria-current="page" href="index.html">Home</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link ${pathname === "/products.html" ? "active" : ""}" href="products.html">Products</a>
+                            <a class="nav-link ${pathname === "/men.html" ? "active" : ""}" href="men.html">Men</a>
                             </li>
+                            <li class="nav-item">
+                            <a class="nav-link ${pathname === "/women.html" ? "active" : ""}" href="women.html">Women</a>
+                            </li>
+                       
                             <li class="nav-item">
                             <a class="nav-link  ${pathname === "/cart.html" ? "active" : ""}" href="cart.html">
                                 Cart
@@ -59,23 +63,3 @@ export function renderMenu() {
     renderCartQuantity(itemsSavedInStorage);
 }
 
-
-// export function renderCartQuantity() {
-//     let quantity = 0;
-
-//     const cartItems = document.querySelector(".cart-quantity");
-//     cartItems.innerHTML = "";
-
-//     cartItems.innerHTML = quantity;
-
-//     for (let i = 0; i < itemsSavedInStorage.length; i++) {
-
-//         quantity += itemsSavedInStorage[i].quantity;
-
-//         cartItems.innerHTML = quantity;
-
-//     }
-//     if (quantity === 0) {
-//         cartItems.classList.add("visually-hidden");
-//     }
-// }
