@@ -1,6 +1,7 @@
 .navbar {
 	@extend .navbar-light, .bg-light, .navbar-expand-md;
 	padding: 1.2em;
+	font-family: $heading-fonts;
 }
 .navbar-ul {
 	justify-content: end;

@@ -89,7 +89,7 @@
 //section newsletter
 .newsletter {
 	@extend .d-flex, .justify-content-center, .align-items-center;
-	height: 50vh;
+	height: 40vh;
 	background-color: $secondary;
 
 	.newsletter-content {

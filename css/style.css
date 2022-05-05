@@ -11034,6 +11034,7 @@ form .div-input-container, form .textarea-container {
 
 .navbar {
   padding: 1.2em;
+  font-family: "Tenor Sans", sans-serif;
 }
 
 .navbar-ul, .nav-menu-container {
@@ -11231,7 +11232,7 @@ form .div-input-container, form .textarea-container {
 }
 
 .newsletter {
-  height: 50vh;
+  height: 40vh;
   background-color: #ffff9d;
 }
 

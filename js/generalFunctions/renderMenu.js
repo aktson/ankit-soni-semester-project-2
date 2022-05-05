@@ -10,7 +10,7 @@ const username = getUser();
 const { pathname } = document.location;
 
 let authLink = `<li class="nav-item">
-                   <a class="nav-link ${pathname === "/login.html" ? "active" : ""}" href="login.html">Log in <i class="fa-solid fa-user"></i></a>
+                   <a class="nav-link ${pathname === "/login.html" ? "active" : ""}" href="login.html">Login <i class="fa-solid fa-user"></i></a>
                 </li>`;
 
 if (username) {
