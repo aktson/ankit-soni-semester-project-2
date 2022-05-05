@@ -1,6 +1,6 @@
 .navbar {
 	@extend .navbar-light, .bg-light, .navbar-expand-md;
-	padding: 1.2em;
+	padding: 1.1em;
 	font-family: $heading-fonts;
 }
 .navbar-ul {
@@ -11,7 +11,7 @@
 }
 .nav-link {
 	color: $dark !important;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	transition: all 0.5s ease;
 }
 .nav-link:hover {

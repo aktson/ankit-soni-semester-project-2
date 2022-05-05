@@ -11033,7 +11033,7 @@ form .div-input-container, form .textarea-container {
 }
 
 .navbar {
-  padding: 1.2em;
+  padding: 1.1em;
   font-family: "Tenor Sans", sans-serif;
 }
 
@@ -11052,7 +11052,7 @@ form .div-input-container, form .textarea-container {
 
 .nav-link {
   color: #3c3f40 !important;
-  font-size: 1.2em;
+  font-size: 1.1em;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
