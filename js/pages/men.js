@@ -12,6 +12,7 @@ import { renderProducts } from "../render/renderProducts.js";
 renderMenu();
 renderFooter();
 
+
 (async function fetchProducts() {
 
   const url = baseUrl + "api/items?populate=*";

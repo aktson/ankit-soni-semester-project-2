@@ -135,7 +135,7 @@ async function editProductWithoutImage(title, description, price, featured, altT
 
         if (res.ok) {
             displayMessage("success text-center", "Product updated successfully!", "#message-container");
-            location.href = "/products.html";
+            location.replace(document.referrer);
         }
 
     }
@@ -189,7 +189,8 @@ async function editProductWithImage(title, description, price, featured, image, 
 
         if (res.ok) {
             displayMessage("success text-center", "Product updated successfully!", "#message-container");
-            location.href = "/products.html";
+            location.replace(document.referrer);
+
         }
 
     }
