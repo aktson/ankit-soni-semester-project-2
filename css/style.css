@@ -6531,7 +6531,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   display: none !important;
 }
 
-.shadow, .hero {
+.shadow, .card, .hero {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(33, 36, 38, 0.15) !important;
           box-shadow: 0 0.5rem 1rem rgba(33, 36, 38, 0.15) !important;
 }
@@ -6541,7 +6541,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           box-shadow: 0 0.125rem 0.25rem rgba(33, 36, 38, 0.075) !important;
 }
 
-.shadow-lg, .card {
+.shadow-lg {
   -webkit-box-shadow: 0 1rem 3rem rgba(33, 36, 38, 0.175) !important;
           box-shadow: 0 1rem 3rem rgba(33, 36, 38, 0.175) !important;
 }

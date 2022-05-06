@@ -14,7 +14,7 @@
 	transform: scale(1.1);
 }
 .card {
-	@extend .h-100, .shadow-lg;
+	@extend .h-100, .shadow;
 	border: 0;
 	overflow: hidden;
 }
