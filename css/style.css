@@ -10576,6 +10576,10 @@ a {
   max-width: 100%;
 }
 
+.line-break {
+  white-space: pre-wrap;
+}
+
 .btn, form .form-btn, .featured-products__link, .delete-product, .edit-product, .product-specific .add-to-cart, .product-specific .delete-btn, .btn-continue-shopping, .btn-to-cart, .back-button {
   border-radius: 0;
   padding: 0.7em 1.5em;

@@ -48,7 +48,7 @@ export function renderSpecificProduct(result) {
                                           </select>
                                         <button class="add-to-cart" data-title="${title}" data-id=${result.id} data-size="${result.size}" data-price="${price}" data-image="${img}" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
                                         <button class="delete-btn ${cssClass}" data-id=${result.id} >Remove item</button>
-                                        <p>${description}</p>
+                                        <p class="line-break">${description}</p>
                                     </div>
                                     </div>`;
 
