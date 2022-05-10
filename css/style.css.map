@@ -77,7 +77,7 @@
         "../sass/partials/_layout.scss",
         "../sass/partials/_loader.scss",
         "../sass/partials/_product-card.scss",
-        "../sass/partials/_member-card.scss",
+        "../sass/partials/_member-campaign-card.scss",
         "../sass/partials/_form.scss",
         "../sass/partials/_nav.scss",
         "../sass/partials/_footer.scss",
