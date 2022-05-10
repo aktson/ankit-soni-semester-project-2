@@ -71,7 +71,7 @@
 }
 //section newsletter
 .newsletter {
-	@extend .d-flex, .justify-content-center, .align-items-center;
+	@extend .d-flex, .justify-content-center, .align-items-center, .spacer;
 	height: 40vh;
 	background-color: $secondary;
 

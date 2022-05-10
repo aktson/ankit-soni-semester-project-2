@@ -10868,12 +10868,12 @@ main {
       flex-shrink: 0;
 }
 
-.spacer, .loader, .member-campaign, form, .hero, .featured-products, .slider, .services, .products, .product-specific, .cart {
+.spacer, .loader, .member-campaign, form, .hero, .featured-products, .slider, .newsletter, .services, .products, .product-specific, .cart {
   margin-bottom: 200px;
 }
 
 @media (max-width: 576px) {
-  .spacer, .loader, .member-campaign, form, .hero, .featured-products, .slider, .services, .products, .product-specific, .cart {
+  .spacer, .loader, .member-campaign, form, .hero, .featured-products, .slider, .newsletter, .services, .products, .product-specific, .cart {
     margin-bottom: 100px;
   }
 }
