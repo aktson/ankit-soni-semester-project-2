@@ -67,7 +67,7 @@
 
 //carousel/slider
 .slider {
-	@extend .spacer, .container-fluid, .p-0;
+	@extend .spacer, .container, .p-0;
 }
 //section newsletter
 .newsletter {

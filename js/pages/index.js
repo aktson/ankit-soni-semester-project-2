@@ -2,6 +2,7 @@ import { baseUrl } from "../settings.js";
 import { renderMenu } from "../render/renderMenu.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
 import { renderFooter } from "../render/renderFooter.js";
+import { renderSliderHome } from "../render/renderSliderHome.js";
 
 renderMenu();
 renderFooter();
@@ -36,7 +37,9 @@ renderFooter();
 
     if (response.ok) {
       const results = await response.json();
+      console.log(results.data)
       renderFeaturedProducts(results.data)
+      renderSliderHome(results.data);
 
     } else {
       throw new Error(response.statusText);
