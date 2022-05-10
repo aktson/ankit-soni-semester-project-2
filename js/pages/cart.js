@@ -41,27 +41,27 @@ function renderCartItems(itemsToRender) {
         const itemTotal = formatPrice(item.price * item.quantity);
 
         cartItemContainer.innerHTML += `<div class="cart-item ">
-                                      <a href="product-specific.html?id=${item.id}" class="cart-item-link"> 
-                                        <img src="${item.image}" class="cart-item-image" alt="${item.title}" />
-                                        <div>
-                                          <h4>${item.title}</h4> 
-                                          <p class="text-start">Size: ${item.size}</p>
-                                        </div>
-                                      </a>
-                                      <div class="d-flex gap-1">
-                                        <i class="fa-solid fa-circle-minus" id="minus-btn" data-size="${item.size}" data-id=${item.id}></i>  
-                                        <p class="cart-price lead">${item.quantity}</p>
-                                        <i class="fa-solid fa-circle-plus" id="plus-btn" data-size="${item.size}" data-id=${item.id}></i>
-                                      </div>
-                                      <p class="ms-auto">NOK ${price} </p>
-                                      <i class="fa-solid fa-trash-can delete-btn" data-size="${item.size}" data-id=${item.id}></i>
-                                    </div>`
+                                            <a href="product-specific.html?id=${item.id}" class="cart-item-link"> 
+                                                <img src="${item.image}" class="cart-item-image" alt="${item.title}" />
+                                                <div>
+                                                <h4>${item.title}</h4> 
+                                                <p class="text-start">Size: ${item.size}</p>  
+                                                </div>
+                                            </a>               
+                                            <div class="quantity-container">
+                                                <i class="fa-solid fa-circle-minus" id="minus-btn" data-size="${item.size}" data-id=${item.id}></i>  
+                                                <p class="lead">${item.quantity}</p>
+                                                <i class="fa-solid fa-circle-plus" id="plus-btn" data-size="${item.size}" data-id=${item.id}></i>
+                                            </div>
+                                            <p class="ms-auto">NOK ${price} </p>
+                                            <i class="fa-solid fa-trash-can delete-btn" data-size="${item.size}" data-id=${item.id}></i>
+                                        </div>`
 
         cartTotalItemContainer.innerHTML += `<div class="row">
-                                          <p class="col text-start fw-bold">${item.title}</p>
-                                          <p class="col text-start">${item.quantity}  x  ${price}</p>
-                                          <p class="col text-end">${itemTotal}</p>
-                                        </div>`
+                                                <p class="col text-start fw-bold">${item.title}</p>
+                                                <p class="col text-start">${item.quantity}  x  ${price}</p>
+                                                <p class="col text-end">${itemTotal}</p>
+                                            </div>`
 
 
         total += parseFloat(item.price) * parseFloat(item.quantity);

@@ -29,9 +29,6 @@ renderFooter();
             searchProduct(filterKidsData);
             sortByPrice(filterKidsData);
 
-            console.log(results.data)
-
-
         } else {
             throw new Error(response.statusText);
         }
