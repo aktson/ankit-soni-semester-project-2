@@ -5428,7 +5428,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           filter: invert(1) grayscale(100%) brightness(200%);
 }
 
-.modal {
+.modal, .modal-loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -5448,7 +5448,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   pointer-events: none;
 }
 
-.modal.fade .modal-dialog {
+.modal.fade .modal-dialog, .fade.modal-loader .modal-dialog {
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
@@ -5458,18 +5458,18 @@ form .show > .dropdown-toggle.form-btn:focus,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .modal.fade .modal-dialog {
+  .modal.fade .modal-dialog, .fade.modal-loader .modal-dialog {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.modal.show .modal-dialog {
+.modal.show .modal-dialog, .show.modal-loader .modal-dialog {
   -webkit-transform: none;
           transform: none;
 }
 
-.modal.modal-static .modal-dialog {
+.modal.modal-static .modal-dialog, .modal-static.modal-loader .modal-dialog {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
 }
@@ -10974,23 +10974,33 @@ a {
   }
 }
 
+.modal-loader {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-loader .modal-content {
+  background-color: transparent;
+  border: none;
+}
+
 #product__link {
   overflow: hidden;
 }
 
 #product__link .product-image {
   height: 300px;
-  -webkit-transition: 0.7s -webkit-transform;
-  transition: 0.7s -webkit-transform;
-  transition: 0.7s transform;
-  transition: 0.7s transform, 0.7s -webkit-transform;
+  -webkit-transition: 1s -webkit-transform;
+  transition: 1s -webkit-transform;
+  transition: 1s transform;
+  transition: 1s transform, 1s -webkit-transform;
 }
 
 #product__link:hover .product-image {
-  -webkit-transition: 0.7s -webkit-transform;
-  transition: 0.7s -webkit-transform;
-  transition: 0.7s transform;
-  transition: 0.7s transform, 0.7s -webkit-transform;
+  -webkit-transition: 1s -webkit-transform;
+  transition: 1s -webkit-transform;
+  transition: 1s transform;
+  transition: 1s transform, 1s -webkit-transform;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -11274,20 +11284,6 @@ form .div-input-container, form .textarea-container {
 .services i {
   font-size: 2em;
   margin-bottom: 0.5em;
-}
-
-.member-campaign__content {
-  background-color: #3c3f40;
-  color: #eeefe9;
-  padding: 0.5em;
-}
-
-.member-campaign__content h3, .member-campaign__content .h3 {
-  font-size: 3em;
-}
-
-.member-campaign__content p {
-  font-size: 1.5em;
 }
 
 .products .col {

@@ -3,12 +3,11 @@ import { saveToken, saveUser } from "../storage/storage.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
 import { renderMenu } from "../render/renderMenu.js";
 import { renderFooter } from "../render/renderFooter.js";
+import { hideModalLoader, showModalLoader } from "../generalFunctions/modalLoader.js";
 
 
 renderMenu();
 renderFooter();
-
-
 
 const form = document.querySelector("form");
 const username = document.querySelector("#username");
@@ -57,6 +56,7 @@ async function doLogin(username, password) {
         }
 
     }
+    showModalLoader();
 
     try {
 
@@ -66,6 +66,7 @@ async function doLogin(username, password) {
 
 
         if (result.user) {
+            hideModalLoader();
             displayMessage("success", "Login successful", "#message-container");
             saveToken(result.jwt);
             saveUser(result.user);
@@ -73,6 +74,7 @@ async function doLogin(username, password) {
             window.history.go(-1);
         }
         if (result.error) {
+            hideModalLoader();
             displayMessage("danger", "Invalid username/password", "#message-container");
         }
 
@@ -80,6 +82,7 @@ async function doLogin(username, password) {
     }
 
     catch (error) {
+        hideModalLoader();
         console.log(error)
         displayMessage("danger", "Unknown error occured", "#message-container")
     }

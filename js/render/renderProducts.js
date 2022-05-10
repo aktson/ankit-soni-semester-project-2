@@ -1,6 +1,7 @@
 import { getUser, getToken, getFromStorage, productKey } from "../storage/storage.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
 import { baseUrl } from "../settings.js";
+import { hideModalLoader, showModalLoader } from "../generalFunctions/modalLoader.js";
 
 
 const itemsSavedInStorage = getFromStorage(productKey);
@@ -71,6 +72,7 @@ export function renderProducts(results) {
 
 // delete request to delete item from api only for authenticated user
 async function deleteProduct(event) {
+    showModalLoader();
 
     try {
         const id = event.target.dataset.id;
@@ -95,12 +97,14 @@ async function deleteProduct(event) {
             const res = await fetch(imageUrl, options);
 
             if (res.ok) {
+                hideModalLoader();
                 displayMessage("success", "Product deleted!!", "#message-container");
                 location.reload();
             }
         }
     }
     catch (error) {
+        hideModalLoader();
         console.log(error)
         displayMessage("danger", "Unknown error occured", "#message-container")
     }

@@ -5,6 +5,7 @@ import { getUser, getToken } from "../storage/storage.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
 import { checkLength, emptyInnerhtml, checkInput } from "../generalFunctions/formFunctions.js"
 import { removeMessage } from "../generalFunctions/removeMessage.js";
+import { hideModalLoader, showModalLoader } from "../generalFunctions/modalLoader.js";
 
 
 
@@ -75,6 +76,7 @@ function handleSubmit(event) {
 
 
 async function addProduct(title, description, price, featured, image, altText, category) {
+    showModalLoader();
 
     try {
 
@@ -112,12 +114,16 @@ async function addProduct(title, description, price, featured, image, altText, c
         const res = await fetch(productUrl, optionsProduct);
 
         if (res.ok) {
+
+            hideModalLoader();
+
             displayMessage("success text-center", "Product added!!", "#message-container");
             removeMessage("#message-container");
             form.reset();
         }
     }
     catch (error) {
+        hideModalLoader();
         console.log(error)
         displayMessage("danger", "Unknow error occured", "#message-container");
     }

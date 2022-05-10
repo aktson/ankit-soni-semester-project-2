@@ -4,6 +4,7 @@ import { renderFooter } from "../render/renderFooter.js";
 import { getUser, getToken } from "../storage/storage.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
 import { checkInput, checkLength, emptyInnerhtml } from "../generalFunctions/formFunctions.js";
+import { hideModalLoader, showModalLoader } from "../generalFunctions/modalLoader.js";
 
 
 
@@ -114,6 +115,8 @@ function handleEdit(event) {
 // if image input value is empty then only data without image will be updated and image will get its existing id
 async function editProductWithoutImage(title, description, price, featured, altText, id) {
 
+    showModalLoader();
+
     try {
 
         messageContainer.innerHTML = "";
@@ -134,13 +137,14 @@ async function editProductWithoutImage(title, description, price, featured, altT
 
 
         if (res.ok) {
-
+            hideModalLoader();
             displayMessage("success text-center", "Product updated successfully!", "#message-container");
             location.replace(document.referrer);
         }
 
     }
     catch (error) {
+        hideModalLoader();
         console.log(error)
         displayMessage("danger", "Unknow error occured", "#message-container");
     }
@@ -150,6 +154,9 @@ async function editProductWithoutImage(title, description, price, featured, altT
 
 // If new image is added then follwing function will upload image and id will be passed in put request
 async function editProductWithImage(title, description, price, featured, image, altText, id) {
+    const loader = document.querySelector(".modal-loader");
+    loader.style.display = "block";
+
 
     try {
         messageContainer.innerHTML = "";
@@ -192,6 +199,7 @@ async function editProductWithImage(title, description, price, featured, image, 
 
 
         if (res.ok) {
+            loader.style.display = "none";
             displayMessage("success text-center", "Product updated successfully!", "#message-container");
             location.replace(document.referrer);
 
@@ -199,6 +207,7 @@ async function editProductWithImage(title, description, price, featured, image, 
 
     }
     catch (error) {
+        loader.style.display = "none";
         console.log(error)
         displayMessage("danger", "Unknow error occured", "#message-container");
     }

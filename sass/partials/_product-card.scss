@@ -3,14 +3,14 @@
 
 	.product-image {
 		height: 300px;
-		transition: 0.7s transform;
+		transition: 1s transform;
 	}
 	.col {
 		@extend .inner-spacer-bottom;
 	}
 }
 #product__link:hover .product-image {
-	transition: 0.7s transform;
+	transition: 1s transform;
 	transform: scale(1.1);
 }
 .card {
