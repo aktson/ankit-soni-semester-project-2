@@ -25,8 +25,8 @@ renderFooter();
             })
 
             renderProducts(filterWomenData);
-            searchProduct(results.data);
-            sortByPrice(results.data);
+            searchProduct(filterWomenData);
+            sortByPrice(filterWomenData);
 
         } else {
             throw new Error(response.statusText);

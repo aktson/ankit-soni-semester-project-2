@@ -4,6 +4,7 @@ import { sortByPrice } from "../generalFunctions/sortByPrice.js";
 import { renderProducts } from "../render/renderProducts.js";
 import { renderMenu } from "../render/renderMenu.js";
 import { renderFooter } from "../render/renderFooter.js";
+import { displayMessage } from "../generalFunctions/displayMessage.js"
 
 
 renderMenu();
@@ -25,8 +26,8 @@ renderFooter();
             })
 
             renderProducts(filterKidsData);
-            searchProduct(results.data);
-            sortByPrice(results.data);
+            searchProduct(filterKidsData);
+            sortByPrice(filterKidsData);
 
             console.log(results.data)
 

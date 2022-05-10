@@ -8,6 +8,8 @@ import { renderFooter } from "../render/renderFooter.js";
 renderMenu();
 renderFooter();
 
+
+
 const form = document.querySelector("form");
 const username = document.querySelector("#username");
 const usernameError = document.querySelector("#username-error");
@@ -57,9 +59,11 @@ async function doLogin(username, password) {
     }
 
     try {
+
         const response = await fetch(url, options);
 
         const result = await response.json();
+
 
         if (result.user) {
             displayMessage("success", "Login successful", "#message-container");

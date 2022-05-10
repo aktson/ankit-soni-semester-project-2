@@ -28,8 +28,9 @@ renderFooter();
       })
 
       renderProducts(filterMenData);
-      searchProduct(results.data);
-      sortByPrice(results.data);
+      searchProduct(filterMenData);
+      sortByPrice(filterMenData);
+
 
 
     } else {

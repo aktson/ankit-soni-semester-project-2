@@ -30,7 +30,7 @@ const form = document.querySelector("form");
 // container to show success or error message
 const messageContainer = document.querySelector("#message-container");
 
-
+const btn = document.querySelector(".form-btn");
 // input containers
 const title = document.querySelector("#title");
 const image = document.querySelector("#image");
@@ -45,6 +45,7 @@ const priceError = document.querySelector("#price-error");
 const descriptionError = document.querySelector("#description-error");
 const alttextError = document.querySelector("#alttext-error");
 
+
 // fetch product with queryString parameter and popullate form
 (async function fetchProduct() {
 
@@ -55,9 +56,9 @@ const alttextError = document.querySelector("#alttext-error");
 
         if (response.ok) {
             const results = await response.json();
-            console.log(results)
 
             const featured = document.querySelector("#featured");
+
 
             inputid.value = results.data.id;
             title.value = results.data.attributes.title;
@@ -66,7 +67,6 @@ const alttextError = document.querySelector("#alttext-error");
             alttext.value = results.data.attributes.image_alttext;
             featured.checked = results.data.attributes.featured;
 
-            console.log()
         } else {
             throw new Error(response.statusText);
         }
@@ -91,7 +91,6 @@ function handleEdit(event) {
     checkInput(title.value, 4, "title must be atleast 4 letters", "#title-error");
     checkInput(description.value, 10, "description must be atleast 10 letters", "#description-error");
     checkInput(alttext.value, 4, "must be atleast 4 letters", "#alttext-error");
-
     checkInput(price.value, 1, "price missing", "#price-error");
 
     if (isNaN(price.value)) {
@@ -133,7 +132,9 @@ async function editProductWithoutImage(title, description, price, featured, altT
         const productUrl = baseUrl + `api/items/${id}`;
         const res = await fetch(productUrl, optionsProduct);
 
+
         if (res.ok) {
+
             displayMessage("success text-center", "Product updated successfully!", "#message-container");
             location.replace(document.referrer);
         }
@@ -168,7 +169,9 @@ async function editProductWithImage(title, description, price, featured, image, 
         }
         const url = baseUrl + "api/upload";
         const response = await fetch(url, postImageoptions);
+
         const result = await response.json();
+
         const newimageId = result[0].id;
 
         //PUT request:data and image,  make put request with data and connect image with image id
@@ -186,6 +189,7 @@ async function editProductWithImage(title, description, price, featured, image, 
 
         const productUrl = baseUrl + `api/items/${id}`;
         const res = await fetch(productUrl, optionsProduct);
+
 
         if (res.ok) {
             displayMessage("success text-center", "Product updated successfully!", "#message-container");

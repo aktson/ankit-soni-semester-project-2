@@ -33,17 +33,25 @@ form {
 
 .form-wrapper__add-edit-product {
 	@extend .form-wrapper;
-}
-.form-switch .form-check-input {
-	width: 3em;
-	height: 1.5em;
-	margin-right: 0.5em;
-}
-.form-check-label {
-	margin-top: 0.2em;
-}
-.form-switch {
-	padding-left: 3em;
+
+	.form-switch .form-check-input {
+		width: 3em;
+		height: 1.5em;
+		margin-right: 0.5em;
+	}
+	.form-check-label {
+		margin-top: 0.2em;
+	}
+	.form-switch {
+		padding-left: 3em;
+	}
+	.select {
+		margin-bottom: 2.5em;
+	}
+	.category {
+		@extend .form-select;
+		width: 100%;
+	}
 }
 .textarea-container {
 	@extend .div-input-container;

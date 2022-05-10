@@ -1247,7 +1247,7 @@ progress {
             flex: 0 0 auto;
     width: 41.66667%;
   }
-  .col-md-6 {
+  .col-md-6, .member-campaign__content {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -2477,7 +2477,7 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
 }
 
-.form-select, .product-specific .size {
+.form-select, .form-wrapper__add-edit-product .category, .product-specific .size {
   display: block;
   width: 100%;
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
@@ -2503,29 +2503,29 @@ textarea.form-control-lg {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .form-select, .product-specific .size {
+  .form-select, .form-wrapper__add-edit-product .category, .product-specific .size {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.form-select:focus, .product-specific .size:focus {
+.form-select:focus, .form-wrapper__add-edit-product .category:focus, .product-specific .size:focus {
   border-color: #b9b9ff;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.25);
 }
 
-.form-select[multiple], .product-specific .size[multiple], .form-select[size]:not([size="1"]), .product-specific .size[size]:not([size="1"]) {
+.form-select[multiple], .form-wrapper__add-edit-product .category[multiple], .product-specific .size[multiple], .form-select[size]:not([size="1"]), .form-wrapper__add-edit-product .category[size]:not([size="1"]), .product-specific .size[size]:not([size="1"]) {
   padding-right: 0.75rem;
   background-image: none;
 }
 
-.form-select:disabled, .product-specific .size:disabled {
+.form-select:disabled, .form-wrapper__add-edit-product .category:disabled, .product-specific .size:disabled {
   background-color: #e9ecef;
 }
 
-.form-select:-moz-focusring, .product-specific .size:-moz-focusring {
+.form-select:-moz-focusring, .form-wrapper__add-edit-product .category:-moz-focusring, .product-specific .size:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #212529;
 }
@@ -2790,6 +2790,11 @@ textarea.form-control-lg {
 .form-floating > .form-select,
 form .div-input-container > .form-select,
 form .textarea-container > .form-select,
+.form-wrapper__add-edit-product .form-floating > .category,
+form .form-wrapper__add-edit-product .div-input-container > .category,
+.form-wrapper__add-edit-product form .div-input-container > .category,
+form .form-wrapper__add-edit-product .textarea-container > .category,
+.form-wrapper__add-edit-product form .textarea-container > .category,
 .product-specific .form-floating > .size,
 form .product-specific .div-input-container > .size,
 .product-specific form .div-input-container > .size,
@@ -2856,6 +2861,11 @@ form .product-specific .textarea-container > .size,
 .form-floating > .form-select,
 form .div-input-container > .form-select,
 form .textarea-container > .form-select,
+.form-wrapper__add-edit-product .form-floating > .category,
+form .form-wrapper__add-edit-product .div-input-container > .category,
+.form-wrapper__add-edit-product form .div-input-container > .category,
+form .form-wrapper__add-edit-product .textarea-container > .category,
+.form-wrapper__add-edit-product form .textarea-container > .category,
 .product-specific .form-floating > .size,
 form .product-specific .div-input-container > .size,
 .product-specific form .div-input-container > .size,
@@ -2872,6 +2882,11 @@ form .textarea-container > .form-control:not(:placeholder-shown) ~ label,
 .form-floating > .form-select ~ label,
 form .div-input-container > .form-select ~ label,
 form .textarea-container > .form-select ~ label,
+.form-wrapper__add-edit-product .form-floating > .category ~ label,
+form .form-wrapper__add-edit-product .div-input-container > .category ~ label,
+.form-wrapper__add-edit-product form .div-input-container > .category ~ label,
+form .form-wrapper__add-edit-product .textarea-container > .category ~ label,
+.form-wrapper__add-edit-product form .textarea-container > .category ~ label,
 .product-specific .form-floating > .size ~ label,
 form .product-specific .div-input-container > .size ~ label,
 .product-specific form .div-input-container > .size ~ label,
@@ -2903,6 +2918,7 @@ form .product-specific .textarea-container > .size ~ label,
 
 .input-group > .form-control,
 .input-group > .form-select,
+.form-wrapper__add-edit-product .input-group > .category,
 .product-specific .input-group > .size {
   position: relative;
   -webkit-box-flex: 1;
@@ -2914,6 +2930,7 @@ form .product-specific .textarea-container > .size ~ label,
 
 .input-group > .form-control:focus,
 .input-group > .form-select:focus,
+.form-wrapper__add-edit-product .input-group > .category:focus,
 .product-specific .input-group > .size:focus {
   z-index: 3;
 }
@@ -2948,6 +2965,7 @@ form .product-specific .textarea-container > .size ~ label,
 
 .input-group-lg > .form-control,
 .input-group-lg > .form-select,
+.form-wrapper__add-edit-product .input-group-lg > .category,
 .product-specific .input-group-lg > .size,
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn,
@@ -2967,6 +2985,7 @@ form .input-group-lg > .form-btn,
 
 .input-group-sm > .form-control,
 .input-group-sm > .form-select,
+.form-wrapper__add-edit-product .input-group-sm > .category,
 .product-specific .input-group-sm > .size,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn,
@@ -2986,8 +3005,10 @@ form .input-group-sm > .form-btn,
 
 
 .input-group-lg > .form-select,
+.form-wrapper__add-edit-product .input-group-lg > .category,
 .product-specific .input-group-lg > .size,
 .input-group-sm > .form-select,
+.form-wrapper__add-edit-product .input-group-sm > .category,
 .product-specific .input-group-sm > .size {
   padding-right: 3rem;
 }
@@ -3059,18 +3080,18 @@ form .input-group-sm > .form-btn,
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .form-select:valid, .was-validated .product-specific .size:valid, .product-specific .was-validated .size:valid, .form-select.is-valid, .product-specific .is-valid.size {
+.was-validated .form-select:valid, .was-validated .form-wrapper__add-edit-product .category:valid, .form-wrapper__add-edit-product .was-validated .category:valid, .was-validated .product-specific .size:valid, .product-specific .was-validated .size:valid, .form-select.is-valid, .form-wrapper__add-edit-product .is-valid.category, .product-specific .is-valid.size {
   border-color: #c8ffbb;
 }
 
-.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .product-specific .size:valid:not([multiple]):not([size]), .product-specific .was-validated .size:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .was-validated .product-specific .size:valid:not([multiple])[size="1"], .product-specific .was-validated .size:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .product-specific .is-valid.size:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"], .product-specific .is-valid.size:not([multiple])[size="1"] {
+.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .form-wrapper__add-edit-product .category:valid:not([multiple]):not([size]), .form-wrapper__add-edit-product .was-validated .category:valid:not([multiple]):not([size]), .was-validated .product-specific .size:valid:not([multiple]):not([size]), .product-specific .was-validated .size:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .was-validated .form-wrapper__add-edit-product .category:valid:not([multiple])[size="1"], .form-wrapper__add-edit-product .was-validated .category:valid:not([multiple])[size="1"], .was-validated .product-specific .size:valid:not([multiple])[size="1"], .product-specific .was-validated .size:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .form-wrapper__add-edit-product .is-valid.category:not([multiple]):not([size]), .product-specific .is-valid.size:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"], .form-wrapper__add-edit-product .is-valid.category:not([multiple])[size="1"], .product-specific .is-valid.size:not([multiple])[size="1"] {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23c8ffbb' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
-.was-validated .form-select:valid:focus, .was-validated .product-specific .size:valid:focus, .product-specific .was-validated .size:valid:focus, .form-select.is-valid:focus, .product-specific .is-valid.size:focus {
+.was-validated .form-select:valid:focus, .was-validated .form-wrapper__add-edit-product .category:valid:focus, .form-wrapper__add-edit-product .was-validated .category:valid:focus, .was-validated .product-specific .size:valid:focus, .product-specific .was-validated .size:valid:focus, .form-select.is-valid:focus, .form-wrapper__add-edit-product .is-valid.category:focus, .product-specific .is-valid.size:focus {
   border-color: #c8ffbb;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(200, 255, 187, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(200, 255, 187, 0.25);
@@ -3097,15 +3118,19 @@ form .input-group-sm > .form-btn,
   margin-left: .5em;
 }
 
-.was-validated .input-group .form-control:valid, .input-group .form-control.is-valid, .was-validated .input-group .form-select:valid, .was-validated .input-group .product-specific .size:valid, .product-specific .was-validated .input-group .size:valid,
+.was-validated .input-group .form-control:valid, .input-group .form-control.is-valid, .was-validated .input-group .form-select:valid, .was-validated .input-group .form-wrapper__add-edit-product .category:valid, .form-wrapper__add-edit-product .was-validated .input-group .category:valid, .was-validated .input-group .product-specific .size:valid, .product-specific .was-validated .input-group .size:valid,
 .input-group .form-select.is-valid,
+.input-group .form-wrapper__add-edit-product .is-valid.category,
+.form-wrapper__add-edit-product .input-group .is-valid.category,
 .input-group .product-specific .is-valid.size,
 .product-specific .input-group .is-valid.size {
   z-index: 1;
 }
 
-.was-validated .input-group .form-control:valid:focus, .input-group .form-control.is-valid:focus, .was-validated .input-group .form-select:valid:focus, .was-validated .input-group .product-specific .size:valid:focus, .product-specific .was-validated .input-group .size:valid:focus,
+.was-validated .input-group .form-control:valid:focus, .input-group .form-control.is-valid:focus, .was-validated .input-group .form-select:valid:focus, .was-validated .input-group .form-wrapper__add-edit-product .category:valid:focus, .form-wrapper__add-edit-product .was-validated .input-group .category:valid:focus, .was-validated .input-group .product-specific .size:valid:focus, .product-specific .was-validated .input-group .size:valid:focus,
 .input-group .form-select.is-valid:focus,
+.input-group .form-wrapper__add-edit-product .is-valid.category:focus,
+.form-wrapper__add-edit-product .input-group .is-valid.category:focus,
 .input-group .product-specific .is-valid.size:focus,
 .product-specific .input-group .is-valid.size:focus {
   z-index: 3;
@@ -3160,18 +3185,18 @@ form .input-group-sm > .form-btn,
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .form-select:invalid, .was-validated .product-specific .size:invalid, .product-specific .was-validated .size:invalid, .form-select.is-invalid, .product-specific .is-invalid.size {
+.was-validated .form-select:invalid, .was-validated .form-wrapper__add-edit-product .category:invalid, .form-wrapper__add-edit-product .was-validated .category:invalid, .was-validated .product-specific .size:invalid, .product-specific .was-validated .size:invalid, .form-select.is-invalid, .form-wrapper__add-edit-product .is-invalid.category, .product-specific .is-invalid.size {
   border-color: #ffb2ad;
 }
 
-.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .product-specific .size:invalid:not([multiple]):not([size]), .product-specific .was-validated .size:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .was-validated .product-specific .size:invalid:not([multiple])[size="1"], .product-specific .was-validated .size:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .product-specific .is-invalid.size:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], .product-specific .is-invalid.size:not([multiple])[size="1"] {
+.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-wrapper__add-edit-product .category:invalid:not([multiple]):not([size]), .form-wrapper__add-edit-product .was-validated .category:invalid:not([multiple]):not([size]), .was-validated .product-specific .size:invalid:not([multiple]):not([size]), .product-specific .was-validated .size:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .was-validated .form-wrapper__add-edit-product .category:invalid:not([multiple])[size="1"], .form-wrapper__add-edit-product .was-validated .category:invalid:not([multiple])[size="1"], .was-validated .product-specific .size:invalid:not([multiple])[size="1"], .product-specific .was-validated .size:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .form-wrapper__add-edit-product .is-invalid.category:not([multiple]):not([size]), .product-specific .is-invalid.size:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], .form-wrapper__add-edit-product .is-invalid.category:not([multiple])[size="1"], .product-specific .is-invalid.size:not([multiple])[size="1"] {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23ffb2ad'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23ffb2ad' stroke='none'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
-.was-validated .form-select:invalid:focus, .was-validated .product-specific .size:invalid:focus, .product-specific .was-validated .size:invalid:focus, .form-select.is-invalid:focus, .product-specific .is-invalid.size:focus {
+.was-validated .form-select:invalid:focus, .was-validated .form-wrapper__add-edit-product .category:invalid:focus, .form-wrapper__add-edit-product .was-validated .category:invalid:focus, .was-validated .product-specific .size:invalid:focus, .product-specific .was-validated .size:invalid:focus, .form-select.is-invalid:focus, .form-wrapper__add-edit-product .is-invalid.category:focus, .product-specific .is-invalid.size:focus {
   border-color: #ffb2ad;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(255, 178, 173, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(255, 178, 173, 0.25);
@@ -3198,15 +3223,19 @@ form .input-group-sm > .form-btn,
   margin-left: .5em;
 }
 
-.was-validated .input-group .form-control:invalid, .input-group .form-control.is-invalid, .was-validated .input-group .form-select:invalid, .was-validated .input-group .product-specific .size:invalid, .product-specific .was-validated .input-group .size:invalid,
+.was-validated .input-group .form-control:invalid, .input-group .form-control.is-invalid, .was-validated .input-group .form-select:invalid, .was-validated .input-group .form-wrapper__add-edit-product .category:invalid, .form-wrapper__add-edit-product .was-validated .input-group .category:invalid, .was-validated .input-group .product-specific .size:invalid, .product-specific .was-validated .input-group .size:invalid,
 .input-group .form-select.is-invalid,
+.input-group .form-wrapper__add-edit-product .is-invalid.category,
+.form-wrapper__add-edit-product .input-group .is-invalid.category,
 .input-group .product-specific .is-invalid.size,
 .product-specific .input-group .is-invalid.size {
   z-index: 2;
 }
 
-.was-validated .input-group .form-control:invalid:focus, .input-group .form-control.is-invalid:focus, .was-validated .input-group .form-select:invalid:focus, .was-validated .input-group .product-specific .size:invalid:focus, .product-specific .was-validated .input-group .size:invalid:focus,
+.was-validated .input-group .form-control:invalid:focus, .input-group .form-control.is-invalid:focus, .was-validated .input-group .form-select:invalid:focus, .was-validated .input-group .form-wrapper__add-edit-product .category:invalid:focus, .form-wrapper__add-edit-product .was-validated .input-group .category:invalid:focus, .was-validated .input-group .product-specific .size:invalid:focus, .product-specific .was-validated .input-group .size:invalid:focus,
 .input-group .form-select.is-invalid:focus,
+.input-group .form-wrapper__add-edit-product .is-invalid.category:focus,
+.form-wrapper__add-edit-product .input-group .is-invalid.category:focus,
 .input-group .product-specific .is-invalid.size:focus,
 .product-specific .input-group .is-invalid.size:focus {
   z-index: 3;
@@ -6515,7 +6544,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   display: table-cell !important;
 }
 
-.d-flex, .footer, .footer__content .footer__content-logo, .hero .hero-content, .hero .loader, .member-campaign__content, .newsletter, .search-container {
+.d-flex, .member-campaign__content, .nav-icons, .footer, .footer__content .footer__content-logo, .hero .hero-content, .hero .loader, .newsletter, .search-container {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -6874,7 +6903,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   gap: 0.25rem !important;
 }
 
-.gap-2, .footer, .footer__content .footer__content-logo, .footer__content .footer__content-menu {
+.gap-2, .nav-icons, .footer, .footer__content .footer__content-logo, .footer__content .footer__content-menu {
   gap: 0.5rem !important;
 }
 
@@ -6937,7 +6966,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           align-items: flex-end !important;
 }
 
-.align-items-center, .hero .hero-content, .member-campaign__content, .newsletter {
+.align-items-center, .member-campaign__content, .hero .hero-content, .newsletter {
   -webkit-box-align: center !important;
       -ms-flex-align: center !important;
           align-items: center !important;
@@ -7200,7 +7229,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   margin-right: 0.25rem !important;
 }
 
-.me-2, .btn-continue-shopping {
+.me-2, .cart-quantity, .btn-continue-shopping {
   margin-right: 0.5rem !important;
 }
 
@@ -7536,7 +7565,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   text-align: right !important;
 }
 
-.text-center, .footer__copyright, .hero .hero-content, .member-campaign__content, .search-container .sort-product {
+.text-center, .member-campaign__content, .footer__copyright, .hero .hero-content, .search-container .sort-product {
   text-align: center !important;
 }
 
@@ -10840,12 +10869,12 @@ main {
       flex-shrink: 0;
 }
 
-.spacer, .loader, form, .hero, .featured-products, .member-campaign, .slider, .services, .products, .product-specific, .cart {
+.spacer, .loader, .member-campaign, form, .hero, .featured-products, .slider, .services, .products, .product-specific, .cart {
   margin-bottom: 200px;
 }
 
 @media (max-width: 576px) {
-  .spacer, .loader, form, .hero, .featured-products, .member-campaign, .slider, .services, .products, .product-specific, .cart {
+  .spacer, .loader, .member-campaign, form, .hero, .featured-products, .slider, .services, .products, .product-specific, .cart {
     margin-bottom: 100px;
   }
 }
@@ -10971,6 +11000,20 @@ a {
   overflow: hidden;
 }
 
+.member-campaign__content {
+  background-color: #3c3f40;
+  color: #eeefe9;
+  padding: 0.5em;
+}
+
+.member-campaign__content h3, .member-campaign__content .h3 {
+  font-size: 3em;
+}
+
+.member-campaign__content p {
+  font-size: 1.5em;
+}
+
 .form-control {
   border: transparent;
   border-bottom: 1px solid #3c3f40;
@@ -11004,18 +11047,26 @@ form .div-input-container, form .textarea-container {
           align-items: center;
 }
 
-.form-switch .form-check-input {
+.form-wrapper__add-edit-product .form-switch .form-check-input {
   width: 3em;
   height: 1.5em;
   margin-right: 0.5em;
 }
 
-.form-check-label {
+.form-wrapper__add-edit-product .form-check-label {
   margin-top: 0.2em;
 }
 
-.form-switch {
+.form-wrapper__add-edit-product .form-switch {
   padding-left: 3em;
+}
+
+.form-wrapper__add-edit-product .select {
+  margin-bottom: 2.5em;
+}
+
+.form-wrapper__add-edit-product .category {
+  width: 100%;
 }
 
 .textarea-container textarea {
@@ -11087,8 +11138,8 @@ form .div-input-container, form .textarea-container {
   cursor: pointer;
 }
 
-.modal-backdrop.show {
-  opacity: 0;
+.modal-backdrop {
+  display: none;
 }
 
 .cart-quantity {
@@ -11190,20 +11241,6 @@ form .div-input-container, form .textarea-container {
   width: 48px;
 }
 
-.member-campaign__content {
-  background-color: #3c3f40;
-  color: #eeefe9;
-  padding: 0.5em;
-}
-
-.member-campaign__content h3, .member-campaign__content .h3 {
-  font-size: 3em;
-}
-
-.member-campaign__content p {
-  font-size: 1.5em;
-}
-
 .newsletter {
   height: 40vh;
   background-color: #ffff9d;
@@ -11237,6 +11274,20 @@ form .div-input-container, form .textarea-container {
 .services i {
   font-size: 2em;
   margin-bottom: 0.5em;
+}
+
+.member-campaign__content {
+  background-color: #3c3f40;
+  color: #eeefe9;
+  padding: 0.5em;
+}
+
+.member-campaign__content h3, .member-campaign__content .h3 {
+  font-size: 3em;
+}
+
+.member-campaign__content p {
+  font-size: 1.5em;
 }
 
 .products .col {

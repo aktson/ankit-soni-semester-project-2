@@ -18,6 +18,7 @@
 			<!-- site navigation -->
 			<nav class="navbar">
 				<div class="container">
+					<a class="me-auto d-md-none" href="index.html">Logo</a>
 					<button
 						class="navbar-toggler navbar-dark"
 						type="button"
@@ -29,9 +30,6 @@
 					</button>
 					<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 						<div class="offcanvas-header">
-							<div class="offcanvas-title mx-auto" id="offcanvasNavbarLabel">
-								<a class="navbar-brand" href="index.html">Logo</a>
-							</div>
 							<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 						</div>
 						<div class="offcanvas-body">
@@ -64,7 +62,15 @@
 									<label for="alttext" class="form-label">Image alternative text</label>
 									<span id="alttext-error"></span>
 								</div>
-
+								<div class="select">
+									<select aria-label=".form-select-sm " class="category">
+										<option value="">Select category</option>
+										<option value="4">Men</option>
+										<option value="5">Women</option>
+										<option value="7">Kids</option>
+									</select>
+									<span id="category-error"></span>
+								</div>
 								<div class="row align-items-baseline">
 									<div class="div-input-container col">
 										<input type="text" class="form-control" id="price" placeholder="enter price" />
@@ -93,6 +99,7 @@
 						</div>
 
 						<button class="form-btn">Add product</button>
+						<div class="loader"></div>
 					</form>
 				</div>
 			</section>

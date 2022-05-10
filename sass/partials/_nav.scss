@@ -45,11 +45,14 @@
 	cursor: pointer;
 }
 
-.modal-backdrop.show {
-	opacity: 0;
+.modal-backdrop {
+	display: none;
+}
+.nav-icons {
+	@extend .d-flex, .gap-2;
 }
 .cart-quantity {
-	@extend .bg-success, .rounded-circle, .p-2;
+	@extend .bg-success, .rounded-circle, .p-2, .me-2;
 	position: absolute;
 	top: -20px;
 	right: -20px;

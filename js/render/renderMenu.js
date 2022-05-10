@@ -46,7 +46,7 @@ export function renderMenu() {
                                     <a class="nav-link ${pathname === "/kids.html" ? "active" : ""}" href="kids.html">Kids</a>
                                     </li>
                                 </div>
-                                <div class="d-flex ">
+                                <div class="nav-icons">
                                     <li class="nav-item">
                                         <a class="nav-link  ${pathname === "/cart.html" ? "active" : ""}" href="cart.html">
                                             <i class="fa-solid fa-bag-shopping position-relative"><span class="cart-quantity"></span></i>

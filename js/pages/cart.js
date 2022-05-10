@@ -59,11 +59,9 @@ function renderCartItems(itemsToRender) {
 
         cartTotalItemContainer.innerHTML += `<div class="row">
                                           <p class="col text-start fw-bold">${item.title}</p>
-                                          <p class="col text-start">Qty. ${item.quantity}  x  ${price}</p>
+                                          <p class="col text-start">${item.quantity}  x  ${price}</p>
                                           <p class="col text-end">${itemTotal}</p>
                                         </div>`
-
-
 
 
         total += parseFloat(item.price) * parseFloat(item.quantity);
@@ -71,9 +69,6 @@ function renderCartItems(itemsToRender) {
 
         renderCartQuantity(itemsToRender)
     })
-
-
-
     ///////////////////// end of foreach itemstorender loop//////////////////////////////////////
 
     if (itemsToRender.length > 0) {

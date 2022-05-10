@@ -15,7 +15,7 @@ export function searchProduct(results) {
         const filteredResults = results.filter(result => result.attributes.title.toLowerCase().includes(searchValue));
 
         if (filteredResults.length === 0) {
-            displayMessage("light", "Sorry no results found", "#products-container")
+            displayMessage("light", "Sorry no results found", ".products-container")
         }
         else {
             renderProducts(filteredResults)
