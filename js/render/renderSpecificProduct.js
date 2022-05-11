@@ -28,7 +28,7 @@ export function renderSpecificProduct(result) {
     const img = result.attributes.image.data.attributes.url;
     const altText = result.attributes.image_alttext;
 
-    document.title = `${title} | e-commerce`;
+    document.title = `${title} | NOSO sports`;
 
     productContainer.innerHTML = "";
 
