@@ -39,7 +39,7 @@ export function renderFooter() {
                                 <div class="footer__copyright">
                                     <div class="order-1 order-md-2">&copy;2022 designed & developed by AnkSon</div>
                                 </div>
-                                <div class="to-top-btn"><i class="fa-solid fa-arrow-up-long"></i>top</div>`
+                                <div class="to-top-btn"><i class="fa-solid fa-circle-chevron-up"></i></div>`
 
 
     const toTopBtn = document.querySelector(".to-top-btn");

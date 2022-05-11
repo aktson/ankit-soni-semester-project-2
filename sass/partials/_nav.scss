@@ -11,6 +11,8 @@
 }
 .navbar-brand {
 	@extend .d-none, .d-md-block;
+}
+.logo {
 	width: 90px;
 }
 .nav-link {

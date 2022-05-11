@@ -6833,7 +6833,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   margin-left: 3rem !important;
 }
 
-.mx-auto, .footer__content .footer__content-row {
+.mx-auto, .footer__content, .footer__content .footer__content-row {
   margin-right: auto !important;
   margin-left: auto !important;
 }
@@ -10791,7 +10791,7 @@ form .div-input-container, form .textarea-container {
           align-items: center;
 }
 
-.navbar-brand {
+.logo {
   width: 90px;
 }
 
@@ -10857,8 +10857,8 @@ form .div-input-container, form .textarea-container {
   position: absolute;
   right: 1em;
   top: 1em;
-  font-size: 1.3em;
-  color: #3c3f40;
+  font-size: 1.8em;
+  color: #7273ff;
   cursor: pointer;
 }
 
