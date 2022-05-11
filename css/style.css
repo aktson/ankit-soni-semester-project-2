@@ -1228,13 +1228,13 @@ progress {
             flex: 0 0 auto;
     width: 16.66667%;
   }
-  .col-md-3, .services .services-col {
+  .col-md-3, .footer__content .footer__content-logo, .footer__content .footer__content-menu, .footer__content .footer__content-payment, .services .services-col {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
     width: 25%;
   }
-  .col-md-4, .footer__content .footer__content-logo, .footer__content .footer__content-menu, .footer__content .footer__content-payment {
+  .col-md-4 {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -6583,7 +6583,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   gap: 0.25rem !important;
 }
 
-.gap-2, .nav-icons, .footer, .footer__content .footer__content-logo, .footer__content .footer__content-menu {
+.gap-2, .nav-icons, .footer, .footer__content .footer__content-menu {
   gap: 0.5rem !important;
 }
 
@@ -6591,7 +6591,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   gap: 1rem !important;
 }
 
-.gap-4 {
+.gap-4, .footer__content .footer__content-logo {
   gap: 1.5rem !important;
 }
 
@@ -10791,6 +10791,10 @@ form .div-input-container, form .textarea-container {
           align-items: center;
 }
 
+.navbar-brand {
+  width: 90px;
+}
+
 .nav-link {
   color: #3c3f40 !important;
   font-size: 1.1em;
@@ -10860,6 +10864,10 @@ form .div-input-container, form .textarea-container {
 
 .footer .footer-icons {
   max-width: 25px;
+}
+
+.footer__content .logo-footer {
+  width: 150px;
 }
 
 .footer__content .social {

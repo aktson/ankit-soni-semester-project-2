@@ -11,6 +11,7 @@
 }
 .navbar-brand {
 	@extend .d-none, .d-md-block;
+	width: 90px;
 }
 .nav-link {
 	color: $dark !important;

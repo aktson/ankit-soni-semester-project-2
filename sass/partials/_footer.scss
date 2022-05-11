@@ -23,7 +23,10 @@
 	}
 	// col 1
 	.footer__content-logo {
-		@extend .col-sm-6, .col-md-4, .d-flex, .flex-column, .gap-2, .mb-5;
+		@extend .col-sm-6, .col-md-3, .d-flex, .flex-column, .gap-4, .mb-5;
+	}
+	.logo-footer {
+		width: 150px;
 	}
 	.social {
 		display: flex;
@@ -32,11 +35,11 @@
 	}
 	// col 2
 	.footer__content-menu {
-		@extend .col-md-4, .d-none, .d-md-flex, .flex-column, .gap-2;
+		@extend .col-md-3, .d-none, .d-md-flex, .flex-column, .gap-2;
 	}
 	// col 3
 	.footer__content-payment {
-		@extend .col-sm-6, .col-md-4;
+		@extend .col-sm-6, .col-md-3;
 	}
 }
 

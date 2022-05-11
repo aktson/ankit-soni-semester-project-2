@@ -32,10 +32,10 @@ export function renderSpecificProduct(result) {
 
     productContainer.innerHTML = "";
 
-    productContainer.innerHTML = `<div class="col-lg-8" style ="background: url('${img}') no-repeat center;background-size: cover; min-height:500px;" >
+    productContainer.innerHTML = `<div class="col-lg-7" style ="background: url('${img}') no-repeat center;background-size: cover; min-height:500px;" >
                                       <span role="img" aria-label=${altText}></span>
                                     </div>
-                                    <div class="col-lg-4 product-content"> 
+                                    <div class="col-lg-5 product-content"> 
                                         <h2>${title}</h2> 
                                         <p class="price" >NOK ${price} <span class = "badge ${cssClass}"><i class="fa-solid fa-circle-check me-2"></i> In the cart</span></p>
                                         <select aria-label=".form-select-sm " class="size">

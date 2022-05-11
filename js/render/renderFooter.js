@@ -5,20 +5,27 @@ export function renderFooter() {
     footerContainer.innerHTML = `<div class="footer__content">
                                     <div class="footer__content-row">
                                         <div class="footer__content-logo">
-                                            <a href="/">LOGO</a>
+                                            <a href="/index.html" class="logo-footer"><img src="/images/logo.svg" alt="noso sports logo" /></a>
                                             <div class="social order-md-2">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                                <i class="fa-brands fa-instagram"></i>
-                                                <i class="fa-brands fa-pinterest"></i>
+                                                <img src="/images/logos/facebook.svg" alt="facebook logo" class="footer-icons" />
+                                                <img src="/images/logos/instagram.svg" alt="instagram logo" class="footer-icons" />
+                                                <img src="/images/logos/pinterest.svg" alt="pintrest logo" class="footer-icons" />
                                             </div>
                                         </div>
                                         <div class="footer__content-menu">
                                             <h5>Site Navigation</h5>
-                                            <a href="#">Home</a>
+                                            <a href="#">Site map</a>
                                             <a href="#">About</a>
-                                            <a href="#">Products</a>
-                                            <a href="#">Contact us</a>
+                                            <a href="#">Returns</a>
+                                            <a href="#">Customer service</a>
                                         </div>
+                                        <div class="footer__content-menu">
+                                        <h5>More </h5>
+                                        <a href="#">Press</a>
+                                        <a href="#">Careers</a>
+                                        <a href="#">Terms & policies</a>
+                                        <a href="#">Contact us</a>
+                                    </div>
                                         <div class="footer__content-payment">
                                             <h5>We accept</h5>
                                             <div class="social order-md-2">
