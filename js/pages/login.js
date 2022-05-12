@@ -64,7 +64,6 @@ async function doLogin(username, password) {
 
         const result = await response.json();
 
-
         if (result.user) {
             hideModalLoader();
             displayMessage("success", "Login successful", "#message-container");
