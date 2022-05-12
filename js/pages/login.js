@@ -71,7 +71,7 @@ async function doLogin(username, password) {
             saveToken(result.jwt);
             saveUser(result.user);
             form.reset();
-            window.history.go(-1);
+            location.push(document.referrer);
         }
         if (result.error) {
             hideModalLoader();
