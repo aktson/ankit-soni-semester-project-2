@@ -10877,6 +10877,7 @@ form .div-input-container, form .textarea-container {
   display: flex;
   gap: 1em;
   font-size: 1.3em;
+  margin-bottom: 1em;
 }
 
 .hero {
