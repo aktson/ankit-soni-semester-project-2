@@ -68,6 +68,8 @@ function addToCart(event) {
 
     //size select to get value on user input
     const size = document.querySelector(".size").value;
+
+    //modal to give feedback if product is added
     const modalBody = document.querySelector(".modal-body");
 
     const image = event.target.dataset.image;
