@@ -4,29 +4,30 @@ export function renderFooter() {
 
     footerContainer.innerHTML = `<div class="footer__content">
                                     <div class="footer__content-row">
-                                        <div class="footer__content-logo">
+                                        <div class="footer__content-logo-wrapper">
                                             <a href="/index.html" class="logo-footer"><img src="/images/logo.svg" alt="noso sports logo" /></a>
+                                            <h5>Follow us: </h5>
                                             <div class="social order-md-2">
                                                 <img src="/images/logos/facebook.svg" alt="facebook logo" class="footer-icons" />
                                                 <img src="/images/logos/instagram.svg" alt="instagram logo" class="footer-icons" />
                                                 <img src="/images/logos/pinterest.svg" alt="pintrest logo" class="footer-icons" />
                                             </div>
                                         </div>
-                                        <div class="footer__content-menu">
+                                        <div class="footer__content-menu-wrapper">
                                             <h5>Site Navigation</h5>
                                             <a href="#">Site map</a>
                                             <a href="#">About</a>
                                             <a href="#">Returns</a>
                                             <a href="#">Customer service</a>
                                         </div>
-                                        <div class="footer__content-menu">
-                                        <h5>More </h5>
-                                        <a href="#">Press</a>
-                                        <a href="#">Careers</a>
-                                        <a href="#">Terms & policies</a>
-                                        <a href="#">Contact us</a>
-                                    </div>
-                                        <div class="footer__content-payment">
+                                        <div class="footer__content-menu-wrapper">
+                                            <h5>More </h5>
+                                            <a href="#">Press</a>
+                                            <a href="#">Careers</a>
+                                            <a href="#">Terms & policies</a>
+                                            <a href="#">Contact us</a>
+                                        </div>
+                                        <div class="footer__content-payment-wrapper">
                                             <h5>We accept</h5>
                                             <div class="social order-md-2">
                                                 <img src="/images/logos/visa.svg" alt="visa logo" class="footer-icons" />

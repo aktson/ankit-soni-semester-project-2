@@ -112,8 +112,6 @@ function addToCart(event) {
 
             showMessageWithModal("<i class='fa-solid fa-circle-check me-2'></i>Added to cart");
             renderModal(image, title, size, price)
-
-
         }
 
         //check if size matches if user adds same product again
