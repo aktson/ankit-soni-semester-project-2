@@ -5,12 +5,12 @@ export function renderFooter() {
     footerContainer.innerHTML = `<div class="footer__content">
                                     <div class="footer__content-row">
                                         <div class="footer__content-logo-wrapper">
-                                            <a href="/index.html" class="logo-footer"><img src="/images/logo.svg" alt="noso sports logo" /></a>
+                                            <a href="/index.html" class="logo-footer"><img src="/images/logo/logo-dark.svg" alt="noso sports logo" /></a>
                                             <h5>Follow us: </h5>
                                             <div class="social order-md-2">
-                                                <img src="/images/logos/facebook.svg" alt="facebook logo" class="footer-icons" />
-                                                <img src="/images/logos/instagram.svg" alt="instagram logo" class="footer-icons" />
-                                                <img src="/images/logos/pinterest.svg" alt="pintrest logo" class="footer-icons" />
+                                                <img src="/images/footer-icons/facebook.svg" alt="facebook logo" class="footer-icons" />
+                                                <img src="/images/footer-icons/instagram.svg" alt="instagram logo" class="footer-icons" />
+                                                <img src="/images/footer-icons/pinterest.svg" alt="pintrest logo" class="footer-icons" />
                                             </div>
                                         </div>
                                         <div class="footer__content-menu-wrapper">
@@ -30,9 +30,9 @@ export function renderFooter() {
                                         <div class="footer__content-payment-wrapper">
                                             <h5>We accept</h5>
                                             <div class="social order-md-2">
-                                                <img src="/images/logos/visa.svg" alt="visa logo" class="footer-icons" />
-                                                <img src="/images/logos/mastercard.svg" alt="mastercard logo" class="footer-icons" />
-                                                <img src="/images/logos/american-express.svg" alt="american-express logo" class="footer-icons" />
+                                                <img src="/images/footer-icons/visa.svg" alt="visa logo" class="footer-icons" />
+                                                <img src="/images/footer-icons/mastercard.svg" alt="mastercard logo" class="footer-icons" />
+                                                <img src="/images/footer-icons/american-express.svg" alt="american-express logo" class="footer-icons" />
                                             </div>
                                         </div>
                                     </div>
