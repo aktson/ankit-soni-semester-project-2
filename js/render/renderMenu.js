@@ -32,7 +32,7 @@ export function renderMenu() {
     menuContainer.innerHTML = "";
 
     menuContainer.innerHTML = ` <a class="navbar-brand" href="index.html"><img src="/images/logo/logo-dark.svg" alt="noso sports logo" class="logo"/></a>
-                                <div class="d-flex flex-column flex-md-row">
+                                <div class="nav-menu">
                                     <li class="nav-item">
                                         <a class="nav-link ${pathname === "/index.html" || pathname === "/" ? "active" : ""}" aria-current="page" href="index.html">Home</a>
                                     </li>

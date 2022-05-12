@@ -3,6 +3,10 @@
 	padding: 1.1em;
 	font-family: $heading-fonts;
 }
+.nav-menu {
+	@extend .d-flex, .flex-column, .flex-md-row;
+}
+
 .navbar-ul {
 	justify-content: end;
 	flex-grow: 1;

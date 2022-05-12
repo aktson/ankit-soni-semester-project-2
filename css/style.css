@@ -6224,7 +6224,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   display: table-cell !important;
 }
 
-.d-flex, .member-campaign__content, .nav-icons, .footer, .footer__content .footer__content-logo-wrapper, .hero .hero-content, .hero .loader, .newsletter, .search-container, .cart-item-container .quantity-container {
+.d-flex, .member-campaign__content, .nav-menu, .nav-icons, .footer, .footer__content .footer__content-logo-wrapper, .hero .hero-content, .hero .loader, .newsletter, .search-container, .cart-item-container .quantity-container {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -6517,7 +6517,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           flex-direction: row !important;
 }
 
-.flex-column, .footer, .footer__content .footer__content-logo-wrapper, .footer__content .footer__content-menu-wrapper, .hero .hero-content, .search-container {
+.flex-column, .nav-menu, .footer, .footer__content .footer__content-logo-wrapper, .footer__content .footer__content-menu-wrapper, .hero .hero-content, .search-container {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
       -ms-flex-direction: column !important;
@@ -8175,7 +8175,7 @@ form .show > .dropdown-toggle.form-btn:focus,
         -ms-flex: 1 1 auto !important;
             flex: 1 1 auto !important;
   }
-  .flex-md-row {
+  .flex-md-row, .nav-menu {
     -webkit-box-orient: horizontal !important;
     -webkit-box-direction: normal !important;
         -ms-flex-direction: row !important;
