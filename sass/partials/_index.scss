@@ -43,11 +43,9 @@
 	}
 	overflow: hidden; /* Ensures the content is not revealed until the animation */
 	border-right: 0.15em solid $secondary; /* The typwriter cursor */
-	margin: 0auto 1em;
-	white-space: nowrap; /* Keeps the content on a single line */
+	margin: 0 auto 1em;
 	animation: typing 4s steps(40, end), blink-caret 1s step-end forwards;
 
-	/* The typing effect */
 	@keyframes typing {
 		from {
 			width: 0;
@@ -68,6 +66,7 @@
 		}
 	}
 }
+
 // section featured products
 .featured-products {
 	@extend .spacer, .container;

@@ -10923,12 +10923,9 @@ form .div-input-container, form .textarea-container {
   /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid #ffff9d;
   /* The typwriter cursor */
-  margin: 0auto 1em;
-  white-space: nowrap;
-  /* Keeps the content on a single line */
+  margin: 0 auto 1em;
   -webkit-animation: typing 4s steps(40, end), blink-caret 1s step-end forwards;
           animation: typing 4s steps(40, end), blink-caret 1s step-end forwards;
-  /* The typing effect */
   /* The typewriter cursor effect */
 }
 
