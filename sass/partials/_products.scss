@@ -18,21 +18,24 @@
 }
 
 .products-container {
-	@extend .row, .row-cols-1, .row-cols-md-3, .g-4;
+	@extend .row, .row-cols-1, .row-cols-md-2, .row-cols-lg-3, .g-4;
 	#display-message {
 		margin: 2em auto;
 	}
 	.card-body {
-		display: flex;
-		justify-content: space-between;
+		@extend .d-flex, .justify-content-between;
 	}
 }
-
-.delete-product {
-	@extend .btn, .btn-sm, .btn-danger;
-}
-.edit-product {
-	@extend .btn, .btn-sm, .btn-warning;
+.btns-wrapper {
+	@extend .d-flex, .flex-column, , .flex-md-row, .gap-1, .align-items-baseline;
+	.edit-product {
+		@extend .btn, .btn-sm, .btn-warning, .me-1, .p-2;
+		width: 80px;
+	}
+	.delete-product {
+		@extend .btn, .btn-sm, .btn-danger, .p-2;
+		width: 80px;
+	}
 }
 
 .search-container {

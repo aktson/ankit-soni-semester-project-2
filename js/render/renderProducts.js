@@ -52,7 +52,7 @@ export function renderProducts(results) {
                                                     <h5 class="card-title">${title}  </h5>
                                                     <p class="card-text">NOK ${price}</p>
                                                   </div>   
-                                                  <div>
+                                                  <div class="btns-wrapper">
                                                     <a href="editProduct.html?id=${result.id}&imageId=${imageId}" class="edit-product ${cssClass}"><i class="fa-solid fa-pen-to-square"></i> edit</a>
                                                     <button class="delete-product ${cssClass}" data-id=${result.id} ><i class="fa-solid fa-trash-can"></i> Delete</button>
                                                   </div>
@@ -78,6 +78,7 @@ async function deleteProduct(event) {
         const id = event.target.dataset.id;
 
         let doDelete = window.confirm("are you sure??");
+        hideModalLoader();
 
         if (doDelete) {
             const url = baseUrl + `api/items/${id}?populate=*`;

@@ -1180,13 +1180,13 @@ progress {
             flex: 0 0 auto;
     width: 100%;
   }
-  .row-cols-md-2 > * {
+  .row-cols-md-2 > *, .products-container > * {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
     width: 50%;
   }
-  .row-cols-md-3 > *, .featured-products .featured-products-container > *, .products-container > * {
+  .row-cols-md-3 > *, .featured-products .featured-products-container > * {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -1398,7 +1398,7 @@ progress {
             flex: 0 0 auto;
     width: 50%;
   }
-  .row-cols-lg-3 > * {
+  .row-cols-lg-3 > *, .products-container > * {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -2453,7 +2453,7 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 
-.btn-check[disabled] + .btn, form .btn-check[disabled] + .form-btn, .btn-check[disabled] + .featured-products__link, .btn-check[disabled] + .delete-product, .btn-check[disabled] + .edit-product, .product-content .btn-check[disabled] + .add-to-cart, .product-content .btn-check[disabled] + .delete-btn, .btn-check[disabled] + .btn-continue-shopping, .btn-check[disabled] + .btn-to-cart, .btn-check:disabled + .btn, form .btn-check:disabled + .form-btn, .btn-check:disabled + .featured-products__link, .btn-check:disabled + .delete-product, .btn-check:disabled + .edit-product, .product-content .btn-check:disabled + .add-to-cart, .product-content .btn-check:disabled + .delete-btn, .btn-check:disabled + .btn-continue-shopping, .btn-check:disabled + .btn-to-cart {
+.btn-check[disabled] + .btn, form .btn-check[disabled] + .form-btn, .btn-check[disabled] + .featured-products__link, .btns-wrapper .btn-check[disabled] + .edit-product, .btns-wrapper .btn-check[disabled] + .delete-product, .product-content .btn-check[disabled] + .add-to-cart, .product-content .btn-check[disabled] + .delete-btn, .btn-check[disabled] + .btn-continue-shopping, .btn-check[disabled] + .btn-to-cart, .btn-check:disabled + .btn, form .btn-check:disabled + .form-btn, .btn-check:disabled + .featured-products__link, .btns-wrapper .btn-check:disabled + .edit-product, .btns-wrapper .btn-check:disabled + .delete-product, .product-content .btn-check:disabled + .add-to-cart, .product-content .btn-check:disabled + .delete-btn, .btn-check:disabled + .btn-continue-shopping, .btn-check:disabled + .btn-to-cart {
   pointer-events: none;
   -webkit-filter: none;
           filter: none;
@@ -2723,12 +2723,12 @@ form .product-content .textarea-container > .size ~ label,
   z-index: 3;
 }
 
-.input-group .btn, .input-group form .form-btn, form .input-group .form-btn, .input-group .featured-products__link, .input-group .delete-product, .input-group .edit-product, .input-group .product-content .add-to-cart, .product-content .input-group .add-to-cart, .input-group .product-content .delete-btn, .product-content .input-group .delete-btn, .input-group .btn-continue-shopping, .input-group .btn-to-cart {
+.input-group .btn, .input-group form .form-btn, form .input-group .form-btn, .input-group .featured-products__link, .input-group .btns-wrapper .edit-product, .btns-wrapper .input-group .edit-product, .input-group .btns-wrapper .delete-product, .btns-wrapper .input-group .delete-product, .input-group .product-content .add-to-cart, .product-content .input-group .add-to-cart, .input-group .product-content .delete-btn, .product-content .input-group .delete-btn, .input-group .btn-continue-shopping, .input-group .btn-to-cart {
   position: relative;
   z-index: 2;
 }
 
-.input-group .btn:focus, .input-group form .form-btn:focus, form .input-group .form-btn:focus, .input-group .featured-products__link:focus, .input-group .delete-product:focus, .input-group .edit-product:focus, .input-group .product-content .add-to-cart:focus, .product-content .input-group .add-to-cart:focus, .input-group .product-content .delete-btn:focus, .product-content .input-group .delete-btn:focus, .input-group .btn-continue-shopping:focus, .input-group .btn-to-cart:focus {
+.input-group .btn:focus, .input-group form .form-btn:focus, form .input-group .form-btn:focus, .input-group .featured-products__link:focus, .input-group .btns-wrapper .edit-product:focus, .btns-wrapper .input-group .edit-product:focus, .input-group .btns-wrapper .delete-product:focus, .btns-wrapper .input-group .delete-product:focus, .input-group .product-content .add-to-cart:focus, .product-content .input-group .add-to-cart:focus, .input-group .product-content .delete-btn:focus, .product-content .input-group .delete-btn:focus, .input-group .btn-continue-shopping:focus, .input-group .btn-to-cart:focus {
   z-index: 3;
 }
 
@@ -2759,8 +2759,8 @@ form .product-content .textarea-container > .size ~ label,
 .input-group-lg > .btn,
 form .input-group-lg > .form-btn,
 .input-group-lg > .featured-products__link,
-.input-group-lg > .delete-product,
-.input-group-lg > .edit-product,
+.btns-wrapper .input-group-lg > .edit-product,
+.btns-wrapper .input-group-lg > .delete-product,
 .product-content .input-group-lg > .add-to-cart,
 .product-content .input-group-lg > .delete-btn,
 .input-group-lg > .btn-continue-shopping,
@@ -2778,8 +2778,8 @@ form .input-group-lg > .form-btn,
 .input-group-sm > .btn,
 form .input-group-sm > .form-btn,
 .input-group-sm > .featured-products__link,
-.input-group-sm > .delete-product,
-.input-group-sm > .edit-product,
+.btns-wrapper .input-group-sm > .edit-product,
+.btns-wrapper .input-group-sm > .delete-product,
 .product-content .input-group-sm > .add-to-cart,
 .product-content .input-group-sm > .delete-btn,
 .input-group-sm > .btn-continue-shopping,
@@ -3027,7 +3027,7 @@ form .input-group-sm > .form-btn,
   z-index: 3;
 }
 
-.btn, form .form-btn, .featured-products__link, .delete-product, .edit-product, .product-content .add-to-cart, .product-content .delete-btn, .btn-continue-shopping, .btn-to-cart {
+.btn, form .form-btn, .featured-products__link, .btns-wrapper .edit-product, .btns-wrapper .delete-product, .product-content .add-to-cart, .product-content .delete-btn, .btn-continue-shopping, .btn-to-cart {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -3052,29 +3052,31 @@ form .input-group-sm > .form-btn,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn, form .form-btn, .featured-products__link, .delete-product, .edit-product, .product-content .add-to-cart, .product-content .delete-btn, .btn-continue-shopping, .btn-to-cart {
+  .btn, form .form-btn, .featured-products__link, .btns-wrapper .edit-product, .btns-wrapper .delete-product, .product-content .add-to-cart, .product-content .delete-btn, .btn-continue-shopping, .btn-to-cart {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.btn:hover, form .form-btn:hover, .featured-products__link:hover, .delete-product:hover, .edit-product:hover, .product-content .add-to-cart:hover, .product-content .delete-btn:hover, .btn-continue-shopping:hover, .btn-to-cart:hover {
+.btn:hover, form .form-btn:hover, .featured-products__link:hover, .btns-wrapper .edit-product:hover, .btns-wrapper .delete-product:hover, .product-content .add-to-cart:hover, .product-content .delete-btn:hover, .btn-continue-shopping:hover, .btn-to-cart:hover {
   color: #212529;
 }
 
-.btn-check:focus + .btn, form .btn-check:focus + .form-btn, .btn-check:focus + .featured-products__link, .btn-check:focus + .delete-product, .btn-check:focus + .edit-product, .product-content .btn-check:focus + .add-to-cart, .product-content .btn-check:focus + .delete-btn, .btn-check:focus + .btn-continue-shopping, .btn-check:focus + .btn-to-cart, .btn:focus, form .form-btn:focus, .featured-products__link:focus, .delete-product:focus, .edit-product:focus, .product-content .add-to-cart:focus, .product-content .delete-btn:focus, .btn-continue-shopping:focus, .btn-to-cart:focus {
+.btn-check:focus + .btn, form .btn-check:focus + .form-btn, .btn-check:focus + .featured-products__link, .btns-wrapper .btn-check:focus + .edit-product, .btns-wrapper .btn-check:focus + .delete-product, .product-content .btn-check:focus + .add-to-cart, .product-content .btn-check:focus + .delete-btn, .btn-check:focus + .btn-continue-shopping, .btn-check:focus + .btn-to-cart, .btn:focus, form .form-btn:focus, .featured-products__link:focus, .btns-wrapper .edit-product:focus, .btns-wrapper .delete-product:focus, .product-content .add-to-cart:focus, .product-content .delete-btn:focus, .btn-continue-shopping:focus, .btn-to-cart:focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(114, 115, 255, 0.25);
 }
 
-.btn:disabled, form .form-btn:disabled, .featured-products__link:disabled, .delete-product:disabled, .edit-product:disabled, .product-content .add-to-cart:disabled, .product-content .delete-btn:disabled, .btn-continue-shopping:disabled, .btn-to-cart:disabled, .btn.disabled, form .disabled.form-btn, .disabled.featured-products__link, .disabled.delete-product, .disabled.edit-product, .product-content .disabled.add-to-cart, .product-content .disabled.delete-btn, .disabled.btn-continue-shopping, .disabled.btn-to-cart,
+.btn:disabled, form .form-btn:disabled, .featured-products__link:disabled, .btns-wrapper .edit-product:disabled, .btns-wrapper .delete-product:disabled, .product-content .add-to-cart:disabled, .product-content .delete-btn:disabled, .btn-continue-shopping:disabled, .btn-to-cart:disabled, .btn.disabled, form .disabled.form-btn, .disabled.featured-products__link, .btns-wrapper .disabled.edit-product, .btns-wrapper .disabled.delete-product, .product-content .disabled.add-to-cart, .product-content .disabled.delete-btn, .disabled.btn-continue-shopping, .disabled.btn-to-cart,
 fieldset:disabled .btn,
 fieldset:disabled form .form-btn,
 form fieldset:disabled .form-btn,
 fieldset:disabled .featured-products__link,
-fieldset:disabled .delete-product,
-fieldset:disabled .edit-product,
+fieldset:disabled .btns-wrapper .edit-product,
+.btns-wrapper fieldset:disabled .edit-product,
+fieldset:disabled .btns-wrapper .delete-product,
+.btns-wrapper fieldset:disabled .delete-product,
 fieldset:disabled .product-content .add-to-cart,
 .product-content fieldset:disabled .add-to-cart,
 fieldset:disabled .product-content .delete-btn,
@@ -3257,19 +3259,19 @@ form .show > .dropdown-toggle.form-btn:focus,
   border-color: #0dcaf0;
 }
 
-.btn-warning, .edit-product {
+.btn-warning, .btns-wrapper .edit-product {
   color: #212426;
   background-color: #ffdc83;
   border-color: #ffdc83;
 }
 
-.btn-warning:hover, .edit-product:hover {
+.btn-warning:hover, .btns-wrapper .edit-product:hover {
   color: #212426;
   background-color: #ffe196;
   border-color: #ffe08f;
 }
 
-.btn-check:focus + .btn-warning, .btn-check:focus + .edit-product, .btn-warning:focus, .edit-product:focus {
+.btn-check:focus + .btn-warning, .btns-wrapper .btn-check:focus + .edit-product, .btn-warning:focus, .btns-wrapper .edit-product:focus {
   color: #212426;
   background-color: #ffe196;
   border-color: #ffe08f;
@@ -3277,44 +3279,44 @@ form .show > .dropdown-toggle.form-btn:focus,
           box-shadow: 0 0 0 0.25rem rgba(222, 192, 117, 0.5);
 }
 
-.btn-check:checked + .btn-warning, .btn-check:checked + .edit-product,
+.btn-check:checked + .btn-warning, .btns-wrapper .btn-check:checked + .edit-product,
 .btn-check:active + .btn-warning,
-.btn-check:active + .edit-product, .btn-warning:active, .edit-product:active, .btn-warning.active, .active.edit-product,
+.btns-wrapper .btn-check:active + .edit-product, .btn-warning:active, .btns-wrapper .edit-product:active, .btn-warning.active, .btns-wrapper .active.edit-product,
 .show > .btn-warning.dropdown-toggle,
-.show > .dropdown-toggle.edit-product {
+.btns-wrapper .show > .dropdown-toggle.edit-product {
   color: #212426;
   background-color: #ffe39c;
   border-color: #ffe08f;
 }
 
-.btn-check:checked + .btn-warning:focus, .btn-check:checked + .edit-product:focus,
+.btn-check:checked + .btn-warning:focus, .btns-wrapper .btn-check:checked + .edit-product:focus,
 .btn-check:active + .btn-warning:focus,
-.btn-check:active + .edit-product:focus, .btn-warning:active:focus, .edit-product:active:focus, .btn-warning.active:focus, .active.edit-product:focus,
+.btns-wrapper .btn-check:active + .edit-product:focus, .btn-warning:active:focus, .btns-wrapper .edit-product:active:focus, .btn-warning.active:focus, .btns-wrapper .active.edit-product:focus,
 .show > .btn-warning.dropdown-toggle:focus,
-.show > .dropdown-toggle.edit-product:focus {
+.btns-wrapper .show > .dropdown-toggle.edit-product:focus {
   -webkit-box-shadow: 0 0 0 0.25rem rgba(222, 192, 117, 0.5);
           box-shadow: 0 0 0 0.25rem rgba(222, 192, 117, 0.5);
 }
 
-.btn-warning:disabled, .edit-product:disabled, .btn-warning.disabled, .disabled.edit-product {
+.btn-warning:disabled, .btns-wrapper .edit-product:disabled, .btn-warning.disabled, .btns-wrapper .disabled.edit-product {
   color: #212426;
   background-color: #ffdc83;
   border-color: #ffdc83;
 }
 
-.btn-danger, .delete-product {
+.btn-danger, .btns-wrapper .delete-product {
   color: #212426;
   background-color: #ffb2ad;
   border-color: #ffb2ad;
 }
 
-.btn-danger:hover, .delete-product:hover {
+.btn-danger:hover, .btns-wrapper .delete-product:hover {
   color: #212426;
   background-color: #ffbeb9;
   border-color: #ffbab5;
 }
 
-.btn-check:focus + .btn-danger, .btn-check:focus + .delete-product, .btn-danger:focus, .delete-product:focus {
+.btn-check:focus + .btn-danger, .btns-wrapper .btn-check:focus + .delete-product, .btn-danger:focus, .btns-wrapper .delete-product:focus {
   color: #212426;
   background-color: #ffbeb9;
   border-color: #ffbab5;
@@ -3322,26 +3324,26 @@ form .show > .dropdown-toggle.form-btn:focus,
           box-shadow: 0 0 0 0.25rem rgba(222, 157, 153, 0.5);
 }
 
-.btn-check:checked + .btn-danger, .btn-check:checked + .delete-product,
+.btn-check:checked + .btn-danger, .btns-wrapper .btn-check:checked + .delete-product,
 .btn-check:active + .btn-danger,
-.btn-check:active + .delete-product, .btn-danger:active, .delete-product:active, .btn-danger.active, .active.delete-product,
+.btns-wrapper .btn-check:active + .delete-product, .btn-danger:active, .btns-wrapper .delete-product:active, .btn-danger.active, .btns-wrapper .active.delete-product,
 .show > .btn-danger.dropdown-toggle,
-.show > .dropdown-toggle.delete-product {
+.btns-wrapper .show > .dropdown-toggle.delete-product {
   color: #212426;
   background-color: #ffc1bd;
   border-color: #ffbab5;
 }
 
-.btn-check:checked + .btn-danger:focus, .btn-check:checked + .delete-product:focus,
+.btn-check:checked + .btn-danger:focus, .btns-wrapper .btn-check:checked + .delete-product:focus,
 .btn-check:active + .btn-danger:focus,
-.btn-check:active + .delete-product:focus, .btn-danger:active:focus, .delete-product:active:focus, .btn-danger.active:focus, .active.delete-product:focus,
+.btns-wrapper .btn-check:active + .delete-product:focus, .btn-danger:active:focus, .btns-wrapper .delete-product:active:focus, .btn-danger.active:focus, .btns-wrapper .active.delete-product:focus,
 .show > .btn-danger.dropdown-toggle:focus,
-.show > .dropdown-toggle.delete-product:focus {
+.btns-wrapper .show > .dropdown-toggle.delete-product:focus {
   -webkit-box-shadow: 0 0 0 0.25rem rgba(222, 157, 153, 0.5);
           box-shadow: 0 0 0 0.25rem rgba(222, 157, 153, 0.5);
 }
 
-.btn-danger:disabled, .delete-product:disabled, .btn-danger.disabled, .disabled.delete-product {
+.btn-danger:disabled, .btns-wrapper .delete-product:disabled, .btn-danger.disabled, .btns-wrapper .disabled.delete-product {
   color: #212426;
   background-color: #ffb2ad;
   border-color: #ffb2ad;
@@ -3729,7 +3731,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   border-radius: 0.3rem;
 }
 
-.btn-sm, .delete-product, .edit-product, .btn-continue-shopping, .btn-to-cart {
+.btn-sm, .btns-wrapper .edit-product, .btns-wrapper .delete-product, .btn-continue-shopping, .btn-to-cart {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem;
@@ -5818,7 +5820,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   opacity: 0.5;
 }
 
-.placeholder.btn::before, form .placeholder.form-btn::before, .placeholder.featured-products__link::before, .placeholder.delete-product::before, .placeholder.edit-product::before, .product-content .placeholder.add-to-cart::before, .product-content .placeholder.delete-btn::before, .placeholder.btn-continue-shopping::before, .placeholder.btn-to-cart::before {
+.placeholder.btn::before, form .placeholder.form-btn::before, .placeholder.featured-products__link::before, .btns-wrapper .placeholder.edit-product::before, .btns-wrapper .placeholder.delete-product::before, .product-content .placeholder.add-to-cart::before, .product-content .placeholder.delete-btn::before, .placeholder.btn-continue-shopping::before, .placeholder.btn-to-cart::before {
   display: inline-block;
   content: "";
 }
@@ -6219,7 +6221,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   display: table-cell !important;
 }
 
-.d-flex, .member-campaign__content, .nav-menu, .nav-icons, .footer, .footer__content .footer__content-logo-wrapper, .hero .hero-content, .hero .loader, .newsletter, .search-container, .cart-item-container .quantity-container {
+.d-flex, .member-campaign__content, .nav-menu, .nav-icons, .footer, .footer__content .footer__content-logo-wrapper, .hero .hero-content, .hero .loader, .newsletter, .products-container .card-body, .btns-wrapper, .search-container, .cart-item-container .quantity-container {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -6512,7 +6514,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           flex-direction: row !important;
 }
 
-.flex-column, .nav-menu, .footer, .footer__content .footer__content-logo-wrapper, .footer__content .footer__content-menu-wrapper, .hero .hero-content, .search-container {
+.flex-column, .nav-menu, .footer, .footer__content .footer__content-logo-wrapper, .footer__content .footer__content-menu-wrapper, .hero .hero-content, .btns-wrapper, .search-container {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
       -ms-flex-direction: column !important;
@@ -6574,7 +6576,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   gap: 0 !important;
 }
 
-.gap-1, .cart-item-container .quantity-container {
+.gap-1, .btns-wrapper, .cart-item-container .quantity-container {
   gap: 0.25rem !important;
 }
 
@@ -6612,7 +6614,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           justify-content: center !important;
 }
 
-.justify-content-between, .footer__content .footer__content-row, .search-container {
+.justify-content-between, .footer__content .footer__content-row, .products-container .card-body, .search-container {
   -webkit-box-pack: justify !important;
       -ms-flex-pack: justify !important;
           justify-content: space-between !important;
@@ -6647,7 +6649,7 @@ form .show > .dropdown-toggle.form-btn:focus,
           align-items: center !important;
 }
 
-.align-items-baseline {
+.align-items-baseline, .btns-wrapper {
   -webkit-box-align: baseline !important;
       -ms-flex-align: baseline !important;
           align-items: baseline !important;
@@ -6900,7 +6902,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   margin-right: 0 !important;
 }
 
-.me-1 {
+.me-1, .btns-wrapper .edit-product {
   margin-right: 0.25rem !important;
 }
 
@@ -6988,7 +6990,7 @@ form .show > .dropdown-toggle.form-btn:focus,
   padding: 0.25rem !important;
 }
 
-.p-2, .cart-quantity, .products .badge {
+.p-2, .cart-quantity, .products .badge, .btns-wrapper .edit-product, .btns-wrapper .delete-product {
   padding: 0.5rem !important;
 }
 
@@ -8170,7 +8172,7 @@ form .show > .dropdown-toggle.form-btn:focus,
         -ms-flex: 1 1 auto !important;
             flex: 1 1 auto !important;
   }
-  .flex-md-row, .nav-menu {
+  .flex-md-row, .nav-menu, .btns-wrapper {
     -webkit-box-orient: horizontal !important;
     -webkit-box-direction: normal !important;
         -ms-flex-direction: row !important;
@@ -10575,7 +10577,7 @@ a {
   white-space: pre-wrap;
 }
 
-.btn, form .form-btn, .featured-products__link, .delete-product, .edit-product, .product-content .add-to-cart, .product-content .delete-btn, .btn-continue-shopping, .btn-to-cart {
+.btn, form .form-btn, .featured-products__link, .btns-wrapper .edit-product, .btns-wrapper .delete-product, .product-content .add-to-cart, .product-content .delete-btn, .btn-continue-shopping, .btn-to-cart {
   border-radius: 0;
   padding: 0.7em 1.5em;
 }
@@ -11048,13 +11050,12 @@ form .div-input-container, form .textarea-container {
   margin: 2em auto;
 }
 
-.products-container .card-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.btns-wrapper .edit-product {
+  width: 80px;
+}
+
+.btns-wrapper .delete-product {
+  width: 80px;
 }
 
 .search-container #search {
