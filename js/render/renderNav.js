@@ -1,9 +1,12 @@
 import { getFromStorage, getUser, productKey, tokenKey, userKey } from "../storage/storage.js";
-import { renderCartQuantity } from "../render/renderCartQuantity.js";
+import { renderCartQuantity } from "./renderCartQuantity.js";
 
-// nav renders here with offcanvas
-const nav = document.querySelector("nav");
-nav.innerHTML += `<div class="container">
+
+export function renderNav() {
+    // nav renders here with offcanvas, logo, hamburger and nav-items
+
+    const nav = document.querySelector("nav");
+    nav.innerHTML += `<div class="container">
                     <a class="me-auto d-md-none" href="index.html"><img src="/images/logo/logo-dark.svg" alt="noso sports logo" class="logo" /></a>
                     <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <i class="fa-solid fa-bars-staggered"></i>
@@ -17,31 +20,37 @@ nav.innerHTML += `<div class="container">
                         </div>
                     </div>
                 </div>`
-
+    renderMenu();
+}
 const itemsSavedInStorage = getFromStorage(productKey);
 
 const username = getUser();
 
 const { pathname } = document.location;
 
-let authLink = `<li class="nav-item">
-                   <a class="nav-link ${pathname === "/login.html" ? "active" : ""}" href="login.html"><i class="fa-solid fa-user"></i></a>
-                </li>`;
+// authenticated link if username doesn't exist
 
+let authLink = `<li class="nav-item">
+               <a class="nav-link ${pathname === "/login.html" ? "active" : ""}" href="login.html"><i class="fa-solid fa-user"></i></a>
+            </li>`;
+
+// authenticated link if username exist
 if (username) {
     authLink = `<li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >Hi ${username}</a>
-                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <li>
-                       <a class="dropdown-item  ${pathname === "/addProduct.html" ? "active" : ""}" href="addProduct.html"> Add product </a>
-                     </li>
-                     <li>
-                     <span class="dropdown-item" id="logout">Logout</span>
-                   </li>
-                    </ul>
-                </li>`
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >Hi ${username}</a>
+                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <li>
+                   <a class="dropdown-item  ${pathname === "/addProduct.html" ? "active" : ""}" href="addProduct.html"> Add product </a>
+                 </li>
+                 <li>
+                 <span class="dropdown-item" id="logout">Logout</span>
+               </li>
+                </ul>
+            </li>`
 }
-export function renderMenu() {
+
+function renderMenu() {
+
     const menuContainer = document.querySelector(".nav-menu-container");
 
     menuContainer.innerHTML = "";
@@ -79,8 +88,6 @@ export function renderMenu() {
             location.reload();
 
         })
-
     }
     renderCartQuantity(itemsSavedInStorage);
 }
-

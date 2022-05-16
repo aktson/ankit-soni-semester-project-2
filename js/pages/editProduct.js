@@ -1,5 +1,5 @@
 import { baseUrl } from "../settings.js";
-import { renderMenu } from "../render/renderMenu.js";
+import { renderNav } from "../render/renderNav.js";
 import { renderFooter } from "../render/renderFooter.js";
 import { getUser, getToken } from "../storage/storage.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
@@ -8,7 +8,7 @@ import { hideModalLoader, showModalLoader } from "../generalFunctions/modalLoade
 
 
 
-renderMenu();
+renderNav();
 renderFooter();
 
 const token = getToken();

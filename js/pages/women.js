@@ -2,11 +2,11 @@ import { baseUrl } from "../settings.js";
 import { searchProduct } from "../generalFunctions/searchProduct.js";
 import { sortByPrice } from "../generalFunctions/sortByPrice.js";
 import { renderProducts } from "../render/renderProducts.js";
-import { renderMenu } from "../render/renderMenu.js";
+import { renderNav } from "../render/renderNav.js";
 import { renderFooter } from "../render/renderFooter.js";
 
 
-renderMenu();
+renderNav();
 renderFooter();
 
 

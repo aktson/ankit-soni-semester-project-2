@@ -1,10 +1,10 @@
 import { baseUrl } from "../settings.js";
-import { renderMenu } from "../render/renderMenu.js";
+import { renderNav } from "../render/renderNav.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
 import { renderFooter } from "../render/renderFooter.js";
 import { renderSliderHome } from "../render/renderSliderHome.js";
 
-renderMenu();
+renderNav();
 renderFooter();
 
 
@@ -37,7 +37,7 @@ renderFooter();
 
     if (response.ok) {
       const results = await response.json();
-      console.log(results.data)
+
       renderFeaturedProducts(results.data)
       renderSliderHome(results.data);
 

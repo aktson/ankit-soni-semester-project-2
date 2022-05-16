@@ -1,4 +1,4 @@
-import { renderMenu } from "../render/renderMenu.js";
+import { renderNav } from "../render/renderNav.js";
 import { renderFooter } from "../render/renderFooter.js";
 import { baseUrl } from "../settings.js";
 import { getUser, getToken } from "../storage/storage.js";
@@ -10,7 +10,7 @@ import { hideModalLoader, showModalLoader } from "../generalFunctions/modalLoade
 
 
 
-renderMenu();
+renderNav();
 renderFooter();
 
 

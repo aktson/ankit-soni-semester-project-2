@@ -1,12 +1,12 @@
 import { baseUrl } from "../settings.js";
 import { saveToken, saveUser } from "../storage/storage.js";
 import { displayMessage } from "../generalFunctions/displayMessage.js";
-import { renderMenu } from "../render/renderMenu.js";
+import { renderNav } from "../render/renderNav.js";
 import { renderFooter } from "../render/renderFooter.js";
 import { hideModalLoader, showModalLoader } from "../generalFunctions/modalLoader.js";
 
 
-renderMenu();
+renderNav();
 renderFooter();
 
 const form = document.querySelector("form");

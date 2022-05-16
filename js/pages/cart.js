@@ -1,5 +1,5 @@
 import { displayMessage } from "../generalFunctions/displayMessage.js";
-import { renderMenu } from "../render/renderMenu.js";
+import { renderNav } from "../render/renderNav.js";
 import { renderFooter } from "../render/renderFooter.js";
 import { formatPrice } from "../generalFunctions/formatPrice.js";
 import { getFromStorage, saveToStorage, productKey } from "../storage/storage.js";
@@ -8,7 +8,7 @@ import { renderCartQuantity } from "../render/renderCartQuantity.js";
 
 
 
-renderMenu();
+renderNav();
 renderFooter();
 
 
