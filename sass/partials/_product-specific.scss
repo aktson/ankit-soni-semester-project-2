@@ -1,14 +1,18 @@
-.product-specific {
+.product-specific-wrapper {
 	@extend .container, .spacer;
 	margin-top: 100px;
-	.product-content {
-		padding: 0em 1em;
-		@media (max-width: $mobile) {
-			padding: 0.5em;
-		}
-		@media (max-width: $large) {
-			padding: 0.5em;
-		}
+
+	.product-container {
+		justify-content: center;
+	}
+}
+.product-content {
+	padding: 0.5em 1em;
+	@media (max-width: $mobile) {
+		padding: 0.5em;
+	}
+	@media (max-width: $large) {
+		padding: 0.5em;
 	}
 
 	h2 {
@@ -42,11 +46,17 @@
 		@extend .form-select, .inner-spacer-bottom;
 	}
 }
+.product-specific-image {
+	@extend .col-lg-7;
+	min-height: 500px;
 
-.product-container {
-	justify-content: center;
+	@media (max-width: $mobile) {
+		margin: 1em auto;
+		min-height: 50vh;
+	}
 }
 
+// modal to give user feedback on product select
 .modal-header {
 	border: none;
 	position: relative;

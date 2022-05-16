@@ -32,7 +32,7 @@ export function renderSpecificProduct(result) {
 
     productContainer.innerHTML = "";
 
-    productContainer.innerHTML = `<div class="col-lg-7" style ="background: url('${img}') no-repeat center;background-size: cover; min-height:500px;" >
+    productContainer.innerHTML = `<div class="product-specific-image" style ="background: url('${img}') no-repeat center;background-size: cover;" >
                                       <span role="img" aria-label=${altText}></span>
                                     </div>
                                     <div class="col-lg-5 product-content"> 

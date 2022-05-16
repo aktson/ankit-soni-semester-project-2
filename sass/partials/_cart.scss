@@ -4,25 +4,7 @@
 	text-align: center;
 	position: relative;
 }
-.back-btn-container {
-	position: absolute;
-	left: 0;
-}
 
-.back-button {
-	@extend .btn;
-	@extend .btn-outline-primary;
-	position: absolute;
-	left: 0;
-	display: flex;
-	align-items: center;
-	gap: 0.4em;
-
-	@media (max-width: $mobile) {
-		top: -4em;
-		margin: 0 auto;
-	}
-}
 .cart-wrapper {
 	@extend .row;
 	justify-content: center;
