@@ -26,9 +26,7 @@ form {
 
 .form-wrapper {
 	@extend .inner-spacer-top;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@extend .d-flex, .justify-content-center, .align-items-center;
 }
 
 .form-wrapper__add-edit-product {

@@ -12,7 +12,6 @@ renderNav();
 renderFooter();
 
 
-
 const itemsSavedInStorage = getFromStorage(productKey);
 
 renderCartItems(itemsSavedInStorage);
@@ -26,7 +25,7 @@ if (itemsSavedInStorage.length === 0) {
 function renderCartItems(itemsToRender) {
 
     const cartItemContainer = document.querySelector(".cart-item-container");
-    const cartTotalItemContainer = document.querySelector(".cart-total");
+    const cartTotalItemContainer = document.querySelector(".cart-items-total");
     const totalPriceContainer = document.querySelector(".total-price-container");
 
     let total = 0;
@@ -53,7 +52,7 @@ function renderCartItems(itemsToRender) {
                                                 <p class="lead">${item.quantity}</p>
                                                 <i class="fa-solid fa-circle-plus" id="plus-btn" data-size="${item.size}" data-id=${item.id}></i>
                                             </div>
-                                            <p class="ms-auto">NOK ${price} </p>
+                                            <p class="price"> ${price} </p>
                                             <i class="fa-solid fa-trash-can delete-btn" data-size="${item.size}" data-id=${item.id}></i>
                                         </div>`
 
@@ -78,10 +77,11 @@ function renderCartItems(itemsToRender) {
         plusBtns.forEach(plusBtn => {
             plusBtn.addEventListener("click", plusQuantity)
         })
+
         function plusQuantity(event) {
 
             const cartItemContainer = document.querySelector(".cart-item-container");
-            const cartTotalItemContainer = document.querySelector(".cart-total");
+            const cartTotalItemContainer = document.querySelector(".cart-items-total");
 
             const size = event.target.dataset.size;
             const id = event.target.dataset.id;
@@ -107,9 +107,8 @@ function renderCartItems(itemsToRender) {
             minusBtn.addEventListener("click", minusQuantity)
         })
         function minusQuantity(event) {
-
             const cartItemContainer = document.querySelector(".cart-item-container");
-            const cartTotalItemContainer = document.querySelector(".cart-total");
+            const cartTotalItemContainer = document.querySelector(".cart-items-total");
 
             const size = event.target.dataset.size;
             const id = event.target.dataset.id;

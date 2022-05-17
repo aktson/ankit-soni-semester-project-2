@@ -91,6 +91,7 @@ function addToCart(event) {
 
         modalBody.innerHTML = "";
         showMessageWithModal("<i class='fa-solid fa-circle-exclamation me-2'></i>Please select size")
+
     }
 
     //if user have choosen size then let user add the product and show modal with added product

@@ -33,20 +33,21 @@ if (username) {
 export function renderNav() {
     // nav renders here with offcanvas, logo, hamburger and nav-items
     const nav = document.querySelector("nav");
+
     nav.innerHTML += `<div class="container">
-                    <a class="me-auto d-md-none" href="index.html"><img src="/images/logo/logo-dark.svg" alt="noso sports logo" class="logo" /></a>
-                    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <i class="fa-solid fa-bars-staggered"></i>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <a class="me-auto d-md-none" href="index.html"><img src="/images/logo/logo-dark.svg" alt="noso sports logo" class="logo" /></a>
+                        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                        </button>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="nav-menu-container"></ul>
+                            </div>
                         </div>
-                        <div class="offcanvas-body">
-                            <ul class="nav-menu-container"></ul>
-                        </div>
-                    </div>
-                </div>`
+                    </div>`
     renderMenu();
 }
 
