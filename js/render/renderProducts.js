@@ -81,6 +81,7 @@ async function deleteProduct(event) {
         hideModalLoader();
 
         if (doDelete) {
+
             const url = baseUrl + `api/items/${id}?populate=*`;
 
             const options = {

@@ -142,6 +142,8 @@ function renderCartItems(itemsToRender) {
         })
 
         function deleteItem(event) {
+            const cartItemContainer = document.querySelector(".cart-item-container");
+            const cartTotalItemContainer = document.querySelector(".cart-items-total");
 
             let doDelete = window.confirm("Would you like to delete?");
 
