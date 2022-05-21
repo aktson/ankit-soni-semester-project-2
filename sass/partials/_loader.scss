@@ -8,6 +8,7 @@
 	border-right: 4px solid transparent;
 	box-sizing: border-box;
 	animation: rotate 1s linear infinite;
+	margin: 0 auto;
 }
 .loader::after {
 	content: "";
@@ -30,7 +31,7 @@
 		transform: rotate(360deg);
 	}
 }
-
+// modal loader for post and put request
 .modal-loader {
 	@extend .modal;
 	display: none;

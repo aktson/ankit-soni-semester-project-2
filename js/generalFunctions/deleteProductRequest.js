@@ -1,21 +1,21 @@
 import { baseUrl } from "../settings.js";
-import { getUser } from "../storage/storage.js";
+import { getToken } from "../storage/storage.js";
 import { displayMessage } from "./displayMessage.js";
+import { showModalLoader, hideModalLoader } from "./modalLoader.js";
 
-const user = getUser();
+const token = getToken();
 
-let cssClass = "visually-hidden";
 
-if (user) {
-    cssClass = "";
-};
+export async function deleteProductRequest(event) {
 
-export async function deleteProduct(event) {
+    showModalLoader();
+
+    let doDelete = window.confirm("are you sure??");
 
     try {
         const id = event.target.dataset.id;
 
-        let doDelete = window.confirm("are you sure??");
+        hideModalLoader();
 
         if (doDelete) {
             const url = baseUrl + `api/items/${id}?populate=*`;
@@ -35,12 +35,14 @@ export async function deleteProduct(event) {
             const res = await fetch(imageUrl, options);
 
             if (res.ok) {
+                hideModalLoader();
                 displayMessage("success", "Product deleted!!", "#message-container");
                 location.reload();
             }
         }
     }
     catch (error) {
+        hideModalLoader();
         console.log(error)
         displayMessage("danger", "Unknown error occured", "#message-container")
     }

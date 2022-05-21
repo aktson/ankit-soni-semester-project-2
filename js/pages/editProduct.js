@@ -98,7 +98,7 @@ function handleEdit(event) {
         displayMessage("trasparent text-danger", "must be decimal number", "#price-error")
     }
 
-    if (checkLength(title.value, 4) && checkLength(description.value, 10) && checkLength(alttext.value, 4) && checkLength(price.value, 1)) {
+    if (checkLength(title.value, 4) && checkLength(description.value, 10) && checkLength(alttext.value, 4) && checkLength(price.value, 1) && !isNaN(price.value)) {
 
         if (image.value !== "") {
             editProductWithImage(title.value, description.value, price.value, featured, image.value, alttext.value, id);
@@ -112,7 +112,7 @@ function handleEdit(event) {
     }
 }
 
-// if image input value is empty then only data without image will be updated and image will get its existing id
+// if image input value is empty then only data without image will be updated and image will get its existing ids
 async function editProductWithoutImage(title, description, price, featured, altText, id) {
 
     showModalLoader();

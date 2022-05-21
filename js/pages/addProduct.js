@@ -50,8 +50,9 @@ function handleSubmit(event) {
     const featured = document.querySelector("#featured").checked;
     const category = document.querySelector(".category").value;
     const imageValue = image.value;
-    console.log(category)
-    messageContainer.innerHTML = "";
+
+
+    emptyInnerhtml([titleError, descriptionError, alttextError, priceError, imageError, categoryError, messageContainer]);
 
     checkInput(titleValue, 4, "title must be atleast 4 letters", "#title-error");
     checkInput(descriptionValue, 10, "description must be atleast 10 letters", "#description-error");
@@ -65,7 +66,7 @@ function handleSubmit(event) {
 
     checkInput(imageValue, 1, "image missing", "#image-error");
 
-    if (checkLength(titleValue, 4) && checkLength(descriptionValue, 10) && checkLength(alttextValue, 4) && checkLength(category, 1) && checkLength(priceValue, 1) && checkLength(imageValue, 4)) {
+    if (checkLength(titleValue, 4) && checkLength(descriptionValue, 10) && checkLength(alttextValue, 4) && checkLength(category, 1) && checkLength(priceValue, 1) && checkLength(imageValue, 4) && !isNaN(priceValue)) {
         addProduct(titleValue, descriptionValue, priceValue, featured, imageValue, alttextValue, category);
         emptyInnerhtml([titleError, descriptionError, alttextError, priceError, imageError, categoryError]);
         removeMessage("#message-container");

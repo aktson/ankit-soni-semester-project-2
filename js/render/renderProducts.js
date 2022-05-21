@@ -1,12 +1,9 @@
-import { getUser, getToken, getFromStorage, productKey } from "../storage/storage.js";
-import { displayMessage } from "../generalFunctions/displayMessage.js";
-import { baseUrl } from "../settings.js";
-import { hideModalLoader, showModalLoader } from "../generalFunctions/modalLoader.js";
+import { getUser, getFromStorage, productKey } from "../storage/storage.js";
+import { deleteProductRequest } from "../generalFunctions/deleteProductRequest.js";
 
 
 const itemsSavedInStorage = getFromStorage(productKey);
 
-const token = getToken();
 const user = getUser();
 
 let cssClass = "visually-hidden";
@@ -64,51 +61,8 @@ export function renderProducts(results) {
     const deleteBtns = document.querySelectorAll(".delete-product");
 
     deleteBtns.forEach(btn => {
-        btn.addEventListener("click", deleteProduct);
+        btn.addEventListener("click", deleteProductRequest);
     })
 
 };
 
-
-// delete request to delete item from api only for authenticated user
-async function deleteProduct(event) {
-    showModalLoader();
-
-    try {
-        const id = event.target.dataset.id;
-
-        let doDelete = window.confirm("are you sure??");
-        hideModalLoader();
-
-        if (doDelete) {
-
-            const url = baseUrl + `api/items/${id}?populate=*`;
-
-            const options = {
-                method: "DELETE",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                }
-            }
-            const response = await fetch(url, options);
-            const result = await response.json();
-
-            const imageId = result.data.attributes.image.data.id;
-
-            const imageUrl = baseUrl + `api/upload/files/${imageId}`;
-            const res = await fetch(imageUrl, options);
-
-            if (res.ok) {
-                hideModalLoader();
-                displayMessage("success", "Product deleted!!", "#message-container");
-                location.reload();
-            }
-        }
-    }
-    catch (error) {
-        hideModalLoader();
-        console.log(error)
-        displayMessage("danger", "Unknown error occured", "#message-container")
-    }
-
-}
