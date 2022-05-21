@@ -31,7 +31,7 @@ const form = document.querySelector("form");
 // container to show success or error message
 const messageContainer = document.querySelector("#message-container");
 
-const btn = document.querySelector(".form-btn");
+
 // input containers
 const title = document.querySelector("#title");
 const image = document.querySelector("#image");
