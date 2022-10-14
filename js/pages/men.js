@@ -15,7 +15,7 @@ renderFooter();
 
 (async function fetchProducts() {
 
-  const url = baseUrl + "api/items?populate=*";
+  const url = baseUrl + "api/nosos?populate=*";
 
   try {
     const response = await fetch(url);
@@ -24,7 +24,7 @@ renderFooter();
       const results = await response.json();
 
       const filterMenData = results.data.filter(result => {
-        return result.attributes.categories.data[0].attributes.name === "men";
+        return result.attributes.category === "men";
       })
 
       renderProducts(filterMenData);

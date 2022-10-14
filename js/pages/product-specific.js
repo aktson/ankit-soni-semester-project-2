@@ -18,7 +18,7 @@ const id = params.get("id");
 
 (async function fetchProduct() {
 
-  const url = baseUrl + `api/items/${id}?populate=*`;
+  const url = baseUrl + `api/nosos/${id}?populate=*`;
 
   try {
     const response = await fetch(url);

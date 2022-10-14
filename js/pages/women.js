@@ -12,16 +12,17 @@ renderFooter();
 
 (async function fetchProducts() {
 
-    const url = baseUrl + "api/items?populate=*";
+    const url = baseUrl + "api/nosos?populate=*";
 
     try {
         const response = await fetch(url);
 
         if (response.ok) {
             const results = await response.json();
+            console.log(results)
 
             const filterWomenData = results.data.filter(result => {
-                return result.attributes.categories.data[0].attributes.name === "women";
+                return result.attributes.category === "women";
             })
 
             renderProducts(filterWomenData);

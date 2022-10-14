@@ -11,17 +11,27 @@ renderFooter();
 // hero section fetch request
 (async function fetchHero() {
 
-  const response = await fetch(baseUrl + "api/home?populate=*");
-  const result = await response.json();
+  try {
+    const response = await fetch(baseUrl + "api/noso-homes?populate=*");
 
-  const img = result.data.attributes.hero_banner.data.attributes.url;
-  const altText = result.data.attributes.hero_banner_alt_text;
 
-  const heroBanner = document.querySelector(".hero-banner");
+    const result = await response.json();
 
-  heroBanner.innerHTML = `<div style ="background: url('${img}') no-repeat center;background-size: cover;" class="hero__image">
+    const img = result.data[0].attributes.hero_banner.data.attributes.url;
+    const altText = result.data[0].attributes.hero_banner_alt_text;
+
+    const heroBanner = document.querySelector(".hero-banner");
+
+    heroBanner.innerHTML = `<div style ="background: url('${img}') no-repeat center;background-size: cover;" class="hero__image">
                             <span  role="img" aria-label=${altText}></span>
                           </div>`;
+
+
+  } catch (error) {
+    console.log(error)
+
+  }
+
 
 })();
 
@@ -30,13 +40,14 @@ renderFooter();
 
   try {
 
-    const url = baseUrl + "api/items?populate=*";
+    const url = baseUrl + "api/nosos?populate=*";
 
     const response = await fetch(url);
 
 
     if (response.ok) {
       const results = await response.json();
+      console.log(results)
 
       renderFeaturedProducts(results.data)
       renderSliderHome(results.data);
