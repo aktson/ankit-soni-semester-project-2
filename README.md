@@ -8,12 +8,12 @@ Goal
 This is my submission for third semester exam submission. An complete CRUD(create/Read/Update/Delete) e-commerce website that has both customer-facing and admin sections where admin can do all the CRUD operations. Both sections are responsive and the website is populated by a Strapi API hosted on Railway.
 
 
-#3 Getting Started 
+## Getting Started 
 
 ## Visit live site
-[NOSO] (https://noso.netlify.app/)
+[NOSO](https://noso.netlify.app/)
 
-1. Clone the repo:
+### Clone the repo:
 
 ```bash
 gh repo clone aktson/ankit-soni-semester-project-2
@@ -32,6 +32,11 @@ You can start liver server for development with default installed live-server ex
 
 ### !import: if you cannot login with above login credentials, then please contact me on contact details below.
 
+## Built With
+
+ <li> Vanilla JavaScript</li>
+ <li> Bootstrap5</li>
+ <li> Sass</li>
 
 ## Contact
 
@@ -39,11 +44,7 @@ You can start liver server for development with default installed live-server ex
 
 [My LinkedIn page](https://www.linkedin.com/in/ankit-soni-78177b1a/)
 
-## Built With
 
- <li> Vanilla JavaScript</li>
- <li> Bootstrap5</li>
- <li> Sass</li>
 
 
 
